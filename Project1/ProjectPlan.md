@@ -31,35 +31,35 @@ document, specifying the charactaristics of the system, will be completed.
 **Design**
 
 This phase will be where a decision is made regarding the best way to develop the system specified in the requirements.  
-Once detailed requirements are complete we will begin the software design by determining the objects needed for the system  
-and what relations they have with one another, not by writing any actual code, but by representing these relationships with  
-diagrams. Once a complete set of diagrams, detailing the design of the system, and the contents of the user  
-documentation (textual man page) is complete, the next phase will begin.
+Once detailed requirements are complete we will begin the software design by determining the objects needed for the  
+system and what relations they have with one another, not by writing any actual code, but by representing these  
+relationships with diagrams. Once a complete set of diagrams, detailing the design of the system, and the contents of  
+the user documentation (textual man page) is complete, the next phase will begin.
 
 **Coding and Debugging**
 
-In this phase, the design is implemented by the developers through code and a rough product begins to emerge. A detailed design  
-is needed to ensure that all necessary code, and no extraneous code, is written to complete the desired project. To ensure  
-success in all parts of the system, debugging and testing will be done as issues come up or after a section has been completed.  
-Once enough rounds of testing and coding have been completed and a product exists that fully implements the detailed design,  
-This phase will be complete.
+In this phase, the design is implemented by the developers through code and a rough product begins to emerge. A  
+detailed design is needed to ensure that all necessary code, and no extraneous code, is written to complete the  
+desired project. To ensure success in all parts of the system, debugging and testing will be done as issues come up  
+or after a section has been completed. Once enough rounds of testing and coding have been completed and a product  
+exists that fully implements the detailed design, This phase will be complete.
 
 **System Testing**
 
-Once the Coding and Debugging phase is complete and a full product exists, that product must be thoroughly tested. The goal  
-of this phase will be to discover any inconsistencied between the completed system and the requirements; this will be  
-through a detailed set of test cases that will be designed with specific requirements in mind and executed on the system.  
-The team cannot be confident in the product until all tests have been passed without issue and the system is successful  
-in meeting all of the customer requirements.
+Once the Coding and Debugging phase is complete and a full product exists, that product must be thoroughly tested.  
+The goal of this phase will be to discover any inconsistencied between the completed system and the requirements;  
+this will be through a detailed set of test cases that will be designed with specific requirements in mind and executed  
+on the system. The team cannot be confident in the product until all tests have been passed without issue and the  
+system is successful in meeting all of the customer requirements.
 
 3-Team
 ------
 
 **Members:**  
-Kennith Kummerfeldt
-Lance DeSimone
-Jacob Harris
-Yanglei Zou
+Kennith Kummerfeldt  
+Lance DeSimone  
+Jacob Harris  
+Yanglei Zou  
 
 **Roles:**  
 Project Manager - Monitors the state of the project and helps team stay on track.  Assists any team member who is having trouble.  
