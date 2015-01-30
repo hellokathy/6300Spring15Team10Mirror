@@ -1,5 +1,13 @@
 # **Requirements Document -- Team X**
 
+General requirements (from videos):
+no non standard java libraries… 
+should be application and executable, file path 
+compile with javac from command line 
+user specifies file path
+user specifies delimiters (,;.!) with –d 
+user specifies word length –l (above 3 letters)
+
 1 User Requirements
   1.1 Software Interfaces
 
