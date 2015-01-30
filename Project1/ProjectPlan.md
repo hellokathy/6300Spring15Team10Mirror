@@ -71,10 +71,10 @@ Table of Assigned Roles:
 ------------------------
 
 	Name    | Project Manager | Development Lead | Documentation Lead | QA Manager | Developer | Tester |
-	Kennith |	 	  |	    X	     |		 	  |	       |     X     |	    |
-	Lance   |	X	  |	 	     |		 	  |	       |     X     |	    |
-	Jacob   |	 	  |	 	     |		X	  |	       |	   |	X   |
-	Yanglei |	 	  |	 	     |		 	  |	X      |	   |	X   |
+	Kennith |	 	|	X	|	 	|	 	|	X	|	 	|
+	Lance   |	X	|	 	|	 	|	 	|	X	|	 	|
+	Jacob   |	 	|	 	|	X	|	 	|	 	|	X	|
+	Yanglei |	 	|	 	|	 	|	X	|	 	|	X	|
 
 4 Estimates
 -----------
