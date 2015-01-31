@@ -80,10 +80,5 @@ Tester - Writes and executes test cases to ensure the project is functional and 
 4-Estimates
 -----------
 
-Provide estimates for the following metrics:
-
-This project should take team members around 50 effort hours total to complete.
-Approximately 300 lines of code are expected to make up the final product.
-
-- Effort hours: total number of team-member hours you expect to spend on the project
-- Lines of code: total number of lines of source code you expect to have in your final product
+As a rough estimate, the expected combined effort hours of the team will be 40-50 hours total.  This will  
+give us a project complete with test code that will tentatively by in the range of 300-400 lines of code.
