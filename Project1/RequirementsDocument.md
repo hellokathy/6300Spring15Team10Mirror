@@ -5,10 +5,6 @@ The program must be written in Java and must not make you any nonstandard Java l
 
 The user should be able to provide a file path to the file they wish to be analyzed as a command line argument. User should be able to specify which delimiters count as sentence separators, using the flag -d, defaulting to Lauren's initial thoughts on what should be used as delimiters. The user should be able to specify a lower limit for word length, using the flag -l, defaulting to Lauren's guess at what value might be good. Finally, the program's output should be the average sentence length, rounded down to the nearest integer.
 
-user specifies file path  
-user specifies delimiters (,;.!) with –d  
-user specifies word length –l (above 3 letters)  
-
 ##1 User Requirements
 
 ###1.1 User Characteristics
@@ -20,7 +16,7 @@ b)be familiar with computers and know how to use command line
 
 ###1.2 System's functionality
 
-I would like the system to help me calculate the average number of words of the sentences in my essay. And it would be more helpful if it has functions that can specify a lower limit (and higher limit?) for word length and allow me to specify file path and delimiters.
+I would like the system to help me calculate the average number of words of the sentences in my essay. And it would be more helpful if it has functions that can specify a lower limit and higher limit for word length and allow me to specify file path and delimiters.
 
 
 ###1.3 User Interfaces
@@ -32,18 +28,29 @@ All users will have to use this system through command line.
 
 ###2.1 Functional Requirements
 Req#1
-user specifies file path
+The system should accept user specified file path.
 
 Req#2
-user specifies delimiters (,;.!) with –d 
+The system should accept user specified delimiters (,;.!) with –d. 
 
 Req#3
-user specifies word length (above 3 letters) with –l 
+The system should accept user specified word length (above 3 letters) with –l.
 
 Req#4
-output the average sentence length, rounded down to the nearest integer
+The system should output the average sentence length, rounded down to the nearest integer.
 
 
 ###2.2 Non-Functional Requirements
+Req#1
+The system should be portable to Windows, Linux and Mac operating systems.
+
+Req#2
+The system should be able to deal with different document format.
+
+Req#3
+The system should be stable and not crash for an invalid input.
+
+
+
 
 
