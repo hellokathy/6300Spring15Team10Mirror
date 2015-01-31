@@ -1,0 +1,3 @@
+Should quotations be counted in the sentence length?
+Should numbers be counted as words? (ie 12 would not count but 7,345 would)
+
