@@ -39,6 +39,8 @@ The system should accept user specified word length (above 3 letters) with –l.
 Req#4
 The system should output the average sentence length, rounded down to the nearest integer.
 
+Req#5
+They system should output a promp for incorrect input regarding delimiters and or file type.
 
 ###2.2 Non-Functional Requirements
 Req#1

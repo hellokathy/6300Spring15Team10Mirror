@@ -10,3 +10,5 @@ Hey all, just updated questions.txt with some ideas.
 
 Good idea. It is more convenient for me to discuss here.
 Yanglei Zou
+
+-I updated added a funcional requirement that I feel we were lacking and like the two questions- Jake
