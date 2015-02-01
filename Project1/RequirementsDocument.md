@@ -10,9 +10,8 @@ The user should be able to provide a file path to the file they wish to be analy
 ###1.1 User Characteristics
 
 The intended users of the product should at least
-a)be able to write in English
+a)be able to write and read English
 b)know how to use command line
-
 
 ###1.2 System's functionality
 
@@ -21,7 +20,7 @@ I would like the system to help me calculate the average number of words of the 
 
 ###1.3 User Interfaces
 
-All users will have to use this system through command line.
+All users will have to interact with this system through command line.
 
 
 ##2 System Requirements

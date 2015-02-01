@@ -1,3 +1,2 @@
-Should quotations be counted in the sentence length?
-Should numbers be counted as words? (ie 12 would not count but 7,345 would)
-
+How should numbers be counted as words, if ever? (ie 12 would not count because it is not three "letters" long but 7,345 would?)
+Do hyphenated words count as a single word or two words? (example: cross-reference)
