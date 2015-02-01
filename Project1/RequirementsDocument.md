@@ -31,28 +31,23 @@ Req#1
 The system should accept user specified file path.
 
 Req#2
-The system should accept user specified delimiters (,;.!) with –d. 
+The system should accept user specified delimiters (,;.!) with -d. 
 
 Req#3
-The system should accept user specified word length (above 3 letters) with –l.
+The system should accept user specified word length (above 3 letters) with -l.
 
 Req#4
 The system should output the average sentence length, rounded down to the nearest integer.
 
 Req#5
-The system should output a promp for incorrect input regarding delimiters and/or file types.
+The system should output a prompt for incorrect input regarding delimiters and/or file types.
 
 ###2.2 Non-Functional Requirements
 Req#1
 The system should be portable to Windows, Linux and Mac operating systems.
 
 Req#2
-The system should be able to deal with different document formats.
+The system should be capable of dealing with different document formats.
 
 Req#3
 The system should be stable and not crash for an invalid input.
-
-
-
-
-
