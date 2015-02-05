@@ -6,21 +6,28 @@ public class Sentence {
 
 	public void setSentence(String sentence) {
 		this.Sentence = sentence;
-		this.Words = sentence.split(" ");
+		this.Words = sentence.split("\\s|\\.");
 	}
 
 	public String getSentence() {
 		return this.Sentence;
 	}
 
-	public int length() {
+	public int length(int minLength) {
 		if(this.Words == null) {
-			this.Words = this.Sentence.split(" ");
+			this.Words = this.Sentence.split("\\s|\\.");
 		}
 		
 		if(this.Sentence == "" || this.Sentence == null)
 			return 0;
-		else
-			return this.Words.length;
+		else {
+			int len = 0;
+			for(int i = 0; i < Words.length; i++) {
+				if (Words[i].length() > minLength)
+					len++;
+			}
+			
+			return len;
+		}
 	}
 }
