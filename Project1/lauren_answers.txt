@@ -1,0 +1,5 @@
+How should numbers be counted as words, if ever? (ie 12 would not count because it is not three "letters" long but 7,345 would?)
+A: You are correct. 7,345 should count as one word and 12 should not count as a word.
+
+Do hyphenated words count as a single word or two words? (example: cross-reference)
+A: Single word.
