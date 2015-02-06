@@ -1,41 +1,97 @@
 package edu.gatech.seclass.prj1;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
 public class AvgSentenceLength {
 	private Sentence[] Document;
 	private int AvgSentenceLength = 0;
+	private int minLength = 3;
+	char [] charDelimeters;
+	File inputFile;
 	
-	public void setDocument(String doc, char[] delims) {
-		String doc2 = doc.replaceAll("\n", " ");
+	public void setDocument(String doc) {
+		
+		doc = doc.replaceAll("\n", " ");
 		String[] temp;
-		String DelimStr = "\\.*\\s*|\\!*\\s*|\\?*\\s*";
+		String DelimStr = "\\.+\\s*|\\!+\\s*|\\?+\\s*";
 		
 		// Loop through delims array and add each delimiter to the regex search string
-		if(delims != null) {
-			for(int i = 0; i < delims.length; i++) {
-				DelimStr += "|\\" + delims[i] + "\\s*";
+		if(charDelimeters != null) {
+			for(int i = 0; i < charDelimeters.length; i++) {
+				DelimStr += "|\\" + charDelimeters[i] + "\\s*";
 			}
 		}
 		
-		temp = doc2.split(DelimStr);
-			
+		temp = doc.split(DelimStr);
+
 		Document = new Sentence[temp.length];
-		for(int i = 9; i < temp.length; i++) {
+
+		for(int i = 0; i < temp.length; i++) {
+			Document[i] = new Sentence();
 			Document[i].setSentence(temp[i]);
 		}
 	}
 	
-	public int GetAvgSentenceLength(int minLength) {
+	public int computeAverageSentenceLength() {
+		
+		String inputDoc = GetDocumentContents(inputFile.getAbsolutePath());
+		
+		setDocument(inputDoc);
 		int len = 0;
 		int cnt = 0;
 		
-		// Loop through all sentences and add total number of words, keep track of number of sentences
 		for(int i = 0; i < Document.length; i++, cnt++) {
 			len += Document[i].length(minLength);
 		}
 		
-		// Return average
 		this.AvgSentenceLength = len / cnt;
 		return this.AvgSentenceLength;
+	}
+	
+	public void setMinWordLength(int length){
+		
+		minLength = length;
+		
+	}
+	
+	public void setSentenceDelimiters(String delims){
+		charDelimeters = delims.toCharArray();
+	}
+	
+	public void setFile(File file){
+		inputFile = file;
+	}
+	
+	private static String GetDocumentContents(String input) {
+		FileInputStream inFile = null;
+		int cnt = 0;
+		char letter;
+		String outString = "";
+		
+		try {
+			inFile = new FileInputStream(input);
+			while((cnt = inFile.read()) != -1) {
+				letter = (char)cnt;
+				outString += letter;
+			}
+		}
+		catch(IOException ioe) {
+			System.out.println("There was an error reading the file.  Please be sure to include the correct file path.");
+		}
+		finally {
+			try {
+				if(inFile != null)
+					inFile.close();
+			}
+			catch (IOException ioe) {
+				
+			}
+		}
+		
+		return outString;
+		
 	}
 
 }
