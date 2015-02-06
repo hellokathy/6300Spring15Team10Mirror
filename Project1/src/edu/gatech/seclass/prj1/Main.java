@@ -14,20 +14,22 @@ import java.io.*;
 public class Main {
 	private static AvgSentenceLength asl = new AvgSentenceLength();
 	private static int AvgLen = 0;
-	private static String delimiters = "";
-	private static int minLength = 0;
+	private static char[] delimiters;
+	private static int minLength = 3;
 	
 	public static void main(String[] args) {
+		// Grab command line args
 		for(int i = 0; i < args.length; i++) {
 			if(args[i].equalsIgnoreCase("-D"))
-				delimiters = args[i + 1];
+				delimiters = args[i + 1].toCharArray();
 			else if (args[i].equalsIgnoreCase("-L")) {
 				minLength = Integer.parseInt(args[i + 1]);
 			}
 		}
 		
+		// Get document, set to asl, and calculate average
 		String Doc = GetDocumentContents(args[0]);
-		asl.setDocument(Doc); // update to include with delimiters
+		asl.setDocument(Doc, delimiters); // update to include with delimiters
 		AvgLen = asl.GetAvgSentenceLength(minLength);
 		
 		System.out.println("The average length of your sentences is " + AvgLen);

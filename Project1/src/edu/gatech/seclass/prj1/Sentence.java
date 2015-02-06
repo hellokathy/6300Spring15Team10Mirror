@@ -6,7 +6,7 @@ public class Sentence {
 
 	public void setSentence(String sentence) {
 		this.Sentence = sentence;
-		this.Words = sentence.split("\\s|\\.");
+		this.Words = sentence.split("\\s*|\\.\\s*");
 	}
 
 	public String getSentence() {
