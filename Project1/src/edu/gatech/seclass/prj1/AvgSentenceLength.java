@@ -50,22 +50,30 @@ public class AvgSentenceLength {
         return this.AvgSentenceLength;
     }
     
-    public void setMinWordLength(int length){
+    public void setMinWordLength(int length) {
         if (length>=0){
-            minLength = length;
+            this.minLength = length;
         }
         else{
-            minLength=0;
+            // this.minLength=0; Maybe an error message instead of 0? Thought?
+        	System.out.println("The given value for '-l' was less than zero.  Please re-run with a valid whole number.");
+        	System.exit(0);
         }
         
     }
     
     public void setSentenceDelimiters(String delims){
-        charDelimeters = delims.toCharArray();
+        this.charDelimeters = delims.toCharArray();
     }
     
     public void setFile(File file){
-        inputFile = file;
+    	try {
+    		this.inputFile = file;
+    	}
+    	catch (NullPointerException npe) {
+    		System.out.println("The provided file does not exist.  Please be sure the file path and name are correct.");
+    		System.exit(0);
+    	}
     }
     
     private static String GetDocumentContents(String input) {
@@ -83,15 +91,24 @@ public class AvgSentenceLength {
         }
         catch(IOException ioe) {
             System.out.println("There was an error reading the file.  Please be sure to include the correct file path.");
-        }
-        finally {
+            
             try {
                 if(inFile != null)
                     inFile.close();
             }
-            catch (IOException ioe) {
+            catch (IOException ioe2) {
                 
             }
+            
+            System.exit(0);
+        }
+
+        try {
+            if(inFile != null)
+                inFile.close();
+        }
+        catch (IOException ioe) {
+            
         }
         
         return outString;
