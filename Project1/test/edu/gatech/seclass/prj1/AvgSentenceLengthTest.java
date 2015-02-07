@@ -13,6 +13,9 @@ public class AvgSentenceLengthTest {
     private AvgSentenceLength asl;
     private String fileDir;
     
+    
+    
+    
     @Before
     public void setUp() throws Exception {
         asl = new AvgSentenceLength();
