@@ -7,7 +7,6 @@ import java.io.File;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import gurobi.*;
 
 public class AvgSentenceLengthTest {
     
@@ -49,18 +48,20 @@ public class AvgSentenceLengthTest {
     @Test
     public void testSetDocument1() {
         asl.setDocument("");
-        assertEquals( "", asl.Document[0].Sentence);
+        assertEquals( "", asl.Document[0].getSentence());
     }
     
     @Test
     public void testSetDocument2() {
         asl.setDocument(".This is the second sentence!");
-        assertEquals("This is the second sentence", asl.Document[1].Sentence);
+        assertEquals("This is the second sentence", asl.Document[1].getSentence());
     }
     
     @Test
     public void testSetDocument3() {
-        fail("Not yet implemented");
+    	asl.setSentenceDelimiters(",");
+        asl.setDocument(",this is the second sentence!");
+        assertEquals("this is the second sentence", asl.Document[1].getSentence());
     }
     
     @Test
