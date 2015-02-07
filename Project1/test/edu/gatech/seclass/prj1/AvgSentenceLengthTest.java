@@ -10,10 +10,10 @@ import org.junit.Test;
 
 
 public class AvgSentenceLengthTest {
-
+    
     private AvgSentenceLength asl;
     private String fileDir;
-
+    
     @Before
     public void setUp() throws Exception {
         asl = new AvgSentenceLength();
@@ -24,7 +24,7 @@ public class AvgSentenceLengthTest {
         asl = null;
         fileDir = null;
     }
-
+    
     @Test
     public void testComputeAverageSentenceLength1() {
         String comment = "Testing sentences that span multiple lines";
@@ -45,64 +45,72 @@ public class AvgSentenceLengthTest {
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
-
-	@Test
-	public void testSetDocument1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetDocument2() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetDocument3() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMinWordLength1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMinWordLength2() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMinWordLength3(){
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetSentenceDelimiters1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetSentenceDelimiters2() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetSentenceDelimiters3() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetFile1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetFile2()  {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetFile3() {
-		fail("Not yet implemented");
-	}
+    
+    @Test
+    public void testSetDocument1() {
+        asl.setDocument("");
+        assertEquals( "", asl.Document[0].Sentence);
+    }
+    
+    @Test
+    public void testSetDocument2() {
+        asl.setDocument(".This is the second sentence!");
+        assertEquals("This is the second sentence", asl.Document[1].Sentence);
+    }
+    
+    @Test
+    public void testSetDocument3() {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testSetMinWordLength1() {
+        String comment = "Testing set minus min word length";
+        asl.setMinWordLength(-1);
+        assertEquals(comment, 0, asl.minLength, 0);
+    }
+    
+    @Test
+    public void testSetMinWordLength2() {
+        String comment = "Testing set 0 min word length";
+        asl.setMinWordLength(0);
+        assertEquals(comment, 0, asl.minLength, 0);
+    }
+    
+    @Test
+    public void testSetMinWordLength3(){
+        String comment = "Testing set default min word length";
+        asl.setMinWordLength(3);
+        assertEquals(comment, 3, asl.minLength, 0);
+    }
+    
+    @Test
+    public void testSetSentenceDelimiters1() {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testSetSentenceDelimiters2() {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testSetSentenceDelimiters3() {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testSetFile1() {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testSetFile2()  {
+        fail("Not yet implemented");
+    }
+    
+    @Test
+    public void testSetFile3() {
+        fail("Not yet implemented");
+    }
 }
