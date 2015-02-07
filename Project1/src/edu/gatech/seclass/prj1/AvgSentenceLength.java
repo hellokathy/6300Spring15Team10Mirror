@@ -3,6 +3,10 @@ package edu.gatech.seclass.prj1;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import gurobi.*;
+
+
+
 
 public class AvgSentenceLength {
 	private Sentence[] Document;
