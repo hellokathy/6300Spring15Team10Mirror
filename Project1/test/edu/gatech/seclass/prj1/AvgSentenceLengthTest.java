@@ -71,7 +71,7 @@ public class AvgSentenceLengthTest {
     public void testSetMinWordLength1() {
         String comment = "Testing set minus min word length";
         asl.setMinWordLength(-1);
-        assertEquals(comment, 0, asl.minLength, 0);
+        assertEquals(comment, 3, asl.minLength, 0);
     }
     
     @Test
@@ -90,31 +90,35 @@ public class AvgSentenceLengthTest {
     
     @Test
     public void testSetSentenceDelimiters1() {
-        fail("Not yet implemented");
+    	asl.setSentenceDelimiters(" ");
+    	assertEquals(' ', asl.charDelimeters[0]);
     }
     
     @Test
     public void testSetSentenceDelimiters2() {
-        fail("Not yet implemented");
+    	asl.setSentenceDelimiters("-,[}@#");
+    	assertEquals('@', asl.charDelimeters[4]);
     }
     
     @Test
     public void testSetSentenceDelimiters3() {
-        fail("Not yet implemented");
+    	assertEquals(-1, asl.setSentenceDelimiters("a"));
     }
     
     @Test
     public void testSetFile1() {
-        fail("Not yet implemented");
+    	File test=new File(fileDir + "input.txt");
+    	asl.setFile(test);  	
+    	assertEquals(asl.inputFile, test);
     }
     
     @Test
     public void testSetFile2()  {
-        fail("Not yet implemented");
+    	assertEquals(-1, asl.setFile(new File(fileDir + "input.doc")));
     }
     
     @Test
     public void testSetFile3() {
-        fail("Not yet implemented");
+    	assertEquals(-1, asl.setFile(new File(fileDir + "")));
     }
 }

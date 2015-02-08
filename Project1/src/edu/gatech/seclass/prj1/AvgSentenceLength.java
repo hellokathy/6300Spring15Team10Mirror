@@ -61,18 +61,34 @@ public class AvgSentenceLength {
         
     }
     
-    public void setSentenceDelimiters(String delims){
+    public int setSentenceDelimiters(String delims){
         this.charDelimeters = delims.toCharArray();
+        for(int i=0;i<charDelimeters.length;i++){
+        	if((int)charDelimeters[i]>=48 && (int)charDelimeters[i]<=57){
+        		System.out.println("Delimeters can not be numbers");
+        		return -1;
+        	}
+        	if((int)charDelimeters[i]>=97 && (int)charDelimeters[i]<=122){
+        		System.out.println("Delimeters can not be lower case letters");
+        		return -1;
+        	}
+        	if((int)charDelimeters[i]>=65 && (int)charDelimeters[i]<=90){
+        		System.out.println("Delimeters can not be upper case letters");
+        		return -1;
+        	}
+        }
+		return 0;
     }
     
-    public void setFile(File file){
+    public int setFile(File file){
     	try {
     		this.inputFile = file;
     	}
     	catch (NullPointerException npe) {
     		System.out.println("The provided file does not exist.  Please be sure the file path and name are correct.");
-    		System.exit(0);
+    		return -1;
     	}
+    	return 0;
     }
     
     private static String GetDocumentContents(String input) {
