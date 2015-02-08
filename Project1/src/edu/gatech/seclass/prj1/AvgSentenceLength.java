@@ -55,9 +55,8 @@ public class AvgSentenceLength {
             this.minLength = length;
         }
         else{
-            // this.minLength=0; Maybe an error message instead of 0? Thought?
-        	System.out.println("The given value for '-l' was less than zero.  Please re-run with a valid whole number.");
-        	System.exit(0);
+            this.minLength=0;
+        	System.out.println("The given value for '-l' was less than zero.  A value of zero will be used instead.");
         }
         
     }
