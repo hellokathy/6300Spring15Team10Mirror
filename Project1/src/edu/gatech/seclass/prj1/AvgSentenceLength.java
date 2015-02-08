@@ -55,8 +55,8 @@ public class AvgSentenceLength {
             this.minLength = length;
         }
         else{
-            this.minLength=0;
-        	System.out.println("The given value for '-l' was less than zero.  A value of zero will be used instead.");
+            this.minLength=3;
+        	System.out.println("The given value for '-l' was less than zero.  The default value of 3 will be used instead.");
         }
         
     }
