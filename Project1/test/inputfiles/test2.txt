@@ -1,0 +1,2 @@
+This file has all the punctuation of any file2 That puctuation9 however9 has been replaced by numbers2 The test
+is to make sure that numbers work as delimiters5

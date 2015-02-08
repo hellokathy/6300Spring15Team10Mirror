@@ -1,0 +1,2 @@
+This file has all the punctuation of any fileS That puctuationY howeverY has been replaced by cap lettersS The test
+is to make sure that letters work as delimitersE
