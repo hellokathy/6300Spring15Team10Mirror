@@ -79,14 +79,21 @@ public class AvgSentenceLength {
         this.charDelimeters = delims.toCharArray();
     }
     
-    public int setFile(String file) {
-    	this.inputFile = new File(file);
-    	if(!inputFile.isFile()) {
+    public int setFile(File file) {
+    	try {
+    		if(!file.isFile()) {
+    			throw new NullPointerException();
+    		}
+    		else {
+    			this.inputFile = file;
+    			return 0;
+    		}
+    	}
+    	catch (NullPointerException npe) {
     		System.out.println("The given file does not exist. Please be sure the path and file name are correct.");
     		return -1;
     	}
-    	else
-    		return 0;
+    	
     }
     
     private static String GetDocumentContents(String input) {
