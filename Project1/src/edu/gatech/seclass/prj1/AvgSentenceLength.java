@@ -20,7 +20,17 @@ public class AvgSentenceLength {
         // Loop through delims array and add each delimiter to the regex search string
         if(charDelimeters != null) {
             for(int i = 0; i < charDelimeters.length; i++) {
-                DelimStr += "|\\" + charDelimeters[i] + "\\s*";
+            	int ascii = (int)charDelimeters[i];
+            	
+            	if(ascii>=48 && ascii<=57){ // numbers
+            		DelimStr += "|" + charDelimeters[i] + "\\s*";
+            	}
+            	else if((ascii>=97 && ascii<=122) || (ascii>=65 && ascii<=90)){ // letters
+            		DelimStr += "|" + charDelimeters[i] + "\\s*";
+            	}
+            	else {
+            		DelimStr += "|\\" + charDelimeters[i] + "\\s*";
+            	}
             }
         }
         
@@ -37,6 +47,10 @@ public class AvgSentenceLength {
     public int computeAverageSentenceLength() {
         
         String inputDoc = GetDocumentContents(inputFile.getAbsolutePath());
+        
+        if(inputDoc == null) {
+        	return -1;
+        }
         
         setDocument(inputDoc);
         int len = 0;
@@ -61,34 +75,18 @@ public class AvgSentenceLength {
         
     }
     
-    public int setSentenceDelimiters(String delims){
+    public void setSentenceDelimiters(String delims){
         this.charDelimeters = delims.toCharArray();
-        for(int i=0;i<charDelimeters.length;i++){
-        	if((int)charDelimeters[i]>=48 && (int)charDelimeters[i]<=57){
-        		System.out.println("Delimeters can not be numbers");
-        		return -1;
-        	}
-        	if((int)charDelimeters[i]>=97 && (int)charDelimeters[i]<=122){
-        		System.out.println("Delimeters can not be lower case letters");
-        		return -1;
-        	}
-        	if((int)charDelimeters[i]>=65 && (int)charDelimeters[i]<=90){
-        		System.out.println("Delimeters can not be upper case letters");
-        		return -1;
-        	}
-        }
-		return 0;
     }
     
-    public int setFile(File file){
-    	try {
-    		this.inputFile = file;
-    	}
-    	catch (NullPointerException npe) {
-    		System.out.println("The provided file does not exist.  Please be sure the file path and name are correct.");
+    public int setFile(String file) {
+    	this.inputFile = new File(file);
+    	if(!inputFile.isFile()) {
+    		System.out.println("The given file does not exist. Please be sure the path and file name are correct.");
     		return -1;
     	}
-    	return 0;
+    	else
+    		return 0;
     }
     
     private static String GetDocumentContents(String input) {
@@ -105,7 +103,7 @@ public class AvgSentenceLength {
             }
         }
         catch(IOException ioe) {
-            System.out.println("There was an error reading the file.  Please be sure to include the correct file path.");
+            System.out.println("There was an error reading the file.  Please be sure to include the correct path and file name.");
             
             try {
                 if(inFile != null)
@@ -115,7 +113,8 @@ public class AvgSentenceLength {
                 
             }
             
-            System.exit(0);
+            outString = null;
+            return outString;
         }
 
         try {

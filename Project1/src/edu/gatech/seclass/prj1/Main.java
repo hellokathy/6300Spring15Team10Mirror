@@ -1,7 +1,5 @@
 package edu.gatech.seclass.prj1;
 
-import java.io.*;
-
 public class Main {
 	private static AvgSentenceLength asl = new AvgSentenceLength();
 	private static int AvgLen = 0;
@@ -25,12 +23,17 @@ public class Main {
 		}	
 		
 		// Get file, set file and parameters to asl, and calculate average
-		File file = new File(args[0]);
-		asl.setFile(file); 
+		// File file = new File(args[0]);
+		int rtn = asl.setFile(args[0]);
+		if(rtn == -1)
+			return;
+		
 		asl.setMinWordLength(minLength);
 		asl.setSentenceDelimiters(delimiters);
 		AvgLen = asl.computeAverageSentenceLength();
 		
-		System.out.println("The average length of your sentences is " + AvgLen + " words.");
+		if(AvgLen != -1) {
+			System.out.println("The average length of your sentences is " + AvgLen + " words.");
+		}
 	}
 }

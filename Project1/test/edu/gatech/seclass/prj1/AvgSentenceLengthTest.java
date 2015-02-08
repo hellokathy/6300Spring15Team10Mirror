@@ -13,9 +13,7 @@ public class AvgSentenceLengthTest {
     private AvgSentenceLength asl;
     private String fileDir;
     
-    
-    
-    
+
     @Before
     public void setUp() throws Exception {
         asl = new AvgSentenceLength();
@@ -30,22 +28,48 @@ public class AvgSentenceLengthTest {
     @Test
     public void testComputeAverageSentenceLength1() {
         String comment = "Testing sentences that span multiple lines";
-        asl.setFile(new File(fileDir + "input.txt"));
+        asl.setFile(fileDir + "input.txt");
         assertEquals(comment, 7, asl.computeAverageSentenceLength(), 0);
     }
+    
     @Test
     public void testComputeAverageSentenceLength2() {
         String comment = "Testing customized delimiters";
-        asl.setFile(new File(fileDir + "input.txt"));
+        asl.setFile(fileDir + "input.txt");
         asl.setSentenceDelimiters("%.");
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
+    
     @Test
     public void testComputeAverageSentenceLength3() {
         String comment = "Testing customized minimal word length";
-        asl.setFile(new File(fileDir + "input.txt"));
+        asl.setFile(fileDir + "input.txt");
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
+    }
+    
+    @Test
+    public void testComputeAverageSentenceLength4() {
+        String comment = "Testing customized delimiters";
+        asl.setFile(fileDir + "input.asdf");
+        asl.setSentenceDelimiters("%.");
+        assertEquals(comment, -1, asl.computeAverageSentenceLength(), 0);
+    }
+    
+    @Test
+    public void testComputeAverageSentenceLength5() {
+        String comment = "Testing customized delimiters";
+        asl.setFile(fileDir + "test2.txt");
+        asl.setSentenceDelimiters("52");
+        assertEquals(comment, 7, asl.computeAverageSentenceLength(), 0);
+    }
+    
+    @Test
+    public void testComputeAverageSentenceLength6() {
+        String comment = "Testing customized delimiters";
+        asl.setFile(fileDir + "test3.txt");
+        asl.setSentenceDelimiters("SE");
+        assertEquals(comment, 8, asl.computeAverageSentenceLength(), 0);
     }
     
     @Test
@@ -102,23 +126,31 @@ public class AvgSentenceLengthTest {
     
     @Test
     public void testSetSentenceDelimiters3() {
-    	assertEquals(-1, asl.setSentenceDelimiters("a"));
+    	asl.setSentenceDelimiters("*-/ d^%");
+    	assertEquals(' ', asl.charDelimeters[3]);
+    }
+    
+    @Test
+    public void testSetSentenceDelimiters4() {
+    	asl.setSentenceDelimiters("b");
+    	assertEquals('b', asl.charDelimeters[0]);
     }
     
     @Test
     public void testSetFile1() {
-    	File test=new File(fileDir + "input.txt");
-    	asl.setFile(test);  	
-    	assertEquals(asl.inputFile, test);
+    	String test= fileDir + "input.txt";
+    	asl.setFile(test);
+    	assertEquals(asl.inputFile.toString(), test);
     }
     
     @Test
     public void testSetFile2()  {
-    	assertEquals(-1, asl.setFile(new File(fileDir + "input.doc")));
+    	int test = asl.setFile(fileDir + "input.doc");
+    	assertEquals(-1, test);
     }
     
     @Test
     public void testSetFile3() {
-    	assertEquals(-1, asl.setFile(new File(fileDir + "")));
+    	assertEquals(-1, asl.setFile(fileDir + ""));
     }
 }
