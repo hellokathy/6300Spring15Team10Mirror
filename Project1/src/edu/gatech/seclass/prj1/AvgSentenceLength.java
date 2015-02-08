@@ -82,7 +82,12 @@ public class AvgSentenceLength {
     
     public int setFile(File file){
     	try {
+    		if(file.isFile()){
     		this.inputFile = file;
+    		}
+    		else{
+    			throw new NullPointerException();
+    		}
     	}
     	catch (NullPointerException npe) {
     		System.out.println("The provided file does not exist.  Please be sure the file path and name are correct.");
