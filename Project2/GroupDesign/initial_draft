@@ -1,0 +1,13 @@
+First off…I really enjoyed looking at everyone’s design. There is a lot of value in collaborating together and I learned valuable things from each of you. Here are my ideas going forward.
+
+
+Design ideas:
+Thoughts on Kkummerfeldt’s design:
+I like how you have the methods in the manager class. I think all of them are valid and the association with the transaction class. One thing I am unsure about is how the Credit Card class isn’t directly connected / associated with transaction class.
+
+Thoughts on Ldesimon’s design:
+I like how customer class has two attributes of “year purchase total” and “reward amount” in addition to Boolean of isGold (rewards member). In connection with previous notes, I think stall manager needs more methods than only addCustomer(), editCustomer(), and displayTransactions().  
+
+Thoughts on yzou66’s design:
+I really like the reweards class with two sub-classes of singlePurchaseReward and GoldStatusReward along with their attributes and the association with ChangeGoldStatus and email method. And with previous comments, I think the Stall manager needs methods as outlined above. I also like the customer class “as is”.
+
