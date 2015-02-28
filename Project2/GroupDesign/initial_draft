@@ -11,3 +11,41 @@ I like how customer class has two attributes of “year purchase total” and �
 Thoughts on yzou66’s design:
 I really like the reweards class with two sub-classes of singlePurchaseReward and GoldStatusReward along with their attributes and the association with ChangeGoldStatus and email method. And with previous comments, I think the Stall manager needs methods as outlined above. I also like the customer class “as is”.
 
+--------------------------------------------------------------------------------------------------------------------
+
+Hey all, I'll just continue under here. -Ken
+
+
+Jake:
++I like the idea of having the Discount as a class, it would make for a clear idea of which discount and how much is
+being used for the transaction
++I like your choice of methods and placement for them
+-I'm not sure about the attributes for the manager class; would Date refer to today's date? that would probably just
+be part of the Date utility. And would the Discount boolean be better suited to the purchase class?  Some things
+to think on
+
+
+Lance:
++I rather like your choice of utilities and overall simplicity but thoroughness of the design.
++Your classes seem complete and the design is clear and easy to understand/follow
+-The email part of the system is slightly ambiguous; would the customer class be initiating the email? how does the
+class know if the transaction was over $100? Could both Customer and Transaction use email?
+-From your design.md is seems the cards are stored by customer rather than standalone, perhaps an attribute of
+Customer that holds these? A similar thought comes to mind regarding transactions.
+
+
+Yanglei:
++Your design is very thorough and each class and connection is labeled clearly.
++I like that the manager is the center of the structure, the overall controller of the whole thing. That is
+what I think of when I think of a manager of anything
+-The design as a whole seems a bit more complicated than it needs to be.  You have some classes that could possibly be methods or attributes of another class and nearly every class seems to talk to nearly every other class in the
+design
+-The choice to have a CalendarYear utility but no date, yet have Date attributes as strings seems questionable to
+me. Perhaps it would be simpler and more logical to have just a date class that encompasses both.
+
+Thanks all, looking forward to more feedback!
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
