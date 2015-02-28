@@ -9,7 +9,7 @@ Thoughts on Ldesimon’s design:
 I like how customer class has two attributes of “year purchase total” and “reward amount” in addition to Boolean of isGold (rewards member). In connection with previous notes, I think stall manager needs more methods than only addCustomer(), editCustomer(), and displayTransactions().  
 
 Thoughts on yzou66’s design:
-I really like the reweards class with two sub-classes of singlePurchaseReward and GoldStatusReward along with their attributes and the association with ChangeGoldStatus and email method. And with previous comments, I think the Stall manager needs methods as outlined above. I also like the customer class “as is”.
+I really like the rewards class with two sub-classes of singlePurchaseReward and GoldStatusReward along with their attributes and the association with ChangeGoldStatus and email method. And with previous comments, I think the Stall manager needs methods as outlined above. I also like the customer class “as is”.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -62,5 +62,25 @@ I really like your design. It is so clear and easy to follow. I especially like 
 two questions: Can the stall manager change the Gold status reward percentage? Should the CreditCardScanner have a readCard() operation?
 ---------------------------------------------------------------------------------------------------------------------
 
+Here are my thoughts! -Lance
 
+Jake:
++ Great job, the Discount class especially is clever.
++ Clean, well thought out, easy to understand at a glance
+- I think cardinalities should be added for clarity
+- Nitpicking, but it would be better to remove empty fields (example: the attribute field in the CardScanner class)
 
+Kennith:
++ Great level of detail, nearly everything is accounted for
++ The non-standard "Manager" operations are good additions
++ Email as a utility works really well
+- I don't love some of the variable names, although I understand the intention (example: cCustomer)
+- Transaction class doesn't clearly differentiate between gold discounts and reward discounts
+
+Yanglei:
++ Very nice design Yanglei, I like how you specify operations in the connections between classes
++ The "SinglePurchaseReward" and "GoldStatusReward" classes are very clever
++ Great job tying the credit card, the scanner, and the payment processing server together
+- Takes a while to understand the intricacies of the design
+- Should clearly label "Time" and "CalendarYear" as utilities
+- Remove empty sections of the classes (example: the methods section of "Customer")
