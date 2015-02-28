@@ -46,6 +46,21 @@ me. Perhaps it would be simpler and more logical to have just a date class that 
 Thanks all, looking forward to more feedback!
 
 ---------------------------------------------------------------------------------------------------------------------
+Interesting looking at everyone’s design! I would like to share some thoughts.
+
+Jake:
+I really like your design. It is really neat and easy to understand. I especially like the part that you describe CardScanner and CardProcessingProvider and the Discount Class not the connection.
+one question: Does the ManagerDisplay need a connection to Purchase(because of the ViewPurchases() operation)? 
+one suggestion: it seems people use lower case letter for the first word in attributes and operations..(for example, people use viewPurchase() instead of ViewPurchase())..just nitpicking…
+
+Kennith:
+I really like your design. It is professional, clear and easy to understand. And I really like that you define aPastTransactons and aCreditCards in Customer.
+two question: Is it better to place readCard() to CardScanner? Is it better if we can place some of the operations on the connection lines?
+
+Lance:
+I really like your design. It is so clear and easy to follow. I especially like that you make email a separate class and including Payment Processing Service ,Money and Operating System as utilities.
+two questions: Can the stall manager change the Gold status reward percentage? Should the CreditCardScanner have a readCard() operation?
+---------------------------------------------------------------------------------------------------------------------
 
 
 
