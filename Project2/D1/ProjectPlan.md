@@ -4,7 +4,7 @@
 
 ## 1 Introduction
 
-The product to be developed is an android application which acts as a payment and rewards management system for mobile stalls.
+The product to be developed is an android application, PReMS, which acts as a payment and rewards management system for mobile stalls.
 
 ## 2 Process Description
 
