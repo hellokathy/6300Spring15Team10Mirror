@@ -1,8 +1,6 @@
 # Vision Document
 
-*This is the template for your vision document, adapted from a [template provided by StartupCTO](http://www.startupcto.com/templates/software-vision-document-template). You can refer to their document for additional details and examples.) Your final document should be a couple of pages long. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
-**Author**: \<person or team name\>
+**Author**: Team 10
 
 ## 1 Introduction
 

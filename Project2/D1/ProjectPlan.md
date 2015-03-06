@@ -60,8 +60,6 @@ on the system.
 
 ## 3 Team
 
-*Describe the team and their roles (there may be more roles than there are team members)*
-
 **Members:**  
 Kennith Kummerfeldt  
 Lance DeSimone  
@@ -85,8 +83,6 @@ Tester - Writes and executes test cases to ensure the project is functional and 
 	Yanglei |		 		|		 		|		 		|		X		|		 		|		X		|
 
 ## 4 Estimates
-
-*Provide estimates for the following metrics:*
 
 As a rough estimate, the expected combined effort hours of the team will be 70-80 hours total. 
 This will give us a project tentatively by in the range of 600-700 lines of code.
