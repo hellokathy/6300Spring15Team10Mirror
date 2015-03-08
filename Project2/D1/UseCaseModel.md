@@ -25,7 +25,7 @@ will revert to the initial screen.
 ---------------------------------
 This will allow the manager to edit an existing customer in the database. In order to edit or delete  
 a customer there must be at least one customer already in the system. If this condition is not met the  
-customers list will show as empty. Once the use case is run, the existing customer must either be 
+customers list will show as empty. Once the use case is run, the existing customer must either be  
 deleted from the system or have the old information replaced with the new. Also, after running the  
 use case, the system will revert to the initial screen.
 
