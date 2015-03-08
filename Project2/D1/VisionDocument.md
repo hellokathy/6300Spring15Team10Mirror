@@ -9,15 +9,15 @@ The product to be developed is an android application, PReMS, which acts as a pa
 ## 2 Business Needs/Requirements
 
 As time goes on, less and less people carry cash.  Instead, they simply buy everything with a credit card.  Because of this, companies need to accept credit cards or risk losing business.
-Bill and Janet are two farmers who run a stall that sells produce.  They are aware of the falling use of cash and to keep business strong, they would like the ability to accept credit cards from their customers.
+Brad and Janet are two farmers who run a stall that sells produce.  They are aware of the falling use of cash and to keep business strong, they would like the ability to accept credit cards from their customers.
 As time goes on, it's also becoming clear that customer reward programs can increase customer loyalty as well as sales for any given business.
-To this end, Bill and Janet would also like to reward their most loyal customers in a couple of ways.  When a customer makes a large purchase, they will receive a credit that they can apply toward a future purchase.
+To this end, Brad and Janet would also like to reward their most loyal customers in a couple of ways.  When a customer makes a large purchase, they will receive a credit that they can apply toward a future purchase.
 Additionally, when a customer spends enough money at the stall over the course of a year, that customer will be guaranteed a flat discount on any purchase at the stall for the rest of their life (they achieve "gold status").
 To ensure customers know about the discounts and credits they are receiving, emails will be sent out notifying customers when they qualify for rewards.
-To make their lives easier, Bill and Janet would like the above features to be managed by a rewards and management system for the Android OS.
-Since Bill and Janet anticipate new customers, they would like the ability to add a customer into the management system.  And, in case a customer's information changes, they would like the ability to edit an existing customer's information.
-Finally, in case of a customer question or for their own information, Bill and Janet need the ability to display any customer's transaction history including the date, amount, and discounts applied for each transaction.
-By implementing these features, Bill and Janet are confident their business will succeed.
+To make their lives easier, Brad and Janet would like the above features to be managed by a rewards and management system for the Android OS.
+Since Brad and Janet anticipate new customers, they would like the ability to add a customer into the management system.  And, in case a customer's information changes, they would like the ability to edit an existing customer's information.
+Finally, in case of a customer question or for their own information, Brad and Janet need the ability to display any customer's transaction history including the date, amount, and discounts applied for each transaction.
+By implementing these features, Brad and Janet are confident their business will succeed.
 
 ## 3 Product / Solution Overview
 
@@ -33,7 +33,7 @@ By implementing these features, Bill and Janet are confident their business will
 -If the final purchase price is sufficient, credit will be awarded to the customer.
 -When a customer achieves gold status or gains credit, an email utility will be used to send an email to that customer.
 -Each customer can have many credit cards, and as such we must keep track of which cards belong to which customers.
--The final player in this system is the stall manager.   In this case, Bill and Janet will act as the stall manager.  
+-The final player in this system is the stall manager.   In this case, Brad and Janet will act as the stall manager.  
 -Using the system, the manager will be able to add a new customer, edit an existing customer, and display transaction history for a given customer.
 -Adding a customer will involve entering the information of the customer manually which the system will then store.
 -To edit a customer, the system will allow the manager to choose the customer they want to edit and prompt the manager to enter new information where it's needed.  The system will then store this new information.
