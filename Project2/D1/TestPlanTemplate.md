@@ -32,8 +32,7 @@ We will use JUnit to build the tests.
 
 ## 2 Test Cases
  
-TestCase# | Purpose            | NecessarySteps                                | ExpectedResult         
-| ActualResult()       | Pass/Fail
+####TestCase# | Purpose            | NecessarySteps                                | ExpectedResult         | ActualResult       | Pass/Fail
 1.         | TestAddCustomer1   | MGR.enInfo(info)->MGR.add()                   | add a new customer with correct infomation
 2.         | TestAddCustomer2   | MGR.add()                                     | WARNING:Must enter customer information!
 3.         | TestAddCustomer3   | MGR.enInfo(null)->MGR.add()                   | WARNING:No information entered!
