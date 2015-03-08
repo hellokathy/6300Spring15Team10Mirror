@@ -6,22 +6,29 @@
 
 ### 1.1 Overall strategy
 
-We will test each unit(Class), test all kinds of combinations of units and test the entile system.
+We will test each unit, test all kinds of combinations of units and test the entile system.
 Jacob and Yanglei will perform such activities.
 
 ### 1.2 Test Selection
 
-We will test all units as well as the entile system.
-We will select our test cases to have as much coverage of branchs and conditions as possible, i.e., including different kinds of boundary values, including different kinds of inputs that can go through as many branches and conditions as possible and also confine the tests to a reasonable small number. 
+1. We will test all units as well as the entile system.
+2. We will select our test cases to have as much coverage of branchs and conditions as possible.
+3. The tests should include different kinds of boundary values, different kinds of inputs that can cover as many branches and conditions as possible.
+4. We will control the number of tests.
 
 
 ### 1.3 Adequacy Criterion
+Mainly use manual tests.
 
-####criterions                                      minimum percentage 
-scenarios coverage (defined in the use cases)             90%
-branch coverage                                           85%
-condition coverage                                        90%
-units coverage                                           100%
+####criterions                                     minimum percentage (according to the video, companies typically have 80%-90% coverage of branches and conditions in a white-box testing)
+
+1. scenarios coverage (defined in the use cases)             90%. (Tests should cover all possible scenarios described in the use cases)
+
+2. branch coverage                                           85%. (Tests should cover 85% of all the possible branches in the code.)
+
+3. condition coverage                                        90%. (Tests should cover 90% of all the possible conditions in the code.)
+
+4. units coverage                                           100% (Tests should test all units in the code)
 
 ### 1.4 Bug Tracking
 
