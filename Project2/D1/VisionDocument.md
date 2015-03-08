@@ -65,10 +65,10 @@ PReMS will focus on allowing customers to pay with credit cards and automaticall
 
 -Customers who pay with cash
 
--Deleting a customer
-
 -Displaying all customers
 
 -Manually rewarding a customer
 
--Editing transactions
+-Editing past transactions
+
+-Customers who do not want to enroll in the rewards program
