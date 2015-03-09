@@ -18,15 +18,14 @@ Jacob and Yanglei will perform such activities.
 
 
 ### 1.3 Adequacy Criterion
- (According to the video, companies typically have 80%-90% coverage of branches and conditions in a white-box testing.)
 
-1. scenarios coverage (defined in the use cases)             90%. (Tests should cover all possible scenarios described in the use cases)
+  No.   | criterions          | minimum accepted coverage    | Remark                                 
+--------| --------------------|------------------------------|------------------------------------------------
+1.      | units               | 100%                         | Tests should test all units in the code.
+2.      | scenarios           | 100%                         | Tests should cover all possible scenarios described in the use cases.
+3.      | branchs             | 85%                          | Tests should cover at least 85% of all the possible branches in the code.
+4.      | conditions          | 90%                          | Tests should cover at least 90% of all the possible conditions in the code.
 
-2. branch coverage                                           85%. (Tests should cover 85% of all the possible branches in the code.)
-
-3. condition coverage                                        90%. (Tests should cover 90% of all the possible conditions in the code.)
-
-4. units coverage                                           100% (Tests should test all units in the code)
 
 ### 1.4 Bug Tracking
 
