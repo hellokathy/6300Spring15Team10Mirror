@@ -18,9 +18,7 @@ Jacob and Yanglei will perform such activities.
 
 
 ### 1.3 Adequacy Criterion
-
-
-####criterions  |minimum percentage (according to the video, companies typically have 80%-90% coverage of branches and conditions in a white-box testing)
+ (According to the video, companies typically have 80%-90% coverage of branches and conditions in a white-box testing.)
 
 1. scenarios coverage (defined in the use cases)             90%. (Tests should cover all possible scenarios described in the use cases)
 
