@@ -11,16 +11,16 @@ Jacob and Yanglei will perform such activities.
 
 ### 1.2 Test Selection
 
-1. We will test all units as well as the entile system.
-2. We will select our test cases to have as much coverage of branchs and conditions as possible.
-3. The tests should include different kinds of boundary values, different kinds of inputs that can cover as many branches and conditions as possible.
+1. Mainly use manual tests.
+2. In the black-box test, we will test each unit, test all kinds of combinations of units and test the entile system for all scenarios mentioned in the use cases.
+3. In the white-box test, we will select our test cases to have as much coverage of branchs and conditions as possible. The tests should include different kinds of boundary values, different kinds of inputs that can cover as many branches and conditions as possible.
 4. We will control the number of tests.
 
 
 ### 1.3 Adequacy Criterion
-Mainly use manual tests.
 
-####criterions                                     minimum percentage (according to the video, companies typically have 80%-90% coverage of branches and conditions in a white-box testing)
+
+####criterions  |minimum percentage (according to the video, companies typically have 80%-90% coverage of branches and conditions in a white-box testing)
 
 1. scenarios coverage (defined in the use cases)             90%. (Tests should cover all possible scenarios described in the use cases)
 
