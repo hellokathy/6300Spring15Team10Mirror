@@ -16,13 +16,14 @@ software provided with Android Utility?
 
 We assume there will only be one user at a time but an issue might arise if they experience growth and need to have two registers with multiple  
 accesses to same software. Another big assumption is cost benefit. This software production needs to be justified and should show the value  
-added to the company. 
+added to the company. Users know how to run and install Android Apps. System will use API 19 with minimum of Android 16. System will be written and displayed in English.
+
 
 
 ### 1.2 Constraints
 
 Common constraints are budget and time. These shouldn’t be a big issue for this project but will affect the quality of the GUI and additional  
-functionality. The time constraints are subject to the deadlines of the class and the capacity of our group. 
+functionality. The time constraints are subject to the deadlines of the class and the capacity of our group. Lasty, the system will be constrained to run only on Android devices.
 
 ### 1.3 System Environment
 
@@ -30,6 +31,7 @@ The program will likely run on a tablet at a kiosk. It will need to be wifi enab
 process credit cards, and send email. It will be an Android application programmed in Java and available to run on any Android device. 
 
 ## 2 Architectural Design
+We have an “even-driven ” architecture. Buttons will drive the methods to “add customer”, “view customer transactions”, etc. Transactions will be the other event triggers that: send emails, apply discounts, update reward status, etc.
 
 ### Component Diagram
 
