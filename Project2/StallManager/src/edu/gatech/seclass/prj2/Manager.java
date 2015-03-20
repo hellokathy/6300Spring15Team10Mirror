@@ -18,31 +18,24 @@ public class Manager {
 	}
 	
 	//Consider having this return if the addition was a success or a failure
-	public void addCustomer(String firstName, String lastName, String zip, String email){
-		//Use full name + num for the key where num=number of customers with the given first name and last name
-		String key = firstName + lastName;
-		int num = 1;
-		while(customers.containsKey(key + String.valueOf(num))){
-			num++;
-		}
-		key = key + String.valueOf(num);
-		Customer newCustomer = new Customer(firstName, lastName, zip, email, key);
+	public void addCustomer(String firstName, String lastName, String zip, String email, String customerID){
+		/*
+			//Use full name + num for the key where num=number of customers with the given first name and last name
+			String key = ID;
+	 		int num = 1;
+			while(customers.containsKey(key + String.valueOf(num))){
+				num++;
+			}
+			key = key + String.valueOf(num);
+		*/
+		Customer newCustomer = new Customer(firstName, lastName, zip, email, customerID);
 	
-		//Do we want to use SQLite?
-		customers.put(key, newCustomer);
+		customers.put(customerID, newCustomer);
 	}
 	
-	public void editCustomer(String firstName, String lastName, String zip, String email){
-		//Use full name + num for the key where num=number of customers with the given first name and last name
-		String key = firstName + lastName;
-		int num = 1;
-		while(customers.containsKey(key + String.valueOf(num))){
-			num++;
-		}
-		key = key + String.valueOf(num);
-		Customer newCustomer = new Customer(firstName, lastName, zip, email, key);
-	
-		//Do we want to use SQLite?
-		customers.put(key, newCustomer);
+	public void editCustomer(String firstName, String lastName, String zip, String email, String customerID){
+		Customer newCustomer = new Customer(firstName, lastName, zip, email, customerID);
+		
+		customers.put(customerID, newCustomer);
 	}
 }

@@ -12,9 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="30dp"
         android:text="Please enter the new customer&apos;s information:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium" /><TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,7 +85,7 @@
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="number" >
-
+         
         <requestFocus />
     </EditText>
 
@@ -95,10 +93,29 @@
         android:id="@+id/submitNewCustomerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/emailText"
-        android:layout_marginTop="51dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="Submit" 
-        android:onClick="submitNewCustomerPressed"/>
+        android:layout_alignLeft="@+id/emailText"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:onClick="submitNewCustomerPressed"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView03"
+        android:layout_marginTop="36dp"
+        android:text="Customer ID"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/customerID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView04"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="number" />
 
 </RelativeLayout>

@@ -23,8 +23,9 @@ public class EditCustomer extends Activity {
 		String firstName = ((EditText)findViewById(R.id.firstNameText)).getText().toString();
 		String lastName = ((EditText)findViewById(R.id.lastNameText)).getText().toString();
 		String zip = ((EditText)findViewById(R.id.zipCodeText)).getText().toString();
-		String email = ((EditText)findViewById(R.id.emailText)).getText().toString();
-		Manager.getInstance().editCustomer(firstName, lastName, zip, email);
+		String email = ((EditText)findViewById(R.id.emailText)).getText().toString();	
+		String customerID = ((EditText)findViewById(R.id.customerID)).getText().toString();
+		Manager.getInstance().editCustomer(firstName, lastName, zip, email,customerID);
 		//Switch back to the main view
 		//Should we bother adding a confirmation to the user that the customer was added successfully?
 		setContentView(R.layout.activity_main);

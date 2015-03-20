@@ -26,12 +26,9 @@ public class MainActivity extends Activity {
 	
 	public void editCustomerPressed(View view){
 		//setContentView(R.layout.activity_edit_customer);
-        
-		System.out.println("breakpoint A");
-		
+        	
 		Intent launchactivity= new Intent(MainActivity.this, EditCustomer.class); 
 		
-		System.out.println("breakpoint B");
 		startActivity(launchactivity);                          
 	}
 }
