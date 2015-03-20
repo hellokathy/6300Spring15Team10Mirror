@@ -4,6 +4,7 @@ import edu.gatech.seclass.prj2.Manager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +29,14 @@ public class MainActivity extends Activity {
 		//setContentView(R.layout.activity_edit_customer);
         	
 		Intent launchactivity= new Intent(MainActivity.this, EditCustomer.class); 
+		
+		startActivity(launchactivity);                          
+	}
+	
+	public void getCustomerInfoPressed(View view){
+		//setContentView(R.layout.activity_edit_customer);
+        	
+		Intent launchactivity= new Intent(MainActivity.this, GetCustomerInfo.class); 
 		
 		startActivity(launchactivity);                          
 	}

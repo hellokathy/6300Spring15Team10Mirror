@@ -6,7 +6,7 @@
 
     <Button
         android:id="@+id/addCustomer"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -17,12 +17,22 @@
 
     <Button
         android:id="@+id/editCustomer"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/addCustomer"
         android:layout_below="@+id/addCustomer"
         android:layout_marginTop="22dp"
         android:onClick="editCustomerPressed"
         android:text="Edit Customer" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addCustomer"
+        android:layout_below="@+id/editCustomer"
+        android:layout_marginTop="22dp"
+        android:onClick="getCustomerInfoPressed"
+        android:text=" Get Customer Info " />
 
 </RelativeLayout>

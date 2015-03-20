@@ -2,6 +2,10 @@ package edu.gatech.seclass.prj2;
 
 import java.util.ArrayList;
 
+import android.R;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+
 public class Customer {
 
 	private String szFName;
@@ -21,6 +25,10 @@ public class Customer {
 		this.szZip = zip;
 		this.szEmail = email;
 		this.szCustomerID = customerID;
+	}
+	
+	public void printCustomerInfo() {
+		//need to be implemented
 	}
 	
 	public void addTransaction(Transaction trans) {

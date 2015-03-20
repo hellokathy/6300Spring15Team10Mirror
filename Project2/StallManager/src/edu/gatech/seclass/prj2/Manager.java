@@ -38,4 +38,10 @@ public class Manager {
 		
 		customers.put(customerID, newCustomer);
 	}
+	
+	public void getCustomerInfo(String customerID){
+		
+		Customer oldCustomer=customers.get(customerID);
+		oldCustomer.printCustomerInfo();
+	}
 }
