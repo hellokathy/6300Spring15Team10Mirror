@@ -23,5 +23,11 @@ public class MainActivity extends Activity {
 		Intent launchactivity= new Intent(MainActivity.this, AddCustomer.class);                             
 		startActivity(launchactivity);                          
 	}
+	
+	public void editCustomerPressed(View view){
+		setContentView(R.layout.activity_edit_customer);
 
+		Intent launchactivity= new Intent(MainActivity.this, EditCustomer.class);                             
+		startActivity(launchactivity);                          
+	}
 }

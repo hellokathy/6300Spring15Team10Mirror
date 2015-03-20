@@ -31,4 +31,18 @@ public class Manager {
 		//Do we want to use SQLite?
 		customers.put(key, newCustomer);
 	}
+	
+	public void editCustomer(String firstName, String lastName, String zip, String email){
+		//Use full name + num for the key where num=number of customers with the given first name and last name
+		String key = firstName + lastName;
+		int num = 1;
+		while(customers.containsKey(key + String.valueOf(num))){
+			num++;
+		}
+		key = key + String.valueOf(num);
+		Customer newCustomer = new Customer(firstName, lastName, zip, email, key);
+	
+		//Do we want to use SQLite?
+		customers.put(key, newCustomer);
+	}
 }

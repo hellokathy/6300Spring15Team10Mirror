@@ -17,10 +17,12 @@ public final class R {
         public static final int TextView01=0x7f060003;
         public static final int TextView02=0x7f060005;
         public static final int TextView03=0x7f060006;
-        public static final int addCustomer=0x7f06000a;
+        public static final int addCustomer=0x7f06000b;
+        public static final int editCustomer=0x7f06000c;
         public static final int emailText=0x7f060007;
         public static final int firstNameText=0x7f060002;
         public static final int lastNameText=0x7f060004;
+        public static final int submitEditCustomerButton=0x7f06000a;
         public static final int submitNewCustomerButton=0x7f060009;
         public static final int textView1=0x7f060000;
         public static final int textView2=0x7f060001;
@@ -28,7 +30,8 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_add_customer=0x7f030000;
-        public static final int activity_main=0x7f030001;
+        public static final int activity_edit_customer=0x7f030001;
+        public static final int activity_main=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

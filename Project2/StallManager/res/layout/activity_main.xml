@@ -15,4 +15,14 @@
         android:text="Add Customer" 
         android:onClick="newCustomerPressed"/>
 
+    <Button
+        android:id="@+id/editCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addCustomer"
+        android:layout_below="@+id/addCustomer"
+        android:layout_marginTop="22dp"
+        android:onClick="editCustomerPressed"
+        android:text="Edit Customer" />
+
 </RelativeLayout>

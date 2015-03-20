@@ -23,14 +23,14 @@ public class Customer {
 		this.szCustomerID = customerID;
 	}
 	
-	public void AddTransaction(Transaction trans) {
+	public void addTransaction(Transaction trans) {
 		if(this.aTransactions == null)
 			this.aTransactions = new ArrayList<Transaction>();
 		
 		this.aTransactions.add(trans);
 	}
 	
-	public void AddCard(CreditCard card) {
+	public void addCard(CreditCard card) {
 		if(this.aCreditCards == null)
 			this.aCreditCards = new ArrayList<CreditCard>();
 		
