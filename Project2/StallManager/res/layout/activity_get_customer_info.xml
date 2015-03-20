@@ -33,15 +33,53 @@
         android:ems="10"
         android:inputType="number" />
 
+    <TextView
+        android:id="@+id/cName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:text="Name:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/cZip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cName"
+        android:layout_below="@+id/cName"
+        android:layout_marginTop="16dp"
+        android:text="Zip:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/cEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cZip"
+        android:layout_below="@+id/cZip"
+        android:layout_marginTop="16dp"
+        android:text="Email:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <Button
         android:id="@+id/submitEditCustomerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/TextView04"
-        android:layout_marginLeft="82dp"
-        android:layout_marginTop="25dp"
+        android:layout_above="@+id/cName"
+        android:layout_alignLeft="@+id/customerID"
+        android:layout_marginBottom="21dp"
         android:onClick="submitGetCustomerInfoPressed"
         android:text="Submit" />
 
+    <Button
+        android:id="@+id/returnGetCustomerInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/submitEditCustomerButton"
+        android:layout_alignParentBottom="true"
+        android:onClick="returnGetCustomerInfo"
+        android:text="Return" />
+        
 </RelativeLayout>

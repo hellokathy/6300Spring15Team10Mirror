@@ -5,6 +5,22 @@ import java.util.ArrayList;
 import android.R;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import edu.gatech.seclass.prj2.Manager;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class Customer {
 
@@ -27,10 +43,6 @@ public class Customer {
 		this.szCustomerID = customerID;
 	}
 	
-	public void printCustomerInfo() {
-		//need to be implemented
-	}
-	
 	public void addTransaction(Transaction trans) {
 		if(this.aTransactions == null)
 			this.aTransactions = new ArrayList<Transaction>();
@@ -49,16 +61,36 @@ public class Customer {
 		this.szFName = firstname;
 	}
 	
+	public String getFName() {
+		return this.szFName;
+	}
+	
 	public void setLName(String lastname) {
 		this.szLName = lastname;
+	}
+	
+	public String getLName() {
+		return this.szLName;
 	}
 	
 	public void setZip(String zip) {
 		this.szZip = zip;
 	}
 	
+	public String getZip() {
+		return this.szZip;
+	}
+	
 	public void setEmail(String email) {
 		this.szEmail = email;
+	}
+	
+	public String getEmail() {
+		return this.szEmail;
+	}
+	
+	public String getCustomerID() {
+		return this.szCustomerID;
 	}
 	
 	public void setCumDiscount(double amt) {

@@ -39,9 +39,9 @@ public class Manager {
 		customers.put(customerID, newCustomer);
 	}
 	
-	public void getCustomerInfo(String customerID){
+	public Customer getCustomerInfo(String customerID){
 		
 		Customer oldCustomer=customers.get(customerID);
-		oldCustomer.printCustomerInfo();
+		return oldCustomer;
 	}
 }

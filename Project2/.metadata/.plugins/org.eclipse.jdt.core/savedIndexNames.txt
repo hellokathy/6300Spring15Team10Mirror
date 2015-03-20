@@ -1,6 +1,1 @@
-INDEX VERSION 1.127+C:\Users\lancedesi\6300\6300Spring15Team10\Project2\.metadata\.plugins\org.eclipse.jdt.core
-611044998.index
-3838467416.index
-1433368218.index
-848890580.index
-2311938856.index
+INDEX VERSION 1.127+/Users/yangleizou/CS6300/6300Spring15Team10/Project2/.metadata/.plugins/org.eclipse.jdt.core
