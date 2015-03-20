@@ -19,19 +19,22 @@ public class EditCustomer extends Activity {
 	}
 	
 	public void submitEditCustomerPressed(View view){
-		
+		System.out.println("breakpoint C");
 		//Get the information the user entered and create a new customer
 		String firstName = ((EditText)findViewById(R.id.firstNameText)).getText().toString();
 		String lastName = ((EditText)findViewById(R.id.lastNameText)).getText().toString();
 		String zip = ((EditText)findViewById(R.id.zipCodeText)).getText().toString();
 		String email = ((EditText)findViewById(R.id.emailText)).getText().toString();
-		
+		System.out.println("breakpoint D");
 		Manager.getInstance().editCustomer(firstName, lastName, zip, email);
-		
+		System.out.println("breakpoint E");
 		//Switch back to the main view
 		//Should we bother adding a confirmation to the user that the customer was added successfully?
 		setContentView(R.layout.activity_main);
-		Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);                             
-		startActivity(launchactivity);        
+		System.out.println("breakpoint F");
+		Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);   
+		System.out.println("breakpoint G");
+		startActivity(launchactivity);       
+		System.out.println("breakpoint H");
 	}
 }
