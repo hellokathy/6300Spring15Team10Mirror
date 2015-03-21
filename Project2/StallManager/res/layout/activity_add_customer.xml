@@ -28,7 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignParentRight="true"
-        android:ems="10" />
+        android:ems="10" >
+        
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/TextView01"
@@ -84,10 +87,8 @@
         android:layout_above="@+id/TextView03"
         android:layout_alignParentRight="true"
         android:ems="10"
-        android:inputType="number" >
-         
-        <requestFocus />
-    </EditText>
+        android:inputType="number" />
+
 
     <Button
         android:id="@+id/submitNewCustomerButton"

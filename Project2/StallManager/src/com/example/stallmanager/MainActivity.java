@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void editCustomerPressed(View view){
-		Intent launchactivity = new Intent(ctx, EditCustomer.class);
+		Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
 		startActivity(launchactivity);
 	}
 	
