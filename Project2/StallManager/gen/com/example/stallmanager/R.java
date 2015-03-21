@@ -14,7 +14,8 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Button01=0x7f060013;
+        public static final int Button01=0x7f060012;
+        public static final int Search=0x7f060014;
         public static final int TextView01=0x7f060003;
         public static final int TextView02=0x7f060005;
         public static final int TextView03=0x7f060006;
@@ -24,7 +25,7 @@ public final class R {
         public static final int cName=0x7f06000d;
         public static final int cZip=0x7f06000e;
         public static final int customerID=0x7f06000b;
-        public static final int editCustomer=0x7f060012;
+        public static final int editCustomer=0x7f060013;
         public static final int emailText=0x7f060007;
         public static final int firstNameText=0x7f060002;
         public static final int lastNameText=0x7f060004;
@@ -40,12 +41,14 @@ public final class R {
         public static final int activity_edit_customer=0x7f030001;
         public static final int activity_get_customer_info=0x7f030002;
         public static final int activity_main=0x7f030003;
+        public static final int selectcustomer=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040002;
         public static final int title_activity_add_customer=0x7f040003;
         public static final int title_activity_main=0x7f040001;
+        public static final int title_activity_selectcustomer=0x7f040004;
     }
     public static final class style {
         /** 

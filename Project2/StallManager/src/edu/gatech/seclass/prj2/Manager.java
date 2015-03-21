@@ -28,9 +28,8 @@ public class Manager {
 			}
 			key = key + String.valueOf(num);
 		*/
-		Customer newCustomer = new Customer(firstName, lastName, zip, email, customerID);
-	
-		customers.put(customerID, newCustomer);
+		//Customer newCustomer = new Customer(firstName, lastName, zip, email, customerID);
+		//customers.put(customerID, newCustomer);
 	}
 	
 	public void editCustomer(String firstName, String lastName, String zip, String email, String customerID){
