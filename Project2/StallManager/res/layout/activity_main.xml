@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}" 
+    android:background="#00BFFF">
 
     <Button
         android:id="@+id/addCustomer"
@@ -32,5 +33,15 @@
         android:layout_marginBottom="25dp"
         android:onClick="editCustomerPressed"
         android:text="Edit Customer" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button01"
+        android:layout_alignRight="@+id/Button01"
+        android:layout_below="@+id/Button01"
+        android:onClick="listOfCustomersPressed"
+        android:text="List Of Customers" />
 
 </RelativeLayout>

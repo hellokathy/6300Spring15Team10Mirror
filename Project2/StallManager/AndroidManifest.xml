@@ -36,6 +36,15 @@
             android:name=".SelectcustomerActivity"
             android:label="@string/title_activity_selectcustomer" >
         </activity>
+        <activity
+            android:name=".ListOfCustomers"
+            android:label="@string/title_activity_list_of_customers" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_add_customer">AddCustomer</string>
     <string name="title_activity_selectcustomer">SelectCustomer</string>
+    <string name="title_activity_list_of_customers">ListOfCustomers</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

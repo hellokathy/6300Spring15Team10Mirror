@@ -35,4 +35,8 @@ public class MainActivity extends Activity {
 		Intent launchactivity = new Intent(ctx, GetCustomerInfo.class);
 		startActivity(launchactivity);
 	}
+	public void listOfCustomersPressed(View view){
+		Intent launchactivity = new Intent(ctx, ListOfCustomers.class);
+		startActivity(launchactivity);
+	}
 }
