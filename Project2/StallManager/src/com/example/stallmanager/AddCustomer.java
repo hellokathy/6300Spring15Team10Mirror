@@ -24,17 +24,19 @@ public class AddCustomer extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_customer);
 		
-		//Get the information the user entered and create a new customer
-		firstName = ((EditText)findViewById(R.id.firstNameText)).getText().toString();
-		lastName = ((EditText)findViewById(R.id.lastNameText)).getText().toString();
-		zip = ((EditText)findViewById(R.id.zipCodeText)).getText().toString();
-		email = ((EditText)findViewById(R.id.emailText)).getText().toString();
-		customerID = ((EditText)findViewById(R.id.customerID)).getText().toString();
 		Submit = (Button) findViewById(R.id.submitNewCustomerButton);
 		
 		Submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				
+				//Get the information the user entered and create a new customer
+				firstName = ((EditText)findViewById(R.id.firstNameText)).getText().toString();
+				lastName = ((EditText)findViewById(R.id.lastNameText)).getText().toString();
+				zip = ((EditText)findViewById(R.id.zipCodeText)).getText().toString();
+				email = ((EditText)findViewById(R.id.emailText)).getText().toString();
+				customerID = ((EditText)findViewById(R.id.customerID)).getText().toString();
+				
 				DatabaseOperations DB = new DatabaseOperations(ctx);
 				DB.EnterInfo(DB, firstName, lastName, zip, email, customerID);
 				Toast.makeText(getBaseContext(), "Customer added successfully", Toast.LENGTH_LONG).show();
