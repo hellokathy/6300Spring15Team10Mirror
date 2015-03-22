@@ -30,8 +30,13 @@ import android.widget.Toast;
 
 public class SelectcustomerActivity extends Activity {
 	private DatabaseOperations DB;
+<<<<<<< HEAD
 	private SimpleCursorAdapter SCA = null;
 	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION};
+=======
+	//private SimpleCursorAdapter SCA;
+	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION, VIEW_TRANSACTIONS};
+>>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32
 	public static views previousView;
 	Context ctx = this;
 	String SelectedID = "";
@@ -100,12 +105,13 @@ public class SelectcustomerActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		ListView lv = (ListView)findViewById(R.id.listView1);
+		ListView lv = (ListView)findViewById(R.id.transactionList);
 		lv.setAdapter(SCA);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> lv, View v, int pos, long id) {
 				//Log.d("Click received: ", "Click received");
 				Cursor cr = (Cursor)lv.getItemAtPosition(pos);
+<<<<<<< HEAD
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
 			}
 		});
@@ -126,6 +132,36 @@ public class SelectcustomerActivity extends Activity {
 			@Override
 			public Cursor runQuery(CharSequence constraint) {
 				return DB.getInfoByKey(CustomerTableInfo.LAST_NAME, constraint.toString());
+=======
+				//Log.d("Click received: ", "Cursor initialized");
+				SelectedID = cr.getString(cr.getColumnIndexOrThrow("acctnum"));
+				
+				if(previousView == views.EDIT_CUSTOMER){
+				String firstName = cr.getString(cr.getColumnIndexOrThrow("fname"));
+				String lastName = cr.getString(cr.getColumnIndexOrThrow("lname"));
+				String email = cr.getString(cr.getColumnIndexOrThrow("email"));
+				String zip = cr.getString(cr.getColumnIndexOrThrow("zip"));
+				EditCustomer.setValues(firstName, lastName, zip, email, SelectedID);
+//				Log.d("Click received: ", "Selected ID set");
+//				Log.d("Selected ID: ", String.valueOf(SelectedID));
+				Intent launchactivity= new Intent(SelectcustomerActivity.this, EditCustomer.class);                             
+				startActivity(launchactivity);
+				}
+				
+				else if (previousView == views.ADD_TRANSACTION){
+					//Add transaction brought us here
+					AddTransaction.acct = SelectedID; 
+					Intent launchactivity= new Intent(SelectcustomerActivity.this, AddTransaction.class);                             
+					startActivity(launchactivity);
+				}
+				else if (previousView == views.VIEW_TRANSACTIONS){
+					//View transaction brought us here
+					ViewTransactions.acct = SelectedID;
+					Intent launchactivity= new Intent(SelectcustomerActivity.this, ViewTransactions.class);                             
+					startActivity(launchactivity);
+				}
+				finish();
+>>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32
 			}
 		});
 	}

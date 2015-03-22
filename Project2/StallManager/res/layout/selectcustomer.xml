@@ -15,7 +15,7 @@
         android:hint="Last Name Search" />
     
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/transactionList"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/Search"

@@ -45,6 +45,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ViewTransactions"
+            android:label="@string/title_activity_view_transactions" >
+        </activity>
     </application>
 
 </manifest>

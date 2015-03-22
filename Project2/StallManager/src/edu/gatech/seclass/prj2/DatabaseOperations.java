@@ -113,6 +113,19 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
 		long success = sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);
 
+<<<<<<< HEAD
 		Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
+=======
+	Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
+}
+
+public Cursor getTransactionInfo(DatabaseOperations dop) {
+	sqldb = dop.getReadableDatabase();
+	String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
+	//Cursor cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, null, null, null, null, CustomerTableInfo.LAST_NAME);
+	Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, null, null, null, null, TransactionTableInfo.DATE);
+	cr.moveToFirst();
+	return cr;
+>>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32
 	}
 }

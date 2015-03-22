@@ -47,4 +47,9 @@ public class MainActivity extends Activity {
 		Intent launchactivity = new Intent(ctx, ListOfCustomers.class);
 		startActivity(launchactivity);
 	}
+	public void viewTransactionsPressed(View view){
+		SelectcustomerActivity.previousView = views.VIEW_TRANSACTIONS;
+		Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
+		startActivity(launchactivity);
+	}
 }
