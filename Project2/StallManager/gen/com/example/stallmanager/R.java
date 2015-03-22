@@ -28,12 +28,14 @@ public final class R {
         public static final int Button01=0x7f080014;
         public static final int CustomerID=0x7f080011;
         public static final int CustomerName=0x7f080012;
+        public static final int DeleBtn=0x7f080022;
+        public static final int EditBtn=0x7f080021;
         public static final int Search=0x7f08001f;
         public static final int TextView01=0x7f080003;
         public static final int TextView02=0x7f080005;
         public static final int TextView03=0x7f080006;
         public static final int TextView04=0x7f08000a;
-        public static final int action_settings=0x7f080021;
+        public static final int action_settings=0x7f080023;
         public static final int addCustomer=0x7f080013;
         public static final int button1=0x7f080016;
         public static final int cEmail=0x7f08000f;

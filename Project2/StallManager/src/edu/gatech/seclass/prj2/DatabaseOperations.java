@@ -14,7 +14,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	public static final int DB_Version = 1;
 	public String CreateQuery = "CREATE TABLE if not exists " + TableInfo.TABLE_NAME + "(" + TableInfo.FIRST_NAME + " TEXT," + TableInfo.LAST_NAME + " TEXT," + 
 	TableInfo.ZIP + " TEXT," + TableInfo.EMAIL + " TEXT," + TableInfo.USER_ID + " TEXT );";
-	private DatabaseOperations dop;
+	private DatabaseOperations dbop;
 	private Context ctx;
 	private SQLiteDatabase sqldb;
 
@@ -37,8 +37,14 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	}
 	
 	public DatabaseOperations open() throws SQLException {
-		this.dop = new DatabaseOperations(ctx);
+		this.dbop = new DatabaseOperations(ctx);
 		return this;
+	}
+	
+	public void deleteCustomer(DatabaseOperations dop, String ID) {
+		sqldb = dop.getWritableDatabase();
+		String[] args = {ID};
+		sqldb.delete(TableInfo.TABLE_NAME, TableInfo.USER_ID + " LIKE ?", args);
 	}
 	
 	public void EnterInfo(DatabaseOperations dop, String fname, String lname, String zip, String email, String acct) {
@@ -58,9 +64,24 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	public Cursor getInfo(DatabaseOperations dop) {
 		sqldb = dop.getReadableDatabase();
 		String[] col = {"rowid _id", TableInfo.USER_ID,TableInfo.FIRST_NAME,TableInfo.LAST_NAME,TableInfo.ZIP,TableInfo.EMAIL};
-		//Cursor cr = sqldb.query(TableInfo.TABLE_NAME, col, null, null, null, null, TableInfo.LAST_NAME);
 		Cursor cr = sqldb.query(TableInfo.TABLE_NAME, col, null, null, null, null, TableInfo.LAST_NAME);
 		cr.moveToFirst();
 		return cr;
-		}
 	}
+	
+	public Cursor getInfoByKey(String searched, String query) throws SQLException {
+		Cursor cr = null;
+		String[] col = {"rowid _id", TableInfo.USER_ID,TableInfo.FIRST_NAME,TableInfo.LAST_NAME,TableInfo.ZIP,TableInfo.EMAIL};
+		if(query == null || query.length() == 0 || searched == null || searched.length() == 0) {
+			cr = sqldb.query(TableInfo.TABLE_NAME, col, null, null, null, null, TableInfo.LAST_NAME);
+		}
+		else {
+			cr = sqldb.query(TableInfo.TABLE_NAME, col, searched + " like '%" + query + "%'", null, null, null, TableInfo.LAST_NAME);
+		}
+		
+		if(cr != null) {
+			cr.moveToFirst();
+		}
+		return cr;
+	}
+}
