@@ -1,71 +1,37 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#1E90FF"
+    android:paddingBottom="20dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.stallmanager.ListOfCustomers" 
-    android:background="#1E90FF">
+    tools:context="com.example.stallmanager.ListOfCustomers" >
 
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+  
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/CustomerID"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" 
-            android:textColor="#8B0000"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" 
-            android:textColor="#8B0000"/>
-
-    </TableRow>
-    
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" 
-            android:textColor="#8B0000"/>
-
-    </TableRow>
-    <TableRow
-        android:id="@+id/tableRow4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#8B0000"/>
-
-    </TableRow>
+            android:textColor="#ffffff" 
+            android:visibility="gone" />
+        
+        <TextView
+            android:id="@+id/CustomerName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff" 
+            android:background="#1E99FF"/>
+  
     
-</TableLayout>
+</TableRow>
