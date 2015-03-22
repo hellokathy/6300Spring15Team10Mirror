@@ -6,15 +6,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class SelectcustomerActivity extends Activity {
 	private DatabaseOperations DB;
-	private SimpleCursorAdapter SCA;
+	//private SimpleCursorAdapter SCA;
 	Context ctx = this;
+	String SelectedID = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +48,20 @@ public class SelectcustomerActivity extends Activity {
 				R.id.mail
 		};
 
-		SCA = new SimpleCursorAdapter(ctx, R.layout.customer_layout, cursor, col, to, 0);
+		SimpleCursorAdapter SCA = null;
+		try{
+				SCA = new SimpleCursorAdapter(getBaseContext(), R.layout.customer_layout, cursor, col, to, 0);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
 		ListView lv = (ListView)findViewById(R.id.listView1);
 		lv.setAdapter(SCA);
+		/*lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> lv, View v, int pos, long id) {
+				Cursor cr = (Cursor)lv.getItemAtPosition(pos);
+				SelectedID = cr.getString(cr.getColumnIndexOrThrow("acct"));
+			}
+		});*/
 	}
 }

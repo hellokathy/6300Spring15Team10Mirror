@@ -42,7 +42,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	}
 	
 	public void EnterInfo(DatabaseOperations dop, String fname, String lname, String zip, String email, String acct) {
-		SQLiteDatabase sqldb = dop.getWritableDatabase();
+		sqldb = dop.getWritableDatabase();
 		ContentValues cv = new ContentValues();
 		cv.put(TableInfo.FIRST_NAME, fname);
 		cv.put(TableInfo.LAST_NAME, lname);
@@ -54,7 +54,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	}
 	
 	public Cursor getInfo(DatabaseOperations dop) {
-		SQLiteDatabase sqldb = dop.getReadableDatabase();
+		sqldb = dop.getReadableDatabase();
 		String[] col = {TableInfo.USER_ID,TableInfo.FIRST_NAME,TableInfo.LAST_NAME,TableInfo.ZIP,TableInfo.EMAIL};
 		Cursor cr = sqldb.query(TableInfo.TABLE_NAME, col, null, null, null, null, TableInfo.LAST_NAME);
 		cr.moveToFirst();
