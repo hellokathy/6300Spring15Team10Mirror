@@ -49,13 +49,16 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		cv.put(TableInfo.ZIP, zip);
 		cv.put(TableInfo.EMAIL, email);
 		cv.put(TableInfo.USER_ID, acct);
+
 		long success = sqldb.insert(TableInfo.TABLE_NAME, null, cv);
+
 		Log.d("DataBase Operations", "Database Row Inserted");
 	}
 	
 	public Cursor getInfo(DatabaseOperations dop) {
 		sqldb = dop.getReadableDatabase();
-		String[] col = {TableInfo.USER_ID,TableInfo.FIRST_NAME,TableInfo.LAST_NAME,TableInfo.ZIP,TableInfo.EMAIL};
+		String[] col = {"rowid _id", TableInfo.USER_ID,TableInfo.FIRST_NAME,TableInfo.LAST_NAME,TableInfo.ZIP,TableInfo.EMAIL};
+		//Cursor cr = sqldb.query(TableInfo.TABLE_NAME, col, null, null, null, null, TableInfo.LAST_NAME);
 		Cursor cr = sqldb.query(TableInfo.TABLE_NAME, col, null, null, null, null, TableInfo.LAST_NAME);
 		cr.moveToFirst();
 		return cr;
