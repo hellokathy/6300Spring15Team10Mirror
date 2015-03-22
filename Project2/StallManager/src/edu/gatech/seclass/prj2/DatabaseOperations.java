@@ -113,10 +113,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
 		long success = sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);
 
-<<<<<<< HEAD
 		Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
-=======
-	Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
 }
 
 public Cursor getTransactionInfo(DatabaseOperations dop) {

@@ -30,13 +30,8 @@ import android.widget.Toast;
 
 public class SelectcustomerActivity extends Activity {
 	private DatabaseOperations DB;
-<<<<<<< HEAD
 	private SimpleCursorAdapter SCA = null;
-	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION};
-=======
-	//private SimpleCursorAdapter SCA;
 	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION, VIEW_TRANSACTIONS};
->>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32
 	public static views previousView;
 	Context ctx = this;
 	String SelectedID = "";
@@ -111,7 +106,7 @@ public class SelectcustomerActivity extends Activity {
 			public void onItemClick(AdapterView<?> lv, View v, int pos, long id) {
 				//Log.d("Click received: ", "Click received");
 				Cursor cr = (Cursor)lv.getItemAtPosition(pos);
-<<<<<<< HEAD
+
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
 			}
 		});
@@ -132,9 +127,9 @@ public class SelectcustomerActivity extends Activity {
 			@Override
 			public Cursor runQuery(CharSequence constraint) {
 				return DB.getInfoByKey(CustomerTableInfo.LAST_NAME, constraint.toString());
-=======
+
 				//Log.d("Click received: ", "Cursor initialized");
-				SelectedID = cr.getString(cr.getColumnIndexOrThrow("acctnum"));
+				/*SelectedID = cr.getString(cr.getColumnIndexOrThrow("acctnum"));
 				
 				if(previousView == views.EDIT_CUSTOMER){
 				String firstName = cr.getString(cr.getColumnIndexOrThrow("fname"));
@@ -161,7 +156,7 @@ public class SelectcustomerActivity extends Activity {
 					startActivity(launchactivity);
 				}
 				finish();
->>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32
+>>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32*/
 			}
 		});
 	}
