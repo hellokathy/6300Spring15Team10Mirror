@@ -1,10 +1,14 @@
 package com.example.stallmanager;
 
 import edu.gatech.seclass.prj2.Customer;
+import edu.gatech.seclass.prj2.CustomerTableData.TableInfo;
+import edu.gatech.seclass.prj2.DatabaseOperations;
 import edu.gatech.seclass.prj2.Manager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,13 +29,18 @@ public class GetCustomerInfo extends Activity {
 	public void submitGetCustomerInfoPressed(View view){	
 		String customerID = ((EditText)findViewById(R.id.customerID)).getText().toString();
 		
-		Customer oldCustomer=Manager.getInstance().getCustomerInfo(customerID);
-		myTextView=(TextView)findViewById(R.id.cName);
-		myTextView.setText("Name: "+oldCustomer.getFName()+""+oldCustomer.getLName());
-		myTextView=(TextView)findViewById(R.id.cZip);
-		myTextView.setText("Zip: "+oldCustomer.getZip());		
-		myTextView=(TextView)findViewById(R.id.cEmail);
-		myTextView.setText("Email: "+oldCustomer.getEmail());		
+		DatabaseOperations DB = new DatabaseOperations(this);
+		SQLiteDatabase sqlDB = DB.getWritableDatabase();
+		//sqlDB.query(TableInfo.TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy)
+		//Cursor c = 
+		
+//		Customer oldCustomer=Manager.getInstance().getCustomerInfo(customerID);
+//		myTextView=(TextView)findViewById(R.id.cName);
+//		myTextView.setText("Name: "+oldCustomer.getFName()+""+oldCustomer.getLName());
+//		myTextView=(TextView)findViewById(R.id.cZip);
+//		myTextView.setText("Zip: "+oldCustomer.getZip());		
+//		myTextView=(TextView)findViewById(R.id.cEmail);
+//		myTextView.setText("Email: "+oldCustomer.getEmail());		
 		     
 	}
 	

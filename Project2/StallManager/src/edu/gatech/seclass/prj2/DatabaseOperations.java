@@ -55,6 +55,22 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		Log.d("DataBase Operations", "Database Row Inserted");
 	}
 	
+	public void EditInfo(DatabaseOperations dop, String fname, String lname, String zip, String email, String acct) {
+		sqldb = dop.getWritableDatabase();
+		ContentValues cv = new ContentValues();
+		cv.put(TableInfo.FIRST_NAME, fname);
+		cv.put(TableInfo.LAST_NAME, lname);
+		cv.put(TableInfo.ZIP, zip);
+		cv.put(TableInfo.EMAIL, email);
+		cv.put(TableInfo.USER_ID, acct);
+
+		String selection = TableInfo.USER_ID + " = " + acct;
+		
+		sqldb.update(TableInfo.TABLE_NAME, cv, selection, null);
+		
+		Log.d("DataBase Operations", "Database Row Updated");
+	}
+	
 	public Cursor getInfo(DatabaseOperations dop) {
 		sqldb = dop.getReadableDatabase();
 		String[] col = {"rowid _id", TableInfo.USER_ID,TableInfo.FIRST_NAME,TableInfo.LAST_NAME,TableInfo.ZIP,TableInfo.EMAIL};

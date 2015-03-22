@@ -39,6 +39,7 @@ public class AddCustomer extends Activity {
 				
 				DatabaseOperations DB = new DatabaseOperations(ctx);
 				DB.EnterInfo(DB, firstName, lastName, zip, email, customerID);
+				DB.close();
 				Toast.makeText(getBaseContext(), "Customer added successfully", Toast.LENGTH_LONG).show();
 				finish();
 			}
