@@ -17,7 +17,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 			CustomerTableInfo.ZIP + " TEXT," + CustomerTableInfo.EMAIL + " TEXT," + CustomerTableInfo.USER_ID + " TEXT );";
 	public String CreateTransactionQuery = "CREATE TABLE if not exists " + TransactionTableInfo.TABLE_NAME + "(" + TransactionTableInfo.DATE + " TEXT," + TransactionTableInfo.AMOUNT + " TEXT," + 
 			CustomerTableInfo.USER_ID + " TEXT );";
-	private DatabaseOperations dop;
+	private DatabaseOperations dbop;
 	private Context ctx;
 	private SQLiteDatabase sqldb;
 
@@ -114,15 +114,13 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		long success = sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);
 
 		Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
-}
+	}
 
-public Cursor getTransactionInfo(DatabaseOperations dop) {
-	sqldb = dop.getReadableDatabase();
-	String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
-	//Cursor cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, null, null, null, null, CustomerTableInfo.LAST_NAME);
-	Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, null, null, null, null, TransactionTableInfo.DATE);
-	cr.moveToFirst();
-	return cr;
->>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32
+	public Cursor getTransactionInfo(DatabaseOperations dop) {
+		sqldb = dop.getReadableDatabase();
+		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
+		Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, null, null, null, null, TransactionTableInfo.DATE);
+		cr.moveToFirst();
+		return cr;
 	}
 }
