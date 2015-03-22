@@ -1,7 +1,7 @@
 package com.example.stallmanager;
 
 import edu.gatech.seclass.prj2.Customer;
-import edu.gatech.seclass.prj2.CustomerTableData.TableInfo;
+import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.prj2.DatabaseOperations;
 import edu.gatech.seclass.prj2.Manager;
 import android.annotation.SuppressLint;
@@ -31,7 +31,7 @@ public class GetCustomerInfo extends Activity {
 		
 		DatabaseOperations DB = new DatabaseOperations(this);
 		SQLiteDatabase sqlDB = DB.getWritableDatabase();
-		//sqlDB.query(TableInfo.TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy)
+		//sqlDB.query(CustomerTableInfo.TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy)
 		//Cursor c = 
 		
 //		Customer oldCustomer=Manager.getInstance().getCustomerInfo(customerID);

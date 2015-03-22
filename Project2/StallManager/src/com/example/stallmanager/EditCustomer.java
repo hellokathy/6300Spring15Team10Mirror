@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class EditCustomer extends Activity {
 	Button Submit;
-	public static String firstName, lastName, zip, email, customerID;
+	private static String firstName, lastName, zip, email, customerID;
 	Context ctx = this;
 
 	@Override
@@ -46,7 +46,7 @@ public class EditCustomer extends Activity {
 				zip = ((EditText)findViewById(R.id.zipCodeText)).getText().toString();
 				email = ((EditText)findViewById(R.id.emailText)).getText().toString();
 				DatabaseOperations DB = new DatabaseOperations(ctx);
-				DB.EditInfo(DB, firstName, lastName, zip, email, customerID);
+				DB.EditCustomerInfo(DB, firstName, lastName, zip, email, customerID);
 				Toast.makeText(getBaseContext(), "Customer edited successfully", Toast.LENGTH_LONG).show();
 				finish();
 			}
@@ -57,5 +57,13 @@ public class EditCustomer extends Activity {
 		setContentView(R.layout.activity_main);
 		Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);   
 		startActivity(launchactivity);       
+	}
+	
+	public static void setValues(String fname, String lname, String zip, String email, String acct){
+		firstName = fname;
+		lastName = lname;
+		zip = zip;
+		email = email;
+		customerID = acct;
 	}
 }

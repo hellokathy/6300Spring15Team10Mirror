@@ -38,7 +38,7 @@ public class AddCustomer extends Activity {
 				customerID = ((EditText)findViewById(R.id.customerID)).getText().toString();
 				
 				DatabaseOperations DB = new DatabaseOperations(ctx);
-				DB.EnterInfo(DB, firstName, lastName, zip, email, customerID);
+				DB.EnterCustomerInfo(DB, firstName, lastName, zip, email, customerID);
 				DB.close();
 				Toast.makeText(getBaseContext(), "Customer added successfully", Toast.LENGTH_LONG).show();
 				finish();
