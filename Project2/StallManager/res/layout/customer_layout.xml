@@ -22,7 +22,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
  
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
@@ -34,8 +34,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/date"
+        android:layout_below="@+id/date"
         android:text="Zip: "
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
@@ -61,7 +61,7 @@
         android:id="@+id/fname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
+        android:layout_above="@+id/date"
         android:layout_toRightOf="@+id/textView2"
         android:text="TextView" />
 
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView4"
-        android:layout_toRightOf="@+id/textView3"
+        android:layout_toRightOf="@+id/date"
         android:layout_alignLeft="@+id/fname"
         android:text="TextView" />
 

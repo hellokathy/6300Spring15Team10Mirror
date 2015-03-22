@@ -19,7 +19,7 @@ import android.widget.SimpleCursorAdapter;
 public class SelectcustomerActivity extends Activity {
 	private DatabaseOperations DB;
 	//private SimpleCursorAdapter SCA;
-	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION};
+	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION, VIEW_TRANSACTIONS};
 	public static views previousView;
 	Context ctx = this;
 	String SelectedID = "";
@@ -59,7 +59,7 @@ public class SelectcustomerActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		ListView lv = (ListView)findViewById(R.id.listView1);
+		ListView lv = (ListView)findViewById(R.id.transactionList);
 		lv.setAdapter(SCA);
 		Log.d("Waiting for click: ", "Waiting for click");
 		lv.setOnItemClickListener(new OnItemClickListener() {
@@ -81,10 +81,16 @@ public class SelectcustomerActivity extends Activity {
 				startActivity(launchactivity);
 				}
 				
-				else{
+				else if (previousView == views.ADD_TRANSACTION){
 					//Add transaction brought us here
 					AddTransaction.acct = SelectedID; 
 					Intent launchactivity= new Intent(SelectcustomerActivity.this, AddTransaction.class);                             
+					startActivity(launchactivity);
+				}
+				else if (previousView == views.VIEW_TRANSACTIONS){
+					//View transaction brought us here
+					ViewTransactions.acct = SelectedID;
+					Intent launchactivity= new Intent(SelectcustomerActivity.this, ViewTransactions.class);                             
 					startActivity(launchactivity);
 				}
 				finish();

@@ -59,11 +59,11 @@ public class EditCustomer extends Activity {
 		startActivity(launchactivity);       
 	}
 	
-	public static void setValues(String fname, String lname, String zip, String email, String acct){
+	public static void setValues(String fname, String lname, String Zip, String Email, String acct){
 		firstName = fname;
 		lastName = lname;
-		zip = zip;
-		email = email;
+		zip = Zip;
+		email = Email;
 		customerID = acct;
 	}
 }

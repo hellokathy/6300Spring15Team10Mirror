@@ -95,4 +95,13 @@ public void EnterTransactionInfo(DatabaseOperations dop, String amount, String d
 
 	Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
 }
+
+public Cursor getTransactionInfo(DatabaseOperations dop) {
+	sqldb = dop.getReadableDatabase();
+	String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
+	//Cursor cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, null, null, null, null, CustomerTableInfo.LAST_NAME);
+	Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, null, null, null, null, TransactionTableInfo.DATE);
+	cr.moveToFirst();
+	return cr;
+	}
 }

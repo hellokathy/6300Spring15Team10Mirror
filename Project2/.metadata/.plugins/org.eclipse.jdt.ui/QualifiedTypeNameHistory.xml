@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.example.stallmanager.R.layout"/>
+<fullyQualifiedTypeName name="android.database.Cursor"/>
+<fullyQualifiedTypeName name="android.database.sqlite.SQLiteDatabase"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="edu.gatech.seclass.prj2.CustomerTableData.TableInfo"/>
+<fullyQualifiedTypeName name="edu.gatech.seclass.prj2.TransactionTableData.TransactionTableInfo"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.SelectcustomerActivity.previousView"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.SelectcustomerActivity.view"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.SelectcustomerActivity.prevView"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.SelectcustomerActivity.views"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.AddTransactionActivity"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.EditCustomer"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.SelectcustomerActivity"/>
+<fullyQualifiedTypeName name="com.example.stallmanager.AddTransaction"/>
 </qualifiedTypeNameHistroy>
