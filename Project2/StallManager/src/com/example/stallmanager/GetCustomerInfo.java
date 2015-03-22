@@ -1,18 +1,11 @@
 package com.example.stallmanager;
 
-import edu.gatech.seclass.prj2.Customer;
-import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.prj2.DatabaseOperations;
-import edu.gatech.seclass.prj2.Manager;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -48,15 +41,26 @@ public class GetCustomerInfo extends Activity {
 						String email=cursor.getString(cursor.getColumnIndex("email"));
 						
 						myTextView=(TextView)findViewById(R.id.cName);
-						myTextView.setText("Name: "+fname+lname);
+						myTextView.setText("Name: "+fname+" "+lname);
 						myTextView=(TextView)findViewById(R.id.cZip);
 						myTextView.setText("Zip: "+zip);		
 						myTextView=(TextView)findViewById(R.id.cEmail);
  						myTextView.setText("Email: "+email);	
+ 						DB.close();
+ 						Toast.makeText(getBaseContext(), "Customer found successfully!", Toast.LENGTH_LONG).show();
+ 						return;
+					}
+					else{
+						myTextView=(TextView)findViewById(R.id.cName);
+						myTextView.setText("Name: ");
+						myTextView=(TextView)findViewById(R.id.cZip);
+						myTextView.setText("Zip: ");		
+						myTextView=(TextView)findViewById(R.id.cEmail);
+ 						myTextView.setText("Email: ");	
 					}
 				}		
-				DB.close();
-				Toast.makeText(getBaseContext(), "Customer found successfully", Toast.LENGTH_LONG).show();
+					DB.close();
+					Toast.makeText(getBaseContext(), "Customer NOT found!", Toast.LENGTH_LONG).show();
 			}
 		});
 	}	     
