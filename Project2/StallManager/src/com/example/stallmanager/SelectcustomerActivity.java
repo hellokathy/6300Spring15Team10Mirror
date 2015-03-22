@@ -137,8 +137,6 @@ public class SelectcustomerActivity extends Activity {
 				String email = cr.getString(cr.getColumnIndexOrThrow("email"));
 				String zip = cr.getString(cr.getColumnIndexOrThrow("zip"));
 				EditCustomer.setValues(firstName, lastName, zip, email, SelectedID);
-//				Log.d("Click received: ", "Selected ID set");
-//				Log.d("Selected ID: ", String.valueOf(SelectedID));
 				Intent launchactivity= new Intent(SelectcustomerActivity.this, EditCustomer.class);                             
 				startActivity(launchactivity);
 				}

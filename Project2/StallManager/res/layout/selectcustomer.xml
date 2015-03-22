@@ -37,7 +37,7 @@
         android:id="@+id/DeleBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/listView1"
+        android:layout_alignBottom="@+id/EditBtn"
         android:layout_toRightOf="@+id/EditBtn"
         android:onClick="DeletePressed"
         android:text="Delete" />

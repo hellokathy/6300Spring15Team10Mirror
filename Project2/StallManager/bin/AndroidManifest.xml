@@ -49,9 +49,9 @@
             android:name=".ViewTransactions"
             android:label="@string/title_activity_view_transactions" >
         </activity>
-                <activity
-            android:name=".AddTransaction"
-            android:label="@string/title_activity_view_transactions" >
+        <activity
+            android:name=".SelecttransActivity"
+            android:label="@string/title_activity_selecttrans" >
         </activity>
     </application>
 
