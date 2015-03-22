@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 	}
 	public void addTransactionPressed(View view){
 		SelectcustomerActivity.previousView = views.ADD_TRANSACTION;
-		Intent launchactivity = new Intent(ctx, SelecttransActivity.class);
+		Intent launchactivity = new Intent(ctx, AddTransaction.class);
 		startActivity(launchactivity);
 	}
 	
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 	}
 	public void viewTransactionsPressed(View view){
 		SelectcustomerActivity.previousView = views.VIEW_TRANSACTIONS;
-		Intent launchactivity = new Intent(ctx, SelecttransActivity.class);
+		Intent launchactivity = new Intent(ctx, ViewTransactions.class);
 		startActivity(launchactivity);
 	}
 }
