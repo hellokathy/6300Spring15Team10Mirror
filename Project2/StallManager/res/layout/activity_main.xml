@@ -16,11 +16,21 @@
         android:text="Add Customer" />
 
     <Button
+        android:id="@+id/addTransactionSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button01"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="58dp"
+        android:onClick="listOfCustomersPressed"
+        android:text="List Of Customers" />
+
+    <Button
         android:id="@+id/Button01"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/addTransactionSubmitButton"
         android:layout_alignLeft="@+id/editCustomer"
-        android:layout_centerVertical="true"
         android:onClick="getCustomerInfoPressed"
         android:text=" Get Customer Info " />
 
@@ -28,20 +38,20 @@
         android:id="@+id/editCustomer"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Button01"
         android:layout_alignLeft="@+id/addCustomer"
-        android:layout_marginBottom="25dp"
+        android:layout_below="@+id/addCustomer"
+        android:layout_marginTop="18dp"
         android:onClick="editCustomerPressed"
         android:text="Edit Customer" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/addTransactionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Button01"
-        android:layout_alignRight="@+id/Button01"
-        android:layout_below="@+id/Button01"
-        android:onClick="listOfCustomersPressed"
-        android:text="List Of Customers" />
+        android:layout_alignLeft="@+id/editCustomer"
+        android:layout_alignRight="@+id/editCustomer"
+        android:layout_centerVertical="true"
+        android:onClick="addTransactionPressed"
+        android:text="Add Transaction" />
 
 </RelativeLayout>

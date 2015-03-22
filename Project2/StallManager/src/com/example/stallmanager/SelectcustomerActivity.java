@@ -1,6 +1,6 @@
 package com.example.stallmanager;
 
-import edu.gatech.seclass.prj2.CustomerTableData.TableInfo;
+import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.prj2.DatabaseOperations;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,6 +13,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +31,8 @@ import android.widget.Toast;
 public class SelectcustomerActivity extends Activity {
 	private DatabaseOperations DB;
 	private SimpleCursorAdapter SCA = null;
+	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION};
+	public static views previousView;
 	Context ctx = this;
 	String SelectedID = "";
 	
@@ -71,13 +77,13 @@ public class SelectcustomerActivity extends Activity {
 	}
 
 	private void displayListView() {
-		Cursor cursor = DB.getInfo(DB);
+		Cursor cursor = DB.getCustomerInfo(DB);
 		String[] col = new String[] {
-				TableInfo.USER_ID,
-				TableInfo.FIRST_NAME,
-				TableInfo.LAST_NAME,
-				TableInfo.ZIP,
-				TableInfo.EMAIL
+				CustomerTableInfo.USER_ID,
+				CustomerTableInfo.FIRST_NAME,
+				CustomerTableInfo.LAST_NAME,
+				CustomerTableInfo.ZIP,
+				CustomerTableInfo.EMAIL
 		};
 
 		int[] to = new int[] {
@@ -98,8 +104,9 @@ public class SelectcustomerActivity extends Activity {
 		lv.setAdapter(SCA);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> lv, View v, int pos, long id) {
+				//Log.d("Click received: ", "Click received");
 				Cursor cr = (Cursor)lv.getItemAtPosition(pos);
-				SelectedID = cr.getString(cr.getColumnIndexOrThrow(TableInfo.USER_ID));
+				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
 			}
 		});
 		
@@ -118,7 +125,7 @@ public class SelectcustomerActivity extends Activity {
 		SCA.setFilterQueryProvider(new FilterQueryProvider() {
 			@Override
 			public Cursor runQuery(CharSequence constraint) {
-				return DB.getInfoByKey(TableInfo.LAST_NAME, constraint.toString());
+				return DB.getInfoByKey(CustomerTableInfo.LAST_NAME, constraint.toString());
 			}
 		});
 	}
