@@ -64,7 +64,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/submitEditCustomerButton"
+        android:id="@+id/submitGetCustomerInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/cName"
@@ -77,7 +77,7 @@
         android:id="@+id/returnGetCustomerInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/submitEditCustomerButton"
+        android:layout_alignLeft="@+id/submitGetCustomerInfoButton"
         android:layout_alignParentBottom="true"
         android:onClick="returnGetCustomerInfo"
         android:text="Return" />
