@@ -1,5 +1,7 @@
 package edu.gatech.seclass.prj2;
 
+import com.example.stallmanager.ViewTransactions;
+
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.prj2.TransactionTableData.TransactionTableInfo;
 import android.content.ContentValues;
@@ -120,6 +122,14 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		sqldb = dop.getReadableDatabase();
 		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
 		Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, null, null, null, null, TransactionTableInfo.DATE);
+		cr.moveToFirst();
+		return cr;
+	}
+	
+	public Cursor getTransactionInfo(DatabaseOperations dop, String acctnum) {
+		sqldb = dop.getReadableDatabase();
+		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
+		Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, "acctnum='" + ViewTransactions.acct + "'", null, null, null, TransactionTableInfo.DATE);
 		cr.moveToFirst();
 		return cr;
 	}

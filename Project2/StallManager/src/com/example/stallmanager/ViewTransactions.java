@@ -28,13 +28,14 @@ public class ViewTransactions extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_transactions);
 
+		Log.v("Current ID:", acct);
 		DB = new DatabaseOperations(ctx);
 		DB.open();
 		displayListView();
 	}
 
 	private void displayListView() {
-		Cursor cursor = DB.getTransactionInfo(DB);
+		Cursor cursor = DB.getTransactionInfo(DB, acct);
 		String[] col = new String[] {
 				TransactionTableInfo.DATE,
 				TransactionTableInfo.AMOUNT

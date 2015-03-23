@@ -3,6 +3,7 @@ package com.example.stallmanager;
 import edu.gatech.seclass.prj2.DatabaseOperations;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,6 +38,8 @@ public class AddTransaction extends Activity {
 				DB.EnterTransactionInfo(DB, amount, date, acct);
 				DB.close();
 				Toast.makeText(getBaseContext(), "Transaction added successfully", Toast.LENGTH_LONG).show();
+				Intent launchactivity = new Intent(ctx, MainActivity.class);
+				startActivity(launchactivity);
 				finish();
 			}
 		});

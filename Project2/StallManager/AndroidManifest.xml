@@ -49,9 +49,21 @@
             android:name=".ViewTransactions"
             android:label="@string/title_activity_view_transactions" >
         </activity>
+                <activity
+            android:name=".AddTransaction"
+            android:label="@string/title_activity_add_transaction" >
+        </activity>
         <activity
             android:name=".SelecttransActivity"
             android:label="@string/title_activity_selecttrans" >
+        </activity>
+        <activity
+            android:name=".SelectCustomerTransaction"
+            android:label="@string/title_activity_select_customer_transaction" >
+        </activity>
+        <activity
+            android:name=".SelectCustomerForTransactionActivity"
+            android:label="@string/title_activity_select_customer_for_transaction" >
         </activity>
     </application>
 
