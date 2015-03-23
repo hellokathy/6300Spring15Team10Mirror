@@ -19,9 +19,11 @@ Stall manager
 
 **Use Case:**
 -------------
-1. add customers
-2. edit/delete customers
-3. display customers’ information
-4. process payments
-5. display payments
-6. manage rewards
+Use Case                 | Steps                               
+-------------------------| ----------------------------------
+1.Add New Customer       | 1. Click "Add Customer"  2. enter new customer's information 3. Click "Submit"
+2. Edit customers        | 1. Click "Edit Customer"  2. enter the customer's last name 3. Click and choose the block you want to edit(the block will be highlighted) 4. Click "Edit" 5. enter customer's information 6. Click "Submit"
+3. Delete customers      | 1. Click "Edit Customer"  2. enter the customer's last name 3. Click and choose the block you want to edit(the block will be highlighted) 4. Click "Delete" 5. Click "Delete" on the confirmation page
+4. process payments      |
+5. display payments      |
+6. manage rewards        |

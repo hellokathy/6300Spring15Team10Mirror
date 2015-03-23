@@ -1,6 +1,6 @@
 package com.example.stallmanager;
 
-import com.example.stallmanager.SelecttransActivity.views;
+//import com.example.stallmanager.SelecttransActivity.view;
 
 import edu.gatech.seclass.prj2.Manager;
 import android.app.Activity;
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 		startActivity(launchactivity);
 	}
 	public void addTransactionPressed(View view){
-		SelecttransActivity.previousView = views.ADD_TRANSACTION;
+		//SelecttransActivity.previousView = views.ADD_TRANSACTION;
 		Intent launchactivity = new Intent(ctx, AddTransaction.class);
 		startActivity(launchactivity);
 	}
@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 		startActivity(launchactivity);
 	}
 	public void viewTransactionsPressed(View view){
-		SelecttransActivity.previousView = views.VIEW_TRANSACTIONS;
+		//SelecttransActivity.previousView = views.VIEW_TRANSACTIONS;
 		Intent launchactivity = new Intent(ctx, ViewTransactions.class);
 		startActivity(launchactivity);
 	}
