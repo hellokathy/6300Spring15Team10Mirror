@@ -31,9 +31,11 @@ import android.widget.Toast;
 public class SelectcustomerActivity extends Activity {
 	private DatabaseOperations DB;
 	private SimpleCursorAdapter SCA = null;
-	public enum views {EDIT_CUSTOMER, ADD_TRANSACTION, VIEW_TRANSACTIONS};
-	public static views previousView;
 	Context ctx = this;
+	String SelectedFN = "";
+	String SelectedLN = "";
+	String SelectedZIP = "";
+	String SelectedEML = "";
 	String SelectedID = "";
 	
 	@Override
@@ -70,9 +72,11 @@ public class SelectcustomerActivity extends Activity {
 	
 	public void EditPressed(View view) {
 		Intent launchactivity = new Intent(ctx, EditCustomer.class);
-		Bundle b = new Bundle();
-		b.putString("KEY", SelectedID);
-		launchactivity.putExtras(b);
+		EditCustomer.firstName = SelectedFN;
+		EditCustomer.lastName = SelectedLN;
+		EditCustomer.zip = SelectedZIP;
+		EditCustomer.email = SelectedEML;
+		EditCustomer.origID = SelectedID;
 		startActivity(launchactivity);
 	}
 
@@ -100,13 +104,16 @@ public class SelectcustomerActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		ListView lv = (ListView)findViewById(R.id.transactionList);
+		ListView lv = (ListView)findViewById(R.id.CustList);
 		lv.setAdapter(SCA);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> lv, View v, int pos, long id) {
 				//Log.d("Click received: ", "Click received");
 				Cursor cr = (Cursor)lv.getItemAtPosition(pos);
-
+				SelectedFN = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.FIRST_NAME));
+				SelectedLN = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.LAST_NAME));
+				SelectedZIP = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.ZIP));
+				SelectedEML = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.EMAIL));
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
 			}
 		});
@@ -127,34 +134,6 @@ public class SelectcustomerActivity extends Activity {
 			@Override
 			public Cursor runQuery(CharSequence constraint) {
 				return DB.getInfoByKey(CustomerTableInfo.LAST_NAME, constraint.toString());
-
-				//Log.d("Click received: ", "Cursor initialized");
-				/*SelectedID = cr.getString(cr.getColumnIndexOrThrow("acctnum"));
-				
-				if(previousView == views.EDIT_CUSTOMER){
-				String firstName = cr.getString(cr.getColumnIndexOrThrow("fname"));
-				String lastName = cr.getString(cr.getColumnIndexOrThrow("lname"));
-				String email = cr.getString(cr.getColumnIndexOrThrow("email"));
-				String zip = cr.getString(cr.getColumnIndexOrThrow("zip"));
-				EditCustomer.setValues(firstName, lastName, zip, email, SelectedID);
-				Intent launchactivity= new Intent(SelectcustomerActivity.this, EditCustomer.class);                             
-				startActivity(launchactivity);
-				}
-				
-				else if (previousView == views.ADD_TRANSACTION){
-					//Add transaction brought us here
-					AddTransaction.acct = SelectedID; 
-					Intent launchactivity= new Intent(SelectcustomerActivity.this, AddTransaction.class);                             
-					startActivity(launchactivity);
-				}
-				else if (previousView == views.VIEW_TRANSACTIONS){
-					//View transaction brought us here
-					ViewTransactions.acct = SelectedID;
-					Intent launchactivity= new Intent(SelectcustomerActivity.this, ViewTransactions.class);                             
-					startActivity(launchactivity);
-				}
-				finish();
->>>>>>> fcb9f99f2c3e0152be16aaa1874bb6ccba7ddf32*/
 			}
 		});
 	}

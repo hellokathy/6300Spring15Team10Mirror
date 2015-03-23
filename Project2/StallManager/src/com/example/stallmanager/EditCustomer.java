@@ -20,87 +20,55 @@ import android.widget.Toast;
 
 public class EditCustomer extends Activity {
 	Button Submit;
-	private static String firstName, lastName, zip, email, customerID;
+	public static String firstName, lastName, zip, email, customerID, origID;
 	Context ctx = this;
-	EditText FNAME, LNAME, ZIP, EMAIL, UID;
+	EditText FNAME, LNAME, ZIP, EMAIL, UID = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_customer);
-		DatabaseOperations DB = new DatabaseOperations(ctx);
 		
-		/*FNAME = (EditText)findViewById(R.id.firstNameText);
-		LNAME = (EditText)findViewById(R.id.lastNameText);
-		ZIP = (EditText)findViewById(R.id.zipCodeText);
-		EMAIL = (EditText)findViewById(R.id.emailText);
-		UID = (EditText)findViewById(R.id.customerID);
-		
-		Bundle b = getIntent().getExtras();
-		String ID = "";
-		if(b != null) {
-			ID = b.getString("KEY");
-		}*/
+		EditText FNAME = (EditText)findViewById(R.id.firstNameTextEdit);
+		EditText LNAME = (EditText)findViewById(R.id.lastNameTextEdit);
+		EditText ZIP = (EditText)findViewById(R.id.zipCodeTextEdit);
+		EditText EMAIL = (EditText)findViewById(R.id.emailTextEdit);
+		EditText UID = (EditText)findViewById(R.id.customerIDEdit);
+		customerID = origID;
 		
 		// Get customer info from DB and write to screen
-		/*Cursor c = DB.getInfoByKey(TableInfo.USER_ID, ID);
-		c.moveToFirst();
-		FNAME.setText(c.getString(1));
-		LNAME.setText(c.getString(2));
-		ZIP.setText(c.getString(3));
-		EMAIL.setText(c.getString(4));
-		UID.setText(c.getString(0));*/
-		//Fill in the text fields with the current information for the customer being edited
-		((EditText)findViewById(R.id.firstNameText)).setText(firstName);
-		((EditText)findViewById(R.id.lastNameText)).setText(lastName);
-		((EditText)findViewById(R.id.zipCodeText)).setText(zip);
-		((EditText)findViewById(R.id.emailText)).setText(email);
+		FNAME.setText(firstName);
+		LNAME.setText(lastName);
+		ZIP.setText(zip);
+		EMAIL.setText(email);
+		UID.setText(customerID);
 
-		Submit = (Button) findViewById(R.id.submitEditCustomerButton);
-
-		Log.d("Customer ID Edit: ", String.valueOf(customerID));
-		Log.d("Edit: ", "Waiting for click");
+		Submit = (Button) findViewById(R.id.editCustomerButton);
 		Submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// Get the information the user entered and create a new customer
-				/*firstName = FNAME.getText().toString();
-				lastName = LNAME.getText().toString();
-				zip = ZIP.getText().toString();
-				email = EMAIL.getText().toString();
-				customerID = UID.getText().toString();
-				Submit = (Button) findViewById(R.id.submitNewCustomerButton);
+				firstName = ((EditText)findViewById(R.id.firstNameTextEdit)).getText().toString();
+				lastName = ((EditText)findViewById(R.id.lastNameTextEdit)).getText().toString();
+				zip = ((EditText)findViewById(R.id.zipCodeTextEdit)).getText().toString();
+				email = ((EditText)findViewById(R.id.emailTextEdit)).getText().toString();
+				customerID = ((EditText)findViewById(R.id.customerIDEdit)).getText().toString();
 				
 				DatabaseOperations DB = new DatabaseOperations(ctx);
-				DB.deleteCustomer(DB, customerID);
-				DB.EnterInfo(DB, firstName, lastName, zip, email, customerID);
-				Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();*/
+				DB.deleteCustomer(DB, origID);
+				DB.EnterCustomerInfo(DB, firstName, lastName, zip, email, customerID);
+				Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
 				
-				Log.d("Edit: ", "Click received");
-				//Get the information the user entered and create a new customer
-				firstName = ((EditText)findViewById(R.id.firstNameText)).getText().toString();
-				lastName = ((EditText)findViewById(R.id.lastNameText)).getText().toString();
-				zip = ((EditText)findViewById(R.id.zipCodeText)).getText().toString();
-				email = ((EditText)findViewById(R.id.emailText)).getText().toString();
-				DatabaseOperations DB = new DatabaseOperations(ctx);
-				DB.EditCustomerInfo(DB, firstName, lastName, zip, email, customerID);
-				Toast.makeText(getBaseContext(), "Customer edited successfully", Toast.LENGTH_LONG).show();
-				finish();
+				setContentView(R.layout.activity_main);
+				Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);   
+				startActivity(launchactivity);
 			}
 		});
 	}
 
-	public void submitEditCustomerPressed(View view){
+	/*public void submitEditCustomerPressed(View view){
 		setContentView(R.layout.activity_main);
 		Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);   
-		startActivity(launchactivity);       
-	}
-	
-	public static void setValues(String fname, String lname, String Zip, String Email, String acct){
-		firstName = fname;
-		lastName = lname;
-		zip = Zip;
-		email = Email;
-		customerID = acct;
-	}
+		startActivity(launchactivity);
+	}*/
 }
