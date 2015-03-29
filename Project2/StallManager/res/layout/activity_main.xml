@@ -13,7 +13,7 @@
         android:layout_below="@+id/addCustomer"
         android:layout_marginTop="18dp"
         android:onClick="editCustomerPressed"
-        android:text="Edit Customer" />
+        android:text="View/Edit/Delete Customer" />
 
     <Button
         android:id="@+id/addCustomer"

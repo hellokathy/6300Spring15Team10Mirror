@@ -5,7 +5,7 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/transactionLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -18,8 +18,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/transactionLabel"
+        android:layout_below="@+id/transactionLabel"
         android:layout_marginTop="32dp"
         android:text="Date:" />
 
@@ -60,8 +60,18 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/amountText"
         android:layout_below="@+id/amountText"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="24dp"
-        android:text="Submit" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="75dp"
+        android:text="Submit" 
+        android:onClick="submitNewTransactionPressed"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/amountText"
+        android:layout_marginTop="18dp"
+        android:text="Please note: clicking &quot;Submit&quot; will scan the customer&apos;s credit card and process the payment" />
 
 </RelativeLayout>
