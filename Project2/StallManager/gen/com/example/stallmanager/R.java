@@ -87,7 +87,8 @@ public final class R {
         public static final int customer_layout=0x7f030007;
         public static final int selectcustomer=0x7f030008;
         public static final int selectcustomerfortransaction=0x7f030009;
-        public static final int transaction_layout=0x7f03000a;
+        public static final int selecttrans=0x7f03000a;
+        public static final int transaction_layout=0x7f03000b;
     }
     public static final class menu {
         public static final int list_of_customers=0x7f070000;
