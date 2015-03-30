@@ -31,6 +31,12 @@ public class AddTransaction extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_transaction);
 		
+	}
+	
+	public void submitNewTransactionPressed(View view){
+		//Get the information the user entered and create a new transaction
+		date = ((EditText)findViewById(R.id.dateText)).getText().toString();
+		amount = ((EditText)findViewById(R.id.amountText)).getText().toString();
 		
 		Submit = (Button) findViewById(R.id.addTransactionSubmitButton);
 		DateText = (EditText) findViewById(R.id.dateText);
@@ -42,7 +48,7 @@ public class AddTransaction extends Activity {
 				// Get dummy card info from service
 				String CCInfo = CreditCardService.getCardInfo();
 				if(CCInfo.equalsIgnoreCase("ERROR")) {
-					Toast.makeText(ctx, "Credit Card Reading error, please retry card...", Toast.LENGTH_LONG).show();
+					Toast.makeText(getBaseContext(), "Card scan failed, try again", Toast.LENGTH_LONG).show();
 				}
 				else {
 					CardInfo = CCInfo.split("#");
@@ -57,6 +63,8 @@ public class AddTransaction extends Activity {
 					if(paymentSuccess) {
 						// Add to DB
 						try {
+							// This is probably the point where we should figure out if the customer making a purchase
+						    // is eligible for any discounts
 							DatabaseOperations DB = new DatabaseOperations(ctx);
 							DB.EnterTransactionInfo(DB, amount, date, acct);
 							Toast.makeText(ctx, "Payment Successful", Toast.LENGTH_LONG).show();

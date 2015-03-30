@@ -1,5 +1,7 @@
 package com.example.stallmanager;
 
+import com.example.stallmanager.MainActivity;
+
 import edu.gatech.seclass.prj2.DatabaseOperations;
 import android.app.Activity;
 import android.content.Context;

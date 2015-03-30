@@ -26,13 +26,18 @@ import android.widget.EditText;
 import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SelectCustomerForTransactionActivity extends Activity {
 	private DatabaseOperations DB;
 	private SimpleCursorAdapter SCA = null;
+	
+	//Rather than have a separate XML for Add and View transactions, we simply keep track of which
+	//button brought us to the transaction list
 	public enum transactionViews{ADD_TRANSACTION, VIEW_TRANSACTIONS};
 	public static transactionViews prevView;
+	
 	Context ctx = this;
 	String SelectedFN = "";
 	String SelectedLN = "";
@@ -44,6 +49,15 @@ public class SelectCustomerForTransactionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.selectcustomerfortransaction);
+		
+		TextView title = (TextView)findViewById(R.id.transactionLabel);
+		
+		if(prevView == transactionViews.ADD_TRANSACTION){
+			title.setText("Choose the customer making a purchase:");
+		}
+		else if(prevView == transactionViews.VIEW_TRANSACTIONS){
+			title.setText("Choose a customer to view their transactions:");
+		}
 
 		DB = new DatabaseOperations(ctx);
 		DB.open();

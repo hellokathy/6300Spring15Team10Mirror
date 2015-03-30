@@ -2,6 +2,7 @@ package com.example.stallmanager;
 
 //import com.example.stallmanager.SelecttransActivity.view;
 
+import com.example.stallmanager.AddCustomer;
 import com.example.stallmanager.SelectCustomerForTransactionActivity.transactionViews;
 
 import edu.gatech.seclass.prj2.Manager;
