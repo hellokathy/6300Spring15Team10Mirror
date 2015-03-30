@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 public class CustomerTableData {
 	public CustomerTableData() { }
 	
-	public static abstract class CustomerTableInfo implements BaseColumns {
+	public static class CustomerTableInfo implements BaseColumns {
 		public static final String FIRST_NAME = "fname";
 		public static final String LAST_NAME = "lname";
 		public static final String ZIP = "zip";

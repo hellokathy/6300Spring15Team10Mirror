@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 public class TransactionTableData {
 	public TransactionTableData() { }
 	
-	public static abstract class TransactionTableInfo implements BaseColumns {
+	public static class TransactionTableInfo implements BaseColumns {
 		public static final String DATE = "date";
 		public static final String AMOUNT = "amount";
 		public static final String USER_ID = "acctnum";

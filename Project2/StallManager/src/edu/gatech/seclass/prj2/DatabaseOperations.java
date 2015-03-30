@@ -22,7 +22,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	private DatabaseOperations dbop;
 	private Context ctx;
 	private SQLiteDatabase sqldb;
-
+	
 	public DatabaseOperations(Context context) {
 		super(context, CustomerTableInfo.DATABASE_NAME, null, DB_Version);
 		this.ctx = context;

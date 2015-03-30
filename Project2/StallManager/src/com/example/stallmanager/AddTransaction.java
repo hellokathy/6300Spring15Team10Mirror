@@ -31,9 +31,6 @@ public class AddTransaction extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_transaction);
 		
-	}
-	
-	public void submitNewTransactionPressed(View view){
 		//Get the information the user entered and create a new transaction
 		date = ((EditText)findViewById(R.id.dateText)).getText().toString();
 		amount = ((EditText)findViewById(R.id.amountText)).getText().toString();
