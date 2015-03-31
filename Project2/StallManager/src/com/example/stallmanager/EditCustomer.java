@@ -55,8 +55,8 @@ public class EditCustomer extends Activity {
 				customerID = ((EditText)findViewById(R.id.customerIDEdit)).getText().toString();
 				
 				DatabaseOperations DB = new DatabaseOperations(ctx);
-				DB.deleteCustomer(DB, origID);
-				DB.EnterCustomerInfo(DB, firstName, lastName, zip, email, customerID);
+				//DB.deleteCustomer(DB, origID);
+				DB.EditCustomerInfo(DB, firstName, lastName, zip, email, customerID);
 				Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
 				
 				setContentView(R.layout.activity_main);

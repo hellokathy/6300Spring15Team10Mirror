@@ -16,7 +16,8 @@ import android.util.Log;
 public class DatabaseOperations extends SQLiteOpenHelper {
 	public static final int DB_Version = 1;
 	public String CreateCustomerQuery = "CREATE TABLE if not exists " + CustomerTableInfo.TABLE_NAME + "(" + CustomerTableInfo.FIRST_NAME + " TEXT," + CustomerTableInfo.LAST_NAME + " TEXT," + 
-			CustomerTableInfo.ZIP + " TEXT," + CustomerTableInfo.EMAIL + " TEXT," + CustomerTableInfo.USER_ID + " TEXT );";
+			CustomerTableInfo.ZIP + " TEXT," + CustomerTableInfo.EMAIL + " TEXT," + CustomerTableInfo.USER_ID + " TEXT," + CustomerTableInfo.GOLD_STATUS + " INTEGER," + 
+			CustomerTableInfo.TOTAL_SPENT + " REAL );";
 	public String CreateTransactionQuery = "CREATE TABLE if not exists " + TransactionTableInfo.TABLE_NAME + "(" + TransactionTableInfo.DATE + " TEXT," + TransactionTableInfo.AMOUNT + " TEXT," + 
 			CustomerTableInfo.USER_ID + " TEXT );";
 	private DatabaseOperations dbop;
@@ -61,6 +62,8 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		cv.put(CustomerTableInfo.ZIP, zip);
 		cv.put(CustomerTableInfo.EMAIL, email);
 		cv.put(CustomerTableInfo.USER_ID, acct);
+		cv.put(CustomerTableInfo.GOLD_STATUS, 0);
+		cv.put(CustomerTableInfo.TOTAL_SPENT, 0.00);
 
 		long success = sqldb.insert(CustomerTableInfo.TABLE_NAME, null, cv);
 
@@ -75,6 +78,20 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		cv.put(CustomerTableInfo.ZIP, zip);
 		cv.put(CustomerTableInfo.EMAIL, email);
 		cv.put(CustomerTableInfo.USER_ID, acct);
+
+		String selection = CustomerTableInfo.USER_ID + " = " + acct;
+
+		sqldb.update(CustomerTableInfo.TABLE_NAME, cv, selection, null);
+
+		Log.d("DataBase Operations", "Database Row Updated (Customer)");
+	}
+	
+	public void EditCustomerInfo(DatabaseOperations dop, String acct, double total, int gold) {
+		sqldb = dop.getWritableDatabase();
+		ContentValues cv = new ContentValues();
+		cv.put(CustomerTableInfo.USER_ID, acct);
+		cv.put(CustomerTableInfo.TOTAL_SPENT, total);
+		cv.put(CustomerTableInfo.GOLD_STATUS, gold);
 
 		String selection = CustomerTableInfo.USER_ID + " = " + acct;
 

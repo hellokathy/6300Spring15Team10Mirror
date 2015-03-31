@@ -11,6 +11,8 @@ public class CustomerTableData {
 		public static final String ZIP = "zip";
 		public static final String EMAIL = "email";
 		public static final String USER_ID = "acctnum";
+		public static final String GOLD_STATUS = "isGold";
+		public static final String TOTAL_SPENT = "totalspent";
 		public static final String DATABASE_NAME = "StallManagerTest2.db";
 		public static final String TABLE_NAME = "CustomerTable";
 	}
