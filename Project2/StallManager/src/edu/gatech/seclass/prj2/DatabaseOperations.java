@@ -48,6 +48,17 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		this.dbop = new DatabaseOperations(ctx);
 		return this;
 	}
+	
+	public int count(DatabaseOperations dop, String table) {
+		sqldb = dop.getReadableDatabase();
+		Cursor cr = sqldb.rawQuery("SELECT * FROM " + table, null);
+		if (cr.getCount() ==0) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
 
 	public void deleteCustomer(DatabaseOperations dop, String ID) {
 		sqldb = dop.getWritableDatabase();
@@ -124,6 +135,16 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		if(cr != null) {
 			cr.moveToFirst();
 		}
+		return cr;
+	}
+	
+	public Cursor getLargestAcctnum(DatabaseOperations dop) {
+		sqldb = dop.getReadableDatabase();
+		Cursor cr = null;
+		String[] col = {"rowid _id", CustomerTableInfo.FIRST_NAME,CustomerTableInfo.LAST_NAME,CustomerTableInfo.ZIP,CustomerTableInfo.EMAIL,
+				CustomerTableInfo.USER_ID,CustomerTableInfo.GOLD_STATUS,CustomerTableInfo.TOTAL_SPENT};
+		cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, null, null, null, null, CustomerTableInfo.USER_ID);
+		cr.moveToLast();
 		return cr;
 	}
 
