@@ -71,9 +71,9 @@ public class SelectCustomerForTransactionActivity extends Activity {
 			startActivity(launchactivity);
 		}
 		else if (prevView == transactionViews.VIEW_TRANSACTIONS){
-		ViewTransactions.acct = SelectedID;
-		Intent launchactivity = new Intent(ctx, ViewTransactions.class);
-		startActivity(launchactivity);
+			ViewTransactions.acct = SelectedID;
+			Intent launchactivity = new Intent(ctx, ViewTransactions.class);
+			startActivity(launchactivity);
 		}
 	}
 
@@ -130,7 +130,7 @@ public class SelectCustomerForTransactionActivity extends Activity {
 		SCA.setFilterQueryProvider(new FilterQueryProvider() {
 			@Override
 			public Cursor runQuery(CharSequence constraint) {
-				return DB.getInfoByKey(CustomerTableInfo.LAST_NAME, constraint.toString());
+				return DB.getInfoByKey(DB, CustomerTableInfo.LAST_NAME, constraint.toString());
 			}
 		});
 	}

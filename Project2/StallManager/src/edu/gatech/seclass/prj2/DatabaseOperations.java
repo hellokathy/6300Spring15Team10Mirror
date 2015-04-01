@@ -12,6 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 public class DatabaseOperations extends SQLiteOpenHelper {
 	public static final int DB_Version = 1;
@@ -108,14 +109,17 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		return cr;
 	}
 
-	public Cursor getInfoByKey(String searched, String query) throws SQLException {
+	public Cursor getInfoByKey(DatabaseOperations dop, String searched, String query) throws SQLException {
+		sqldb = dop.getReadableDatabase();
 		Cursor cr = null;
-		String[] col = {"rowid _id", CustomerTableInfo.USER_ID,CustomerTableInfo.FIRST_NAME,CustomerTableInfo.LAST_NAME,CustomerTableInfo.ZIP,CustomerTableInfo.EMAIL};
+		String[] col = {"rowid _id", CustomerTableInfo.FIRST_NAME,CustomerTableInfo.LAST_NAME,CustomerTableInfo.ZIP,CustomerTableInfo.EMAIL,
+				CustomerTableInfo.USER_ID,CustomerTableInfo.GOLD_STATUS,CustomerTableInfo.TOTAL_SPENT};
 		if(query == null || query.length() == 0 || searched == null || searched.length() == 0) {
 			cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, null, null, null, null, CustomerTableInfo.LAST_NAME);
 		}
 		else {
-			cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, searched + " like '%" + query + "%'", null, null, null, CustomerTableInfo.LAST_NAME);
+			//cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, searched + " like '%" + query + "%'", null, null, null, CustomerTableInfo.LAST_NAME);
+			cr = sqldb.query(CustomerTableInfo.TABLE_NAME, col, searched + " LIKE ?", new String[] {query}, null, null, CustomerTableInfo.LAST_NAME);
 		}
 		if(cr != null) {
 			cr.moveToFirst();
@@ -130,7 +134,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		cv.put(TransactionTableInfo.DATE, date);
 		cv.put(TransactionTableInfo.USER_ID, acct);
 
-		long success = sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);
+		sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);
 
 		Log.d("DataBase Operations", "Database Row Inserted (Transaction)");
 	}

@@ -8,11 +8,13 @@ import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.prj2.DatabaseOperations;
 import edu.gatech.seclass.services.CreditCardService;
 import edu.gatech.seclass.services.PaymentService;
+import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +35,6 @@ public class AddTransaction extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_transaction);
-
 		//Get the information the user entered and create a new transaction
 		date = ((EditText)findViewById(R.id.dateText)).getText().toString();
 		amount = ((EditText)findViewById(R.id.amountText)).getText().toString();
@@ -66,9 +67,11 @@ public class AddTransaction extends Activity {
 							// This is probably the point where we should figure out if the customer making a purchase
 							// is eligible for any discounts
 							DatabaseOperations DB = new DatabaseOperations(ctx);
-							Cursor c = DB.getInfoByKey(CustomerTableInfo.USER_ID, acct);
-							int isGoldInt = c.getInt(5);
-							double total = c.getDouble(6);
+							Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, acct);
+							int gdex = c.getColumnIndex(CustomerTableInfo.GOLD_STATUS);
+							int tdex = c.getColumnIndex(CustomerTableInfo.TOTAL_SPENT);
+							int isGoldInt = c.getInt(gdex);
+							double total = c.getDouble(tdex);
 							boolean isGold = isGoldInt != 0;
 							
 							if( isGold ) {

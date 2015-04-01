@@ -133,7 +133,7 @@ public class SelectcustomerActivity extends Activity {
 		SCA.setFilterQueryProvider(new FilterQueryProvider() {
 			@Override
 			public Cursor runQuery(CharSequence constraint) {
-				return DB.getInfoByKey(CustomerTableInfo.LAST_NAME, constraint.toString());
+				return DB.getInfoByKey(DB, CustomerTableInfo.LAST_NAME, constraint.toString());
 			}
 		});
 	}
