@@ -47,28 +47,25 @@ public class EditCustomer extends Activity {
 		Submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				DatabaseOperations DB = new DatabaseOperations(ctx);
+				
 				// Get the information the user entered and create a new customer
 				firstName = ((EditText)findViewById(R.id.firstNameTextEdit)).getText().toString();
 				lastName = ((EditText)findViewById(R.id.lastNameTextEdit)).getText().toString();
 				zip = ((EditText)findViewById(R.id.zipCodeTextEdit)).getText().toString();
 				email = ((EditText)findViewById(R.id.emailTextEdit)).getText().toString();
 				customerID = ((EditText)findViewById(R.id.customerIDEdit)).getText().toString();
-				
-				DatabaseOperations DB = new DatabaseOperations(ctx);
-				//DB.deleteCustomer(DB, origID);
-				DB.EditCustomerInfo(DB, firstName, lastName, zip, email, customerID);
-				Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
-				
-				setContentView(R.layout.activity_main);
-				Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);   
-				startActivity(launchactivity);
+
+				Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, customerID);
+				if( !(c.moveToFirst()) || (customerID.equals(origID)) ) {
+					DB.EditCustomerInfo(DB, firstName, lastName, zip, email, customerID);
+					Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
+					finish();
+				}
+				else {
+					Toast.makeText(getBaseContext(), "User ID already exists, please choose another", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 	}
-
-	/*public void submitEditCustomerPressed(View view){
-		setContentView(R.layout.activity_main);
-		Intent launchactivity= new Intent(EditCustomer.this, MainActivity.class);   
-		startActivity(launchactivity);
-	}*/
 }

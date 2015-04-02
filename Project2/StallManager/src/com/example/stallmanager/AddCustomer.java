@@ -30,18 +30,12 @@ public class AddCustomer extends Activity {
 		Submit = (Button) findViewById(R.id.submitNewCustomerButton);
 
 		DB = new DatabaseOperations(ctx);
-		int cnt = DB.count(DB, CustomerTableInfo.TABLE_NAME);
-		if ( cnt > 0 ) {
-			Cursor cr = DB.getLargestAcctnum(DB);
-			if( !(cr.moveToLast()) ) {
-				int dex = cr.getColumnIndex(CustomerTableInfo.USER_ID);
-				String largestAcct = cr.getString(dex);
-				int intLA = Integer.parseInt(largestAcct);
-				Acct.setText(Integer.toString(intLA + 1));
-			}
-			else {
-				Acct.setText("1");
-			}
+		Cursor cr = DB.getLargestAcctnum(DB);
+		if( (cr.moveToLast()) ) {
+			int dex = cr.getColumnIndex(CustomerTableInfo.USER_ID);
+			String largestAcct = cr.getString(dex);
+			int intLA = Integer.parseInt(largestAcct);
+			Acct.setText(Integer.toString(intLA + 1));
 		}
 		else {
 			Acct.setText("1");
