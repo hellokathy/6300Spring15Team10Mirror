@@ -118,6 +118,9 @@ public class AddTransaction extends Activity {
 								
 								if(amt >= 100){
 									//Customer spent at least $100, so they get a $10 discount next time
+									EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
+									"receive a $10 credit which will be automatically applied to your next purchase.");
+									
 									discount += 10;
 								}
 								
