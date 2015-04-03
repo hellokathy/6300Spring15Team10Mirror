@@ -40,7 +40,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/discountBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView4"
@@ -78,7 +78,7 @@
         android:id="@+id/zip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView5"
+        android:layout_above="@+id/discountBalance"
         android:layout_toRightOf="@+id/textView4"
         android:layout_alignLeft="@+id/fname"
         android:text="TextView" />
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
-        android:layout_toRightOf="@+id/textView5"
+        android:layout_toRightOf="@+id/discountBalance"
         android:layout_alignLeft="@+id/fname"
         android:text="TextView" />
     

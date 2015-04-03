@@ -1,7 +1,6 @@
 package com.example.stallmanager;
 
 import edu.gatech.seclass.prj2.DatabaseOperations;
-import edu.gatech.seclass.prj2.Manager;
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import android.annotation.SuppressLint;
 import android.app.Activity;

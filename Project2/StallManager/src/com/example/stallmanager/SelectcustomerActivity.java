@@ -37,6 +37,7 @@ public class SelectcustomerActivity extends Activity {
 	String SelectedZIP = "";
 	String SelectedEML = "";
 	String SelectedID = "";
+	String SelectedDISCOUNT = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +116,7 @@ public class SelectcustomerActivity extends Activity {
 				SelectedZIP = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.ZIP));
 				SelectedEML = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.EMAIL));
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
+				SelectedDISCOUNT = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.DISCOUNT));
 			}
 		});
 		

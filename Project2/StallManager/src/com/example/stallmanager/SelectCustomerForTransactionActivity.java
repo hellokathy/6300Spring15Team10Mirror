@@ -67,6 +67,7 @@ public class SelectCustomerForTransactionActivity extends Activity {
 	public void selectPressed(View view) {
 		if(prevView == transactionViews.ADD_TRANSACTION){
 			AddTransaction.acct = SelectedID;
+			AddTransaction.email = SelectedEML;
 			Intent launchactivity = new Intent(ctx, AddTransaction.class);
 			startActivity(launchactivity);
 		}

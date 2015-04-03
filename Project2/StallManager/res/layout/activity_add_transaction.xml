@@ -23,26 +23,33 @@
         android:layout_marginTop="32dp"
         android:text="Date:" />
 
+    <EditText
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="date" />
+
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="40dp"
+        android:layout_below="@+id/dateText"
+        android:layout_marginTop="20dp"
         android:text="Amount:" />
 
-    <EditText
-        android:id="@+id/dateText"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/date"
-        android:ems="10"
-        android:inputType="date" >
-
-        <requestFocus />
-    </EditText>
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="18dp"
+        android:text="Please note: clicking &quot;Submit&quot; will scan the customer&apos;s credit card and process the payment" />
 
     <EditText
         android:id="@+id/amountText"
@@ -50,28 +57,39 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/date"
         android:layout_alignBottom="@+id/date"
-        android:layout_alignLeft="@+id/dateText"
+        android:layout_alignParentRight="true"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/addTransactionSubmitButton"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/amountText"
-        android:layout_below="@+id/amountText"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="75dp"
-        android:text="Submit" 
-        android:onClick="submitNewTransactionPressed"/>
+        android:layout_below="@+id/textView3"
+        android:onClick="submitNewTransactionPressed"
+        android:text="Submit" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/date"
         android:layout_below="@+id/amountText"
-        android:layout_marginTop="18dp"
-        android:text="Please note: clicking &quot;Submit&quot; will scan the customer&apos;s credit card and process the payment" />
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/amountText"
+        android:text="Discount:" />
+
+    <TextView
+        android:id="@+id/discountBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignLeft="@+id/amountText"
+        android:text="0.00" />
 
 </RelativeLayout>

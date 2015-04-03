@@ -3,7 +3,6 @@ package com.example.stallmanager;
 import com.example.stallmanager.AddCustomer;
 import com.example.stallmanager.SelectCustomerForTransactionActivity.transactionViews;
 
-import edu.gatech.seclass.prj2.Manager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -41,10 +40,6 @@ public class MainActivity extends Activity {
 	
 	public void getCustomerInfoPressed(View view){
 		Intent launchactivity = new Intent(ctx, GetCustomerInfo.class);
-		startActivity(launchactivity);
-	}
-	public void listOfCustomersPressed(View view){
-		Intent launchactivity = new Intent(ctx, ListOfCustomers.class);
 		startActivity(launchactivity);
 	}
 	public void viewTransactionsPressed(View view){
