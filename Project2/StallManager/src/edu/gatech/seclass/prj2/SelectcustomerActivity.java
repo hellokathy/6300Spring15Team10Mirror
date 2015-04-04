@@ -78,6 +78,7 @@ public class SelectcustomerActivity extends Activity {
 		EditCustomer.email = SelectedEML;
 		EditCustomer.origID = SelectedID;
 		startActivity(launchactivity);
+		finish();
 	}
 
 	private void displayListView() {
@@ -115,7 +116,7 @@ public class SelectcustomerActivity extends Activity {
 				SelectedZIP = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.ZIP));
 				SelectedEML = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.EMAIL));
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
-				SelectedDISCOUNT = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.DISCOUNT));
+				//SelectedDISCOUNT = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.DISCOUNT));
 			}
 		});
 		

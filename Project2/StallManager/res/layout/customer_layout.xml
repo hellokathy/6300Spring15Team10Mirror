@@ -31,7 +31,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
  
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/goldApplied"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/date"
@@ -43,8 +43,8 @@
         android:id="@+id/discountBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/goldApplied"
+        android:layout_below="@+id/goldApplied"
         android:text="Email: "
         android:textAppearance="?android:attr/textAppearanceMedium" />
  
@@ -69,7 +69,7 @@
         android:id="@+id/lname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
+        android:layout_above="@+id/goldApplied"
         android:layout_toRightOf="@+id/date"
         android:layout_alignLeft="@+id/fname"
         android:text="TextView" />
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/discountBalance"
-        android:layout_toRightOf="@+id/textView4"
+        android:layout_toRightOf="@+id/goldApplied"
         android:layout_alignLeft="@+id/fname"
         android:text="TextView" />
 
@@ -87,7 +87,7 @@
         android:id="@+id/mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/goldApplied"
         android:layout_toRightOf="@+id/discountBalance"
         android:layout_alignLeft="@+id/fname"
         android:text="TextView" />

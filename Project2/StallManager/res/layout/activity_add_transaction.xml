@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/goldApplied"
         android:layout_marginTop="18dp"
         android:text="Please note: clicking &quot;Submit&quot; will scan the customer&apos;s credit card and process the payment" />
 
@@ -74,7 +74,7 @@
         android:text="Submit" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/goldApplied"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/date"
@@ -87,8 +87,8 @@
         android:id="@+id/discountBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignBaseline="@+id/goldApplied"
+        android:layout_alignBottom="@+id/goldApplied"
         android:layout_alignLeft="@+id/amountText"
         android:text="0.00" />
 
