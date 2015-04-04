@@ -5,36 +5,7 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/transactionLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:text="Please enter the Customer ID:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/TextView04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/transactionLabel"
-        android:layout_marginTop="36dp"
-        android:text="Customer ID"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/customerID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/TextView04"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/cName"
+        android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -44,42 +15,93 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/Zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Name"
+        android:layout_below="@+id/Name"
+        android:layout_marginTop="16dp"
+        android:text="Zip:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Zip"
+        android:layout_below="@+id/Zip"
+        android:layout_marginTop="16dp"
+        android:text="Email:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/transactionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Please enter the Customer ID:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/customerID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transactionLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/submitGetCustomerInfoButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/customerID"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/Name"
+        android:onClick="submitGetCustomerInfoPressed"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/returnGetCustomerInfo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/submitGetCustomerInfoButton"
+        android:layout_marginBottom="26dp"
+        android:onClick="returnGetCustomerInfo"
+        android:text="Return" />
+
+    <TextView
+        android:id="@+id/cName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Name"
+        android:layout_alignBottom="@+id/Name"
+        android:layout_alignLeft="@+id/submitGetCustomerInfoButton"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
         android:id="@+id/cZip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/Email"
         android:layout_alignLeft="@+id/cName"
-        android:layout_below="@+id/cName"
-        android:layout_marginTop="16dp"
-        android:text="Zip:"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/cEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Email"
+        android:layout_alignBottom="@+id/Email"
         android:layout_alignLeft="@+id/cZip"
-        android:layout_below="@+id/cZip"
-        android:layout_marginTop="16dp"
-        android:text="Email:"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/submitGetCustomerInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/cName"
-        android:layout_alignLeft="@+id/customerID"
-        android:layout_marginBottom="21dp"
-        android:onClick="submitGetCustomerInfoPressed"
-        android:text="Submit" />
-
-    <Button
-        android:id="@+id/returnGetCustomerInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/submitGetCustomerInfoButton"
-        android:layout_alignParentBottom="true"
-        android:onClick="returnGetCustomerInfo"
-        android:text="Return" />
         
 </RelativeLayout>

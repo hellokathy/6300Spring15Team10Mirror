@@ -16,7 +16,6 @@ public class GetCustomerInfo extends Activity {
 	Button Submit;
 	private TextView myTextView;
 	Context ctx = this;
-
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +33,36 @@ public class GetCustomerInfo extends Activity {
 				cursor.moveToFirst();
 					do{
 					String customerID=cursor.getString(cursor.getColumnIndex("acctnum"));
-					if(inquiryID.equals(customerID)){
+					if(customerID.equals("")){
+						Toast.makeText(getBaseContext(), "Please enter customer ID!", Toast.LENGTH_LONG).show();
+						return;
+					}
+					else if(inquiryID.equals(customerID)){
 						String fname=cursor.getString(cursor.getColumnIndex("fname"));
 						String lname=cursor.getString(cursor.getColumnIndex("lname"));
 						String zip=cursor.getString(cursor.getColumnIndex("zip"));
 						String email=cursor.getString(cursor.getColumnIndex("email"));
 						
 						myTextView=(TextView)findViewById(R.id.cName);
-						myTextView.setText("Name: "+fname+" "+lname);
+						myTextView.setText(fname+" "+lname);
 						myTextView=(TextView)findViewById(R.id.cZip);
-						myTextView.setText("Zip: "+zip);		
+						myTextView.setText(zip);		
 						myTextView=(TextView)findViewById(R.id.cEmail);
- 						myTextView.setText("Email: "+email);	
+ 						myTextView.setText(email);	
  						DB.close();
  						Toast.makeText(getBaseContext(), "Customer found successfully!", Toast.LENGTH_LONG).show();
  						return;
 					}
-					else{
-						myTextView=(TextView)findViewById(R.id.cName);
-						myTextView.setText("Name: ");
-						myTextView=(TextView)findViewById(R.id.cZip);
-						myTextView.setText("Zip: ");		
-						myTextView=(TextView)findViewById(R.id.cEmail);
- 						myTextView.setText("Email: ");	
-					}
 				}while(cursor.moveToNext());
+					myTextView=(TextView)findViewById(R.id.cName);
+					myTextView.setText("");
+					myTextView=(TextView)findViewById(R.id.cZip);
+					myTextView.setText("");		
+					myTextView=(TextView)findViewById(R.id.cEmail);
+					myTextView.setText("");	
 					DB.close();
 					Toast.makeText(getBaseContext(), "Customer NOT found!", Toast.LENGTH_LONG).show();
+					return;
 			}
 		});
 	}	     
