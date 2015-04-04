@@ -50,12 +50,16 @@ public class ViewTransactions extends Activity {
 		Cursor cursor = DB.getTransactionInfo(DB, acct);
 		String[] col = new String[] {
 				TransactionTableInfo.DATE,
-				TransactionTableInfo.AMOUNT
+				TransactionTableInfo.AMOUNT,
+				TransactionTableInfo.GOLD_STATUS,
+				TransactionTableInfo.DISCOUNT_USED
 		};
 
 		int[] to = new int[] {
 				R.id.date,
 				R.id.amount,
+				R.id.goldApplied,
+				R.id.regApplied
 		};
 
 		SimpleCursorAdapter SCA = null;

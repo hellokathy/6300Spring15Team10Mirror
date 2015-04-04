@@ -71,16 +71,16 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		Log.d("DataBase Operations", "Database Row Inserted (Customer)");
 	}
 
-	public void EditCustomerInfo(DatabaseOperations dop, String fname, String lname, String zip, String email, String acct) {
+	public void EditCustomerInfo(DatabaseOperations dop, String fname, String lname, String zip, String email, String oldAcct, String newAcct) {
 		sqldb = dop.getWritableDatabase();
 		ContentValues cv = new ContentValues();
 		cv.put(CustomerTableInfo.FIRST_NAME, fname);
 		cv.put(CustomerTableInfo.LAST_NAME, lname);
 		cv.put(CustomerTableInfo.ZIP, zip);
 		cv.put(CustomerTableInfo.EMAIL, email);
-		cv.put(CustomerTableInfo.USER_ID, acct);
+		cv.put(CustomerTableInfo.USER_ID, newAcct);
 
-		String selection = CustomerTableInfo.USER_ID + " = " + acct;
+		String selection = CustomerTableInfo.USER_ID + " = " + oldAcct;
 
 		sqldb.update(CustomerTableInfo.TABLE_NAME, cv, selection, null);
 
@@ -138,13 +138,13 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		return cr;
 	}
 
-	public void EnterTransactionInfo(DatabaseOperations dop, String amount, String date, String acct, int isGold, double discount) {
+	public void EnterTransactionInfo(DatabaseOperations dop, String amount, String date, String acct, double goldDiscount, double discount) {
 		sqldb = dop.getWritableDatabase();
 		ContentValues cv = new ContentValues();
 		cv.put(TransactionTableInfo.AMOUNT, amount);
 		cv.put(TransactionTableInfo.DATE, date);
 		cv.put(TransactionTableInfo.USER_ID, acct);
-		cv.put(TransactionTableInfo.GOLD_STATUS, isGold);
+		cv.put(TransactionTableInfo.GOLD_STATUS, goldDiscount);
 		cv.put(TransactionTableInfo.DISCOUNT_USED, discount);
 
 		sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);

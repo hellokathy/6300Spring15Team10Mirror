@@ -31,7 +31,8 @@ public class GetCustomerInfo extends Activity {
 				DatabaseOperations DB = new DatabaseOperations(ctx);
 				Cursor cursor=DB.getCustomerInfo(DB);
 				String inquiryID = ((EditText)findViewById(R.id.customerID)).getText().toString();
-				while(cursor.moveToNext()){
+				cursor.moveToFirst();
+					do{
 					String customerID=cursor.getString(cursor.getColumnIndex("acctnum"));
 					if(inquiryID.equals(customerID)){
 						String fname=cursor.getString(cursor.getColumnIndex("fname"));
@@ -57,7 +58,7 @@ public class GetCustomerInfo extends Activity {
 						myTextView=(TextView)findViewById(R.id.cEmail);
  						myTextView.setText("Email: ");	
 					}
-				}		
+				}while(cursor.moveToNext());
 					DB.close();
 					Toast.makeText(getBaseContext(), "Customer NOT found!", Toast.LENGTH_LONG).show();
 			}
@@ -66,7 +67,7 @@ public class GetCustomerInfo extends Activity {
 	
 	public void returnGetCustomerInfo(View view){		
 		//Switch back to the main view
-		setContentView(R.layout.activity_main);
+		//setContentView(R.layout.activity_main);
 		Intent launchactivity= new Intent(GetCustomerInfo.this, MainActivity.class);   
 		startActivity(launchactivity);       
 	}
