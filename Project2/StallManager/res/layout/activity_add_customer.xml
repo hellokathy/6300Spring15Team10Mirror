@@ -12,7 +12,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="30dp"
         android:text="Please enter the new customer&apos;s information:"
-        android:textAppearance="?android:attr/textAppearanceMedium" /><TextView
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,17 +91,6 @@
         android:ems="10"
         android:inputType="number" />
 
-
-    <Button
-        android:id="@+id/submitNewCustomerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/emailText"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="36dp"
-        android:onClick="submitNewCustomerPressed"
-        android:text="Submit" />
-
     <TextView
         android:id="@+id/TextView04"
         android:layout_width="wrap_content"
@@ -118,5 +109,24 @@
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="number" />
+
+    <Button
+        android:id="@+id/submitNewCustomerButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView04"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/TextView01"
+        android:onClick="submitNewCustomerPressed"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/addCustomerReturnButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/submitNewCustomerButton"
+        android:layout_below="@+id/submitNewCustomerButton"
+        android:onClick="addCustomerReturnPressed"
+        android:text="Return" />
 
 </RelativeLayout>
