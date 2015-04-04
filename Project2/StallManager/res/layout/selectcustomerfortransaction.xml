@@ -12,16 +12,6 @@
         android:choiceMode="singleChoice"
         android:listSelector="#FFA500" />
 
-    <Button
-        android:id="@+id/selectButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Search"
-        android:layout_below="@+id/transactionLabel"
-        android:layout_toRightOf="@+id/Search"
-        android:onClick="selectPressed"
-        android:text="Select" />
-
     <TextView
         android:id="@+id/transactionLabel"
         android:layout_width="wrap_content"
@@ -35,11 +25,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/transactionLabel"
-        android:ems="10"
-        android:gravity="center_horizontal"
+
+
         android:hint="Last Name Search" >
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/selectButton"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/Search"
+        android:layout_alignBottom="@+id/Search"
+        android:layout_toLeftOf="@+id/ReturnBtn"
+        android:onClick="selectPressed"
+        android:text="Select" />
+
+    <Button
+        android:id="@+id/ReturnBtn"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/selectButton"
+        android:layout_alignBottom="@+id/selectButton"
+        android:layout_alignParentRight="true"
+        android:onClick="ReturnPressed"
+        android:text="Return" />
 
 </RelativeLayout>

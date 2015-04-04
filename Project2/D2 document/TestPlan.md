@@ -39,21 +39,26 @@ We will use JUnit to build the tests.
 
 TestCase| Purpose             | Test                                                   |ExpectedResult                      |ActualResult             
 --------| --------------------|--------------------------------------------------------|------------------------------------|------------
-1.      | TestAddCustomer1    | addCustomerTest::onCreateTest                          | display a new screen that people can enter information| same as expected   
-2.      | TestAddCustomer2    | addCustomerTest::submitNewCustomerPressedTest          | add a new customer to the data base | same as expected    
-3.      | TestAddCustomer3    | (1)MGR.enInfo(null) (2)MGR.add()                       | WARNING:No information entered!                
-4.      | TestAddCustomer4    | (1)MGR.enInfo(invalidInfo) (2)MGR.add()                | WARNING:Invalid customer information!
-5.      | TestEditCustomer1   | editCustomerTest::onCreateTest0X;                      | update customer information| same as expected 
-6.      | TestEditCustomer1   | SelectcustomerActivity::onCreateTest0X;                | display all customers's information| same as expected 
-7.      | TestEditCustomer3   | SelectcustomerActivity::editPressedTest0X;             | display a new screen that people can enter new information| same as expected 
-8.      | TestEditCustomer2   | (1)MGR.seCust(cusID) (2)MGR.edit(null) (3)MGR.save()   | WARNING:Nothing changed!
-9.      | TestEditCustomer4   | (1)MGR.seCust(cusID) (2)MGR.save()                     | WARNING:Nothing changed!
-10.     | TestEditCustomer5   | (1)MGR.save()                                          | WARNING:Nothing changed!
-11.     | TestDeleteCustomer  | SelectcustomerActivity::DeletePressedTest              | delete the selected customer's information| same as expected 
-12.     | TestNewTransaction1 | (1)MGR.newT() (2)MGR.enInfo(info) (3)MGR.process()     | System creates a new transaction
-13.     | TestNewTransaction2 | (1)MGR.newT() (2)MGR.enInfo(null) (3)MGR.process()     | WARNING:Invalid transaction information!
-14.     | TestNewTransaction3 | (1)MGR.newT() (2)MGR.process()                         | WARNING:Please enter transaction information!
-15.     | TestNewTransaction4 | (1)MGR.process()                                       | WARNING:Please first open a new transaction!
-16.     | TestPastPurchases1  | (1)MGR.pastPur() (2)MGR.select(cusID)                  | system show a list of all past purchases of that custID
-17.     | TestPastPurchases2  | (1)MGR.pastPur() (2)MGR.select(null)                   | WARNING:No customer is selected!
-18.     | TestPastPurchases3  | (1)MGR.pastPur() (2)MGR.select(wrongID)                | WARNING:Selected customer not exist!
+1.      | TestAddCustomer1    | Click "Add Customer"                         | Display a new screen that people can enter information| same as expected   
+2.      | TestAddCustomer2    | Click "Add Customer" -> Click "return"       | Display the home screen | same as expected    
+3.      | TestAddCustomer3    | Click "Add Customer" -> Click "Submit"       | Notice: please enter information| same as expected 
+4.      | TestAddCustomer4    | Click "Add Customer" -> Enter partial information -> Click "Submit"                       | Notice: some information is missing| same as expected              
+5.      | TestAddCustomer5    | Click "Add Customer" -> Enter all information -> Click "Submit"                | Successfully added a customer to the database | same as expected 
+6.      | TestViewCustomer1   | Click "View/Edit/Delete Customer"             | Display a new screen that shows all customer's information| same as expected 
+7.      | TestViewCustomer2   | Click "View/Edit/Delete Customer" -> Enter a customer's last name          | Display a list of customer with the same last name| same as expected 
+8.      | TestViewCustomer3   | Click "View/Edit/Delete Customer" -> Enter an invalid string or a last name that does not exist in the database          | Display nothing| same as expected 
+9.      | TestEditCustomer1   | Click "View/Edit/Delete Customer" -> Click "Edit"      | Notice: please choose a customer | same as expected 
+10.      | TestEditCustomer2   | Click "View/Edit/Delete Customer" -> Choose a customer -> Click "Edit"             | Display a new screen that people can edit this customer's information| same as expected 
+11.      | TestEditCustomer3   | Click "View/Edit/Delete Customer" -> Choose a customer -> Click "Edit"-> Edit the information -> Click "Submit"             | Successfully edited a customer's information in the database| same as expected
+12.     | TestEditCustomer4  | Click "View/Edit/Delete Customer" -> Choose a customer -> Click "Edit"-> Edit the information(removed the name) -> Click "Submit"   | Notice: Invalid name!| No notice
+13.     | TestEditCustomer5  | Click "View/Edit/Delete Customer" -> Choose a customer -> Click "Edit"-> Click "Return"   | Return to the "View/Edit/Delete Customer" screen| No "Return" botton
+14.      | TestDeleteCustomer1  | Click "View/Edit/Delete Customer" -> Click "Delete"   | Notice: please choose a customer| same as expected 
+15.      | TestDeleteCustomer2  | Click "View/Edit/Delete Customer" -> Choose a customer -> Click "Delete" -> Confirm "Delete"  | Delete the customer in the database| same as expected 
+16.      | TestDeleteCustomer3  | Click "View/Edit/Delete Customer" -> Choose a customer -> Click "Delete" -> Confirm "keep"  | Do not delete anything and return to the "View/Edit/Delete Customer" screen| same as expected 
+17.      | TestGetCustomerInfo1  | Click "Get Customer Info"   | Display a new screen that people can enter customer ID| same as expected 
+18.      | TestGetCustomerInfo2  | Click "Get Customer Info" ->  Click "Return"  | Return to the home screen| same as expected 
+19.      | TestGetCustomerInfo3  | Click "Get Customer Info" -> enter a correct customer ID  | Display the customer's infomation| same as expected 
+20.      | TestGetCustomerInfo4  | Click "Get Customer Info" -> enter an invalid customer ID  | Notice: customer not found| same as expected 
+21.     | TestAddTransaction1 | Click "Add Transaction"   | | same as expected 
+22.     | TestAddTransaction2 |    | | same as expected 
+22.     | TestAddTransaction3 |    | | same as expected 

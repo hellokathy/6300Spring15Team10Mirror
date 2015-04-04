@@ -44,6 +44,8 @@ public class SelectCustomerForTransactionActivity extends Activity {
 	String SelectedEML = "";
 	String SelectedID = "";
 	
+	int ifClick=0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,19 +66,30 @@ public class SelectCustomerForTransactionActivity extends Activity {
 	}
 	
 	public void selectPressed(View view) {
-		if(prevView == transactionViews.ADD_TRANSACTION){
-			AddTransaction.acct = SelectedID;
-			AddTransaction.email = SelectedEML;
-			Intent launchactivity = new Intent(ctx, AddTransaction.class);
-			startActivity(launchactivity);
+		if(ifClick==1){
+			if(prevView == transactionViews.ADD_TRANSACTION){
+				AddTransaction.acct = SelectedID;
+				AddTransaction.email = SelectedEML;
+				Intent launchactivity = new Intent(ctx, AddTransaction.class);
+				startActivity(launchactivity);
+			}
+			else if (prevView == transactionViews.VIEW_TRANSACTIONS){
+				ViewTransactions.acct = SelectedID;
+				Intent launchactivity = new Intent(ctx, ViewTransactions.class);
+				startActivity(launchactivity);
+			}
 		}
-		else if (prevView == transactionViews.VIEW_TRANSACTIONS){
-			ViewTransactions.acct = SelectedID;
-			Intent launchactivity = new Intent(ctx, ViewTransactions.class);
-			startActivity(launchactivity);
+		else{
+			Toast.makeText(getBaseContext(), "Please choose a customer!", Toast.LENGTH_LONG).show();
 		}
 	}
 
+	public void ReturnPressed(View view){		
+		//Switch back to the main view
+		Intent launchactivity= new Intent(SelectCustomerForTransactionActivity.this, MainActivity.class);   
+		startActivity(launchactivity);       
+	}
+	
 	private void displayListView() {
 		Cursor cursor = DB.getCustomerInfo(DB);
 		String[] col = new String[] {
@@ -112,6 +125,7 @@ public class SelectCustomerForTransactionActivity extends Activity {
 				SelectedZIP = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.ZIP));
 				SelectedEML = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.EMAIL));
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
+				ifClick=1;
 			}
 		});
 		

@@ -64,15 +64,6 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/addTransactionSubmitButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/amountText"
-        android:layout_below="@+id/textView3"
-        android:onClick="submitNewTransactionPressed"
-        android:text="Submit" />
-
     <TextView
         android:id="@+id/goldApplied"
         android:layout_width="wrap_content"
@@ -91,5 +82,25 @@
         android:layout_alignBottom="@+id/goldApplied"
         android:layout_alignLeft="@+id/amountText"
         android:text="0.00" />
+
+    <Button
+        android:id="@+id/addTransactionSubmitButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/discountBalance"
+        android:layout_below="@+id/textView3"
+        android:onClick="submitNewTransactionPressed"
+        android:text="Submit" />
+
+    <Button
+        android:id="@+id/ReturnBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addTransactionSubmitButton"
+        android:layout_alignBottom="@+id/addTransactionSubmitButton"
+        android:layout_alignRight="@+id/transactionLabel"
+        android:layout_marginRight="17dp"
+        android:onClick="ReturnPressed"
+        android:text="Return" />
 
 </RelativeLayout>

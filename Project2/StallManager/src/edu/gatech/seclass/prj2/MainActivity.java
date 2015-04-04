@@ -31,16 +31,18 @@ public class MainActivity extends Activity {
 		Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
 		startActivity(launchactivity);
 	}
+	
+	public void getCustomerInfoPressed(View view){
+		Intent launchactivity = new Intent(ctx, GetCustomerInfo.class);
+		startActivity(launchactivity);
+	}
+	
 	public void addTransactionPressed(View view){
 		SelectCustomerForTransactionActivity.prevView = transactionViews.ADD_TRANSACTION;
 		Intent launchactivity = new Intent(ctx, SelectCustomerForTransactionActivity.class);
 		startActivity(launchactivity);
 	}
 	
-	public void getCustomerInfoPressed(View view){
-		Intent launchactivity = new Intent(ctx, GetCustomerInfo.class);
-		startActivity(launchactivity);
-	}
 	public void viewTransactionsPressed(View view){
 		SelectCustomerForTransactionActivity.prevView = transactionViews.VIEW_TRANSACTIONS;
 		Intent launchactivity = new Intent(ctx, SelectCustomerForTransactionActivity.class);

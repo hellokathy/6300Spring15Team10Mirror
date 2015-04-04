@@ -2,6 +2,7 @@ package edu.gatech.seclass.prj2;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.services.CreditCardService;
 import edu.gatech.seclass.services.EmailService;
@@ -30,6 +31,12 @@ public class AddTransaction extends Activity {
 	public static String email;
 	Context ctx = this;
 
+	public void ReturnPressed(View view){		
+		//Switch back to the main view
+		Intent launchactivity= new Intent(AddTransaction.this, SelectCustomerForTransactionActivity.class);   
+		startActivity(launchactivity);       
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,7 +55,7 @@ public class AddTransaction extends Activity {
 		int ddex = c.getColumnIndex(CustomerTableInfo.DISCOUNT);
 		double discount = c.getDouble(ddex);
 		DiscountText.setText(String.valueOf(discount));
-
+		
 		Submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
