@@ -17,8 +17,9 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	public String CreateCustomerQuery = "CREATE TABLE if not exists " + CustomerTableInfo.TABLE_NAME + "(" + CustomerTableInfo.FIRST_NAME + " TEXT," + CustomerTableInfo.LAST_NAME + " TEXT," + 
 			CustomerTableInfo.ZIP + " TEXT," + CustomerTableInfo.EMAIL + " TEXT," + CustomerTableInfo.USER_ID + " TEXT," + CustomerTableInfo.GOLD_STATUS + " INTEGER," + 
 			CustomerTableInfo.TOTAL_SPENT + " REAL," + CustomerTableInfo.DISCOUNT + " TEXT );";
-	public String CreateTransactionQuery = "CREATE TABLE if not exists " + TransactionTableInfo.TABLE_NAME + "(" + TransactionTableInfo.DATE + " TEXT," + TransactionTableInfo.AMOUNT + " TEXT," + 
-			CustomerTableInfo.USER_ID + " TEXT );";
+	public String CreateTransactionQuery = "CREATE TABLE if not exists " + TransactionTableInfo.TABLE_NAME + "(" + TransactionTableInfo.DATE + " TEXT," + 
+			TransactionTableInfo.AMOUNT + " TEXT," + TransactionTableInfo.USER_ID + " TEXT," + TransactionTableInfo.GOLD_STATUS + " INTEGER," + 
+			TransactionTableInfo.DISCOUNT_USED + " REAL );";
 	private DatabaseOperations dbop;
 	private Context ctx;
 	private SQLiteDatabase sqldb;
@@ -137,12 +138,14 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		return cr;
 	}
 
-	public void EnterTransactionInfo(DatabaseOperations dop, String amount, String date, String acct) {
+	public void EnterTransactionInfo(DatabaseOperations dop, String amount, String date, String acct, int isGold, double discount) {
 		sqldb = dop.getWritableDatabase();
 		ContentValues cv = new ContentValues();
 		cv.put(TransactionTableInfo.AMOUNT, amount);
 		cv.put(TransactionTableInfo.DATE, date);
 		cv.put(TransactionTableInfo.USER_ID, acct);
+		cv.put(TransactionTableInfo.GOLD_STATUS, isGold);
+		cv.put(TransactionTableInfo.DISCOUNT_USED, discount);
 
 		sqldb.insert(TransactionTableInfo.TABLE_NAME, null, cv);
 
@@ -151,7 +154,9 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
 	public Cursor getTransactionInfo(DatabaseOperations dop) {
 		sqldb = dop.getReadableDatabase();
-		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
+		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,
+				TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID,TransactionTableInfo.GOLD_STATUS,TransactionTableInfo.DISCOUNT_USED};
+		
 		Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, null, null, null, null, TransactionTableInfo.DATE);
 		cr.moveToFirst();
 		return cr;
@@ -159,7 +164,9 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 	
 	public Cursor getTransactionInfo(DatabaseOperations dop, String acctnum) {
 		sqldb = dop.getReadableDatabase();
-		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID};
+		String[] col = {"rowid _id", TransactionTableInfo.USER_ID,TransactionTableInfo.DATE,
+				TransactionTableInfo.AMOUNT,TransactionTableInfo.USER_ID,TransactionTableInfo.GOLD_STATUS,TransactionTableInfo.DISCOUNT_USED};
+		
 		Cursor cr = sqldb.query(TransactionTableInfo.TABLE_NAME, col, "acctnum='" + ViewTransactions.acct + "'", null, null, null, TransactionTableInfo.DATE);
 		cr.moveToFirst();
 		return cr;

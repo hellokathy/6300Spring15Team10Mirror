@@ -80,6 +80,7 @@ public class AddTransaction extends Activity {
 							int isGoldInt = c.getInt(gdex);
 							double total = c.getDouble(tdex);
 							double discount = c.getDouble(ddex);
+							double discUsed = 0;
 							boolean isGold = isGoldInt != 0;
 							
 							//Apply gold discount
@@ -91,11 +92,13 @@ public class AddTransaction extends Activity {
 							if(discount > 0 && amt <= discount){
 								//Customer has enough discount to pay for the full transaction
 								discount = discount - amt;
+								discUsed = amt;
 								amt = 0;
 							}
 							else{
 								//Discount can be fully used
 								amt = amt - discount;
+								discUsed = discount;
 								discount = 0;
 							}
 
@@ -106,7 +109,7 @@ public class AddTransaction extends Activity {
 							boolean paymentSuccess = PaymentService.processPayment(CardInfo[0], CardInfo[1], CardInfo[2], CardInfo[3], CardInfo[4], amt);
 							if(paymentSuccess) {
 								// Add to DB
-								DB.EnterTransactionInfo(DB, amount, date, acct);
+								DB.EnterTransactionInfo(DB, amount, date, acct, isGoldInt, discUsed);
 								Toast.makeText(ctx, "Payment Successful", Toast.LENGTH_LONG).show();
 
 								total += amt;
