@@ -58,7 +58,8 @@ public class EditCustomer extends Activity {
 				if( !(c.moveToFirst()) || (customerID.equals(origID)) ) {
 					DB.EditCustomerInfo(DB, firstName, lastName, zip, email, customerID);
 					Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
-					finish();
+					Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
+					startActivity(launchactivity);
 				}
 				else {
 					Toast.makeText(getBaseContext(), "User ID already exists, please choose another", Toast.LENGTH_LONG).show();

@@ -50,7 +50,7 @@ public class AddCustomer extends Activity {
 			Toast.makeText(getBaseContext(), "Please enter FULL NAME!", Toast.LENGTH_LONG).show();
 		}
 		else if( zip.equals("") || (zip.length() != 5 && zip.length() != 9 && zip.length() != 10) ) {
-			Toast.makeText(getBaseContext(), "Please enter full ZIP!", Toast.LENGTH_LONG).show();
+			Toast.makeText(getBaseContext(), "Please enter FULL ZIP!", Toast.LENGTH_LONG).show();
 		}
 		else if( email.equals("") || !email.contains("@") ) {
 			Toast.makeText(getBaseContext(), "Please enter EMAIL!", Toast.LENGTH_LONG).show();

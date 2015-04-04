@@ -3,43 +3,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
-
-    <EditText
-        android:id="@+id/Search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Last Name Search" />
     
     <ListView
         android:id="@+id/CustList"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/Search"
+        android:layout_below="@+id/EditBtn"
         android:choiceMode="singleChoice"
         android:listSelector="#FFA500" />
 
     <Button
         android:id="@+id/EditBtn"
-        android:onClick="EditPressed"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Search"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/Search"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Search"
+        android:layout_marginLeft="30dp"
         android:minWidth="74dp"
+        android:onClick="EditPressed"
         android:text="Edit" />
 
     <Button
         android:id="@+id/DeleBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/EditBtn"
+        android:layout_above="@+id/CustList"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/EditBtn"
         android:onClick="DeletePressed"
         android:text="Delete" />
+
+    <Button
+        android:id="@+id/ReturnBtn"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Search"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/DeleBtn"
+        android:onClick="ReturnPressed"
+        android:text="Return" />
+
+    <EditText
+        android:id="@+id/Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Last Name Search" />
 
 </RelativeLayout>

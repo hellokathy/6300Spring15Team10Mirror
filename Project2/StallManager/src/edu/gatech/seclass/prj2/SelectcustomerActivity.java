@@ -37,6 +37,7 @@ public class SelectcustomerActivity extends Activity {
 	String SelectedEML = "";
 	String SelectedID = "";
 	String SelectedDISCOUNT = "";
+	int ifClick=0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,37 +50,54 @@ public class SelectcustomerActivity extends Activity {
 	}
 	
 	public void DeletePressed(View view) {
-		AlertDialog.Builder bldr = new AlertDialog.Builder(ctx);
-		bldr.setTitle("Confirm");
-		bldr.setMessage("Do you really want to delete customer?");
-		bldr.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				DB.deleteCustomer(DB, SelectedID);
-				displayListView();
-				dialog.dismiss();
-			}
-		});
-		bldr.setNegativeButton("Keep", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		AlertDialog dialog = bldr.create();
-		dialog.show();
+		if (ifClick==1){
+			AlertDialog.Builder bldr = new AlertDialog.Builder(ctx);
+			bldr.setTitle("Confirm");
+			bldr.setMessage("Do you really want to delete customer?");
+			bldr.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					DB.deleteCustomer(DB, SelectedID);
+					displayListView();
+					dialog.dismiss();
+				}
+			});
+			bldr.setNegativeButton("Keep", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			AlertDialog dialog = bldr.create();
+			dialog.show();
+			ifClick=0;
+		}
+		else{
+			Toast.makeText(getBaseContext(), "Please choose a customer!", Toast.LENGTH_LONG).show();
+		}
 	}
 	
 	public void EditPressed(View view) {
-		Intent launchactivity = new Intent(ctx, EditCustomer.class);
-		EditCustomer.firstName = SelectedFN;
-		EditCustomer.lastName = SelectedLN;
-		EditCustomer.zip = SelectedZIP;
-		EditCustomer.email = SelectedEML;
-		EditCustomer.origID = SelectedID;
-		startActivity(launchactivity);
+		if (ifClick==1){
+			Intent launchactivity = new Intent(ctx, EditCustomer.class);
+			EditCustomer.firstName = SelectedFN;
+			EditCustomer.lastName = SelectedLN;
+			EditCustomer.zip = SelectedZIP;
+			EditCustomer.email = SelectedEML;
+			EditCustomer.origID = SelectedID;
+			startActivity(launchactivity);
+		}
+		else{
+			Toast.makeText(getBaseContext(), "Please choose a customer!", Toast.LENGTH_LONG).show();
+		}
 	}
-
+	
+	public void ReturnPressed(View view){		
+		//Switch back to the main view
+		Intent launchactivity= new Intent(SelectcustomerActivity.this, MainActivity.class);   
+		startActivity(launchactivity);       
+	}
+	
 	private void displayListView() {
 		Cursor cursor = DB.getCustomerInfo(DB);
 		String[] col = new String[] {
@@ -116,20 +134,23 @@ public class SelectcustomerActivity extends Activity {
 				SelectedEML = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.EMAIL));
 				SelectedID = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.USER_ID));
 				SelectedDISCOUNT = cr.getString(cr.getColumnIndexOrThrow(CustomerTableInfo.DISCOUNT));
+				ifClick=1;
 			}
 		});
 		
+		SCA.getFilter().filter("");
 		EditText filter = (EditText) findViewById(R.id.Search);
 		filter.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				SCA.getFilter().filter(s.toString());
 			}
-			@Override
+			@Override				
 			public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 			@Override
 			public void afterTextChanged(Editable s) { }
 		});
+		
 		
 		SCA.setFilterQueryProvider(new FilterQueryProvider() {
 			@Override
