@@ -1,6 +1,7 @@
-package com.example.stallmanager;
+package edu.gatech.seclass.prj2;
 
-import edu.gatech.seclass.prj2.DatabaseOperations;
+import com.example.stallmanager.R;
+
 import edu.gatech.seclass.prj2.TransactionTableData.TransactionTableInfo;
 import android.app.Activity;
 import android.content.Context;
@@ -11,8 +12,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -22,6 +25,7 @@ public class ViewTransactions extends Activity {
 	Context ctx = this;
 	public static String acct;
 	String SelectedID = "";
+	Button Home;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,16 @@ public class ViewTransactions extends Activity {
 		DB = new DatabaseOperations(ctx);
 		DB.open();
 		displayListView();
+		
+		Home = (Button) findViewById(R.id.HomeBtn);
+		
+		Home.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent launchactivity = new Intent(ctx, MainActivity.class);
+				startActivity(launchactivity);
+			}
+		});
 	}
 
 	private void displayListView() {

@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="edu.gatech.seclass.prj2.MainActivity"
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,21 +23,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddCustomer"
+            android:name="edu.gatech.seclass.prj2.AddCustomer"
             android:label="@string/title_activity_add_customer" >
         </activity>
         <activity
-            android:name=".EditCustomer"
+            android:name="edu.gatech.seclass.prj2.EditCustomer"
             android:label="@string/title_activity_add_customer" >
         </activity>
-        <activity android:name=".GetCustomerInfo" >
+        <activity android:name="edu.gatech.seclass.prj2.GetCustomerInfo" >
         </activity>
         <activity
-            android:name=".SelectcustomerActivity"
+            android:name="edu.gatech.seclass.prj2.SelectcustomerActivity"
             android:label="@string/title_activity_selectcustomer" >
         </activity>
         <activity
-            android:name=".ListOfCustomers"
+            android:name="edu.gatech.seclass.prj2.ListOfCustomers"
             android:label="@string/title_activity_list_of_customers" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,23 +46,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ViewTransactions"
+            android:name="edu.gatech.seclass.prj2.ViewTransactions"
             android:label="@string/title_activity_view_transactions" >
         </activity>
                 <activity
-            android:name=".AddTransaction"
+            android:name="edu.gatech.seclass.prj2.AddTransaction"
             android:label="@string/title_activity_add_transaction" >
         </activity>
         <activity
-            android:name=".SelecttransActivity"
+            android:name="edu.gatech.seclass.prj2.SelecttransActivity"
             android:label="@string/title_activity_selecttrans" >
         </activity>
         <activity
-            android:name=".SelectCustomerTransaction"
+            android:name="edu.gatech.seclass.prj2.SelectCustomerTransaction"
             android:label="@string/title_activity_select_customer_transaction" >
         </activity>
         <activity
-            android:name=".SelectCustomerForTransactionActivity"
+            android:name="edu.gatech.seclass.prj2.SelectCustomerForTransactionActivity"
             android:label="@string/title_activity_select_customer_for_transaction" >
         </activity>
     </application>

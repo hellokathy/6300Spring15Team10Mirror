@@ -25,20 +25,22 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int CustList=0x7f08002a;
-        public static final int DeleBtn=0x7f08002c;
-        public static final int EditBtn=0x7f08002b;
-        public static final int Search=0x7f080029;
+        public static final int CustList=0x7f08002c;
+        public static final int DeleBtn=0x7f08002e;
+        public static final int EditBtn=0x7f08002d;
+        public static final int HomeBtn=0x7f080025;
+        public static final int Search=0x7f08002b;
         public static final int TextView01=0x7f080003;
         public static final int TextView02=0x7f080005;
         public static final int TextView03=0x7f080006;
         public static final int TextView04=0x7f08000a;
-        public static final int action_settings=0x7f08002f;
+        public static final int action_settings=0x7f080031;
         public static final int addCustomer=0x7f08001f;
         public static final int addTransactionButton=0x7f080021;
         public static final int addTransactionSubmitButton=0x7f080011;
-        public static final int amount=0x7f08002e;
+        public static final int amount=0x7f080030;
         public static final int amountText=0x7f080010;
+        public static final int button1=0x7f080024;
         public static final int cEmail=0x7f08001b;
         public static final int cName=0x7f080019;
         public static final int cZip=0x7f08001a;
@@ -53,14 +55,14 @@ public final class R {
         public static final int emailTextEdit=0x7f080015;
         public static final int firstNameText=0x7f080002;
         public static final int firstNameTextEdit=0x7f080013;
-        public static final int fname=0x7f080025;
+        public static final int fname=0x7f080027;
         public static final int getCustomerInfoButton=0x7f080020;
         public static final int lastNameText=0x7f080004;
         public static final int lastNameTextEdit=0x7f080014;
-        public static final int lname=0x7f080026;
-        public static final int mail=0x7f080028;
+        public static final int lname=0x7f080028;
+        public static final int mail=0x7f08002a;
         public static final int returnGetCustomerInfo=0x7f08001d;
-        public static final int selectButton=0x7f08002d;
+        public static final int selectButton=0x7f08002f;
         public static final int submitGetCustomerInfoButton=0x7f08001c;
         public static final int submitNewCustomerButton=0x7f080009;
         public static final int textView2=0x7f080001;
@@ -68,9 +70,9 @@ public final class R {
         public static final int textView4=0x7f08000f;
         public static final int transactionLabel=0x7f080000;
         public static final int transactionList=0x7f080023;
-        public static final int uid=0x7f080024;
+        public static final int uid=0x7f080026;
         public static final int viewTransactionsButton=0x7f080022;
-        public static final int zip=0x7f080027;
+        public static final int zip=0x7f080029;
         public static final int zipCodeText=0x7f080008;
         public static final int zipCodeTextEdit=0x7f080016;
     }

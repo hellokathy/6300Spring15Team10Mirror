@@ -1,7 +1,5 @@
 package edu.gatech.seclass.prj2;
 
-import com.example.stallmanager.ViewTransactions;
-
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.prj2.TransactionTableData.TransactionTableInfo;
 import android.content.ContentValues;

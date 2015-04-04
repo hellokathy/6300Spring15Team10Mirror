@@ -1,10 +1,11 @@
-package com.example.stallmanager;
+package edu.gatech.seclass.prj2;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.example.stallmanager.R;
+
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
-import edu.gatech.seclass.prj2.DatabaseOperations;
 import edu.gatech.seclass.services.CreditCardService;
 import edu.gatech.seclass.services.EmailService;
 import edu.gatech.seclass.services.PaymentService;
@@ -103,9 +104,9 @@ public class AddTransaction extends Activity {
 								amt = amt - discount;
 								discount = 0;
 							}
-							
+
 							amount = Double.toString(amt);
-							
+
 
 							// Process payment
 							boolean paymentSuccess = PaymentService.processPayment(CardInfo[0], CardInfo[1], CardInfo[2], CardInfo[3], CardInfo[4], amt);
@@ -113,30 +114,56 @@ public class AddTransaction extends Activity {
 								// Add to DB
 								DB.EnterTransactionInfo(DB, amount, date, acct);
 								Toast.makeText(ctx, "Payment Successful", Toast.LENGTH_LONG).show();
-								
+
 								total += amt;
-								
+
 								if(amt >= 100){
 									//Customer spent at least $100, so they get a $10 discount next time
-									EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
-									"receive a $10 credit which will be automatically applied to your next purchase.");
-									
+									boolean mailSent = EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
+											"receive a $10 credit which will be automatically applied to your next purchase.");
+
+									if( !(mailSent) ) {
+										mailSent = EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
+												"receive a $10 credit which will be automatically applied to your next purchase.");
+									}
+
+									if( !(mailSent) ) {
+										mailSent = EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
+												"receive a $10 credit which will be automatically applied to your next purchase.");
+									}
+									else {
+										Toast.makeText(ctx, "Email could not be sent...", Toast.LENGTH_LONG).show();
+									}
+
 									discount += 10;
 								}
-								
+
 								if( (total) >= 1000.0 ) {
 									if(!isGold){
 										//Customer just transitioned to gold 
-										EmailService.sendEmail(email, "Gold status reached!", "Congratulations! You will" + 
-										"receive a 5% discount on all future purchases.");
+										boolean mailSent = EmailService.sendEmail(email, "Gold status reached!", "Congratulations! You will" + 
+												"receive a 5% discount on all future purchases.");
+
+										if( !(mailSent) ) {
+											mailSent = EmailService.sendEmail(email, "Gold status reached!", "Congratulations! You will" + 
+													"receive a 5% discount on all future purchases.");
+										}
+
+										if( !(mailSent) ) {
+											mailSent = EmailService.sendEmail(email, "Gold status reached!", "Congratulations! You will" + 
+													"receive a 5% discount on all future purchases.");
+										}
+										else {
+											Toast.makeText(ctx, "Email could not be sent...", Toast.LENGTH_LONG).show();
+										}
 									}
 									isGold = true;
 									isGoldInt = 1;
 								}
-								
+
 								DB.EditCustomerInfo(DB, acct, total, isGoldInt, discount);
 								DB.close();
-								
+
 								Intent launchactivity = new Intent(ctx, MainActivity.class);
 								startActivity(launchactivity);
 								finish();

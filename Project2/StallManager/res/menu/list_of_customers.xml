@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.stallmanager.ListOfCustomers" >
+    tools:context="edu.gatech.seclass.prj2.ListOfCustomers" >
 
     <item
         android:id="@+id/action_settings"

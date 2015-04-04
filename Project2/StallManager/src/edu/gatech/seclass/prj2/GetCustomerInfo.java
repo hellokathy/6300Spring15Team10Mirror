@@ -1,6 +1,7 @@
-package com.example.stallmanager;
+package edu.gatech.seclass.prj2;
 
-import edu.gatech.seclass.prj2.DatabaseOperations;
+import com.example.stallmanager.R;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
