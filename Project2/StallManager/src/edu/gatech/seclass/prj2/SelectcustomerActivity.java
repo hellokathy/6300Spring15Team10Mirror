@@ -1,7 +1,5 @@
 package edu.gatech.seclass.prj2;
 
-import com.example.stallmanager.R;
-
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -2,22 +2,16 @@ package edu.gatech.seclass.prj2;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.example.stallmanager.R;
-
 import edu.gatech.seclass.prj2.CustomerTableData.CustomerTableInfo;
 import edu.gatech.seclass.services.CreditCardService;
 import edu.gatech.seclass.services.EmailService;
 import edu.gatech.seclass.services.PaymentService;
-import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;

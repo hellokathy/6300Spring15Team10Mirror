@@ -1,7 +1,5 @@
 package edu.gatech.seclass.prj2;
 
-import com.example.stallmanager.R;
-
 import edu.gatech.seclass.prj2.TransactionTableData.TransactionTableInfo;
 import android.app.Activity;
 import android.content.Context;

@@ -2905,3 +2905,13 @@ Binding(COMMAND+SHIFT+P,
 
 !ENTRY com.android.ide.eclipse.ddms 4 0 2015-03-19 01:23:39.192
 !MESSAGE DDMS files not found: /Users/yangleizou/Documents/eclipse/Eclipse.app/Contents/MacOS/C:\Program Files (x86)\Android\android-sdk/platform-tools/adb /Users/yangleizou/Documents/eclipse/Eclipse.app/Contents/MacOS/C:\Program Files (x86)\Android\android-sdk/platform-tools/hprof-conv /Users/yangleizou/Documents/eclipse/Eclipse.app/Contents/MacOS/C:\Program Files (x86)\Android\android-sdk/tools/traceview 
+!SESSION 2015-04-04 01:05:33.030 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/yangleizou/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/yangleizou/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-04-04 01:05:43.654
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

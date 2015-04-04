@@ -1,7 +1,5 @@
 package edu.gatech.seclass.prj2;
 
-import com.example.stallmanager.R;
-
 import edu.gatech.seclass.prj2.AddCustomer;
 import edu.gatech.seclass.prj2.SelectCustomerForTransactionActivity.transactionViews;
 import android.app.Activity;
