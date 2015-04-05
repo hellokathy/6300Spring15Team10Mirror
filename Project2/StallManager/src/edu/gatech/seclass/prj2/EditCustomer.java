@@ -77,6 +77,7 @@ public class EditCustomer extends Activity {
 					Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, newCustomerID);
 	 				if( !(c.moveToFirst()) || (customerID.equals(newCustomerID)) ) {
 						DB.EditCustomerInfo(DB, firstName, lastName, zip, email, origID, newCustomerID);
+						DB.EditTransactionInfo(DB, origID, newCustomerID);
 	 					Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
 						Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
 						startActivity(launchactivity);

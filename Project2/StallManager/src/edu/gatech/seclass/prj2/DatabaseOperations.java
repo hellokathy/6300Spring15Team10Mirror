@@ -101,6 +101,18 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
 		Log.d("DataBase Operations", "Database Row Updated (Customer)");
 	}
+	
+	public void EditTransactionInfo(DatabaseOperations dop, String oldAcct, String newAcct) {
+		sqldb = dop.getWritableDatabase();
+		ContentValues cv = new ContentValues();
+		cv.put(TransactionTableInfo.USER_ID, newAcct);
+
+		String selection = TransactionTableInfo.USER_ID + " = " + oldAcct;
+
+		sqldb.update(TransactionTableInfo.TABLE_NAME, cv, selection, null);
+
+		Log.d("DataBase Operations", "Database Row Updated (Transaction)");
+	}
 
 	public Cursor getCustomerInfo(DatabaseOperations dop) {
 		sqldb = dop.getReadableDatabase();
