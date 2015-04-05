@@ -58,7 +58,7 @@ public class EditCustomer extends Activity {
 				lastName = ((EditText)findViewById(R.id.lastNameTextEdit)).getText().toString();
 				zip = ((EditText)findViewById(R.id.zipCodeTextEdit)).getText().toString();
 				email = ((EditText)findViewById(R.id.emailTextEdit)).getText().toString();
-				customerID = ((EditText)findViewById(R.id.customerIDEdit)).getText().toString();
+				String newCustomerID = ((EditText)findViewById(R.id.customerIDEdit)).getText().toString();
 
 				
 				if( firstName.equals("") || lastName.equals("") ) {
@@ -70,8 +70,8 @@ public class EditCustomer extends Activity {
 				else if( email.equals("") || !email.contains("@") ) {
 					Toast.makeText(getBaseContext(), "Please enter CORRECT EMAIL!", Toast.LENGTH_LONG).show();
 				}
-				else if(customerID.equals("")){
-					Toast.makeText(getBaseContext(), "Please enter CUSTOMER ID!", Toast.LENGTH_LONG).show();
+				else if(!customerID.equals(newCustomerID)){
+					Toast.makeText(getBaseContext(), "CUSTOMER ID is not allowed to be changed", Toast.LENGTH_LONG).show();
 				}
 				else{
 					Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, customerID);
