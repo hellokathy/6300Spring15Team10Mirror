@@ -27,11 +27,11 @@ Jacob and Yanglei will perform such activities.
 
 ### 1.4 Bug Tracking
 
-We use manual tests to find bugs and then try to fix the bug until all tests get passed.
+We will try to find as many bugs as possible from our tests and then deal with bugs and enhancement requests as a group, everyone should get involved.Same
 
 ### 1.5 Technology
 
-We will use manual tests on Android vertual device in eclipse to test this system.
+We will use JUnit to build the tests.
 
 ## 2 Test Cases
 
@@ -55,16 +55,17 @@ Number| Purpose        | Test step 1          | Test step 2 | Test step 3 | Test
 16.   | TestDeleteCustomer3 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Delete" | Confirm "keep"   | N/A | Do not delete anything and return to the "View/Edit/Delete Customer" screen| same as expected 
 17.   | TestGetCustomerInfo1 | Click "Get Customer Info" |         N/A                  | N/A | N/A | N/A | Display a new screen that people can enter customer ID| same as expected 
 18.   | TestGetCustomerInfo2 | Click "Get Customer Info" | Click "Return"               | N/A | N/A | N/A | Return to the home screen        | same as expected 
-19.   | TestGetCustomerInfo3 | Click "Get Customer Info" | Enter a correct customer ID  | N/A | N/A | N/A | Display the customer's infomation| same as expected 
-20.   | TestGetCustomerInfo4 | Click "Get Customer Info" | Enter an invalid customer ID | N/A | N/A | N/A | Notice: customer not found       | same as expected 
-21.   | TestAddTransaction1 | Click "Add Transaction" |      N/A       | N/A | N/A | N/A | Display a new screen with all customer's information | same as expected 
-22.   | TestAddTransaction2 | Click "Add Transaction" | Click "Select" | N/A | N/A | N/A | Notice: please choose a customer                     | same as expected 
-23.   | TestAddTransaction3 | Click "Add Transaction" | Click "Return" | N/A | N/A | N/A | Display the home screen                              | same as expected 
-24.   | TestAddTransaction4 | Click "Add Transaction" | Choose a customer | Click "Select" |      N/A       | N/A |  Display a new screen that allows people to add transaction information| same as expected 
-25.   | TestAddTransaction5 | Click "Add Transaction" | Choose a customer | Click "Select" | Click "Return" | N/A |  Return to the screen with all customer's informatio| same as expected 
-26.   | TestAddTransaction6 | Click "Add Transaction" | Choose a customer | Click "Select" | Click "Submit" | N/A |  Notice: please enter a amount| same as expected 
-27.   | TestAddTransaction7 | Click "Add Transaction" | Choose a customer | Click "Select" | Enter amount   | Click "Submit"  |  Add the transaction to database and return to the home screen | same as expected 
-28.   | TestViewTransactions1 | Click "View Transactions" |        N/A     | N/A | N/A | N/A | Display a new screen with all customer's information | same as expected 
-29.   | TestViewTransactions2 | Click "View Transactions" | Click "Select" | N/A | N/A | N/A | Notice: please choose a customer | same as expected 
-30.   | TestViewTransactions3 | Click "View Transactions" | Choose a customer | Click "Select" |     N/A      | N/A | Display a new screen that shows all transaction information of this customer| same as expected 
-31.   | TestViewTransactions3 | Click "View Transactions" | Choose a customer | Click "Select" | Click "Home" | N/A | Display a new screen that shows all transaction information of this customer and then display the home screen| same as expected 
+19.   | TestGetCustomerInfo3 | Click "Get Customer Info" | Enter a correct customer ID  | Click "Submit"  | N/A | N/A | Display the customer's infomation| same as expected 
+20.   | TestGetCustomerInfo4 | Click "Get Customer Info" | Enter an invalid customer ID | Click "Submit"  | N/A | N/A | Notice: customer not found       | same as expected 
+21.   | TestGetCustomerInfo5 | Start with an empty database | Click "Get Customer Info" | N/A | N/A | N/A | Notice: empty database           | same as expected 
+22.   | TestAddTransaction1 | Click "Add Transaction" |      N/A       | N/A | N/A | N/A | Display a new screen with all customer's information | same as expected 
+23.   | TestAddTransaction2 | Click "Add Transaction" | Click "Select" | N/A | N/A | N/A | Notice: please choose a customer                     | same as expected 
+24.   | TestAddTransaction3 | Click "Add Transaction" | Click "Return" | N/A | N/A | N/A | Display the home screen                              | same as expected 
+25.   | TestAddTransaction4 | Click "Add Transaction" | Choose a customer | Click "Select" |      N/A       | N/A |  Display a new screen that allows p5ople to add transaction information| same as expected 
+26.   | TestAddTransaction5 | Click "Add Transaction" | Choose a customer | Click "Select" | Click "Return" | N/A |  Return to the screen with all customer's informatio| same as expected 
+27.   | TestAddTransaction6 | Click "Add Transaction" | Choose a customer | Click "Select" | Click "Submit" | N/A |  Notice: please enter a amount| same as expected 
+28.   | TestAddTransaction7 | Click "Add Transaction" | Choose a customer | Click "Select" | Enter amount   | Click "Submit"  |  Add the transaction to database and return to the home screen | same as expected 
+29.   | TestViewTransactions1 | Click "View Transactions" |        N/A     | N/A | N/A | N/A | Display a new screen with all customer's information | same as expected 
+30.   | TestViewTransactions2 | Click "View Transactions" | Click "Select" | N/A | N/A | N/A | Notice: please choose a customer | same as expected 
+31.   | TestViewTransactions3 | Click "View Transactions" | Choose a customer | Click "Select" |     N/A      | N/A | Display a new screen that shows all transaction information of this customer| same as expected 
+32.   | TestViewTransactions3 | Click "View Transactions" | Choose a customer | Click "Select" | Click "Home" | N/A | Display a new screen that shows all transaction information of this customer and then display the home screen| same as expected 
