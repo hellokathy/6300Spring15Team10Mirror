@@ -128,16 +128,17 @@ public class AddTransaction extends Activity {
 									boolean mailSent = EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
 											"receive a $10 credit which will be automatically applied to your next purchase.");
 
-									if( !(mailSent) ) {
+									if( mailSent == false ) {
 										mailSent = EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
 												"receive a $10 credit which will be automatically applied to your next purchase.");
 									}
 
-									if( !(mailSent) ) {
+									if( mailSent == false ) {
 										mailSent = EmailService.sendEmail(email, "Discount received!", "Congratulations! You will" + 
 												"receive a $10 credit which will be automatically applied to your next purchase.");
 									}
-									else {
+									
+									if( mailSent == false ) {
 										Toast.makeText(ctx, "Email could not be sent...", Toast.LENGTH_LONG).show();
 									}
 
