@@ -87,7 +87,7 @@
         android:id="@+id/addTransactionSubmitButton"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/discountBalance"
+        android:layout_alignRight="@+id/goldApplied"
         android:layout_below="@+id/textView3"
         android:onClick="submitNewTransactionPressed"
         android:text="Submit" />
@@ -96,10 +96,8 @@
         android:id="@+id/ReturnBtn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/addTransactionSubmitButton"
-        android:layout_alignBottom="@+id/addTransactionSubmitButton"
-        android:layout_alignRight="@+id/transactionLabel"
-        android:layout_marginRight="17dp"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/discountBalance"
         android:onClick="ReturnPressed"
         android:text="Return" />
 

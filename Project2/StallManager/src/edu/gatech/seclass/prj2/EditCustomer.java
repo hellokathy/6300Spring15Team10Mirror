@@ -51,7 +51,7 @@ public class EditCustomer extends Activity {
 		Submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				DatabaseOperations DB = new DatabaseOperations(ctx);
+				DatabaseOperations DB = new DatabaseOperations(ctx); 
 				
 				// Get the information the user entered and create a new customer
 				firstName = ((EditText)findViewById(R.id.firstNameTextEdit)).getText().toString();
@@ -69,19 +69,20 @@ public class EditCustomer extends Activity {
 				}
 				else if( email.equals("") || !email.contains("@") ) {
 					Toast.makeText(getBaseContext(), "Please enter CORRECT EMAIL!", Toast.LENGTH_LONG).show();
-				}
-				else if(!customerID.equals(newCustomerID)){
-					Toast.makeText(getBaseContext(), "CUSTOMER ID is not allowed to be changed", Toast.LENGTH_LONG).show();
-				}
+				} 
+//				else if(!customerID.equals(newCustomerID)){
+//					Toast.makeText(getBaseContext(), "CUSTOMER ID is not allowed to be changed", Toast.LENGTH_LONG).show();
+//				}
 				else{
-					Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, customerID);
-					if( !(c.moveToFirst()) || (customerID.equals(origID)) ) {
-						DB.EditCustomerInfo(DB, firstName, lastName, zip, email, origID, customerID);
-						Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
+					Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, newCustomerID);
+	 				if( !(c.moveToFirst()) || (customerID.equals(newCustomerID)) ) {
+						DB.EditCustomerInfo(DB, firstName, lastName, zip, email, origID, newCustomerID);
+	 					Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
 						Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
 						startActivity(launchactivity);
-					}
-					else {
+	 					finish();
+	 				}
+	 				else {
 						Toast.makeText(getBaseContext(), "User ID already exists, please choose another", Toast.LENGTH_LONG).show();
 					}
 				}
