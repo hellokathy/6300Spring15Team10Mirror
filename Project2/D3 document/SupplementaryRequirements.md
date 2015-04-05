@@ -4,8 +4,10 @@
 
 ## Functional Requirements
 - The system will automatically email the customer when he/she makes a purchase of over $100
-- The system will automatically email the customer when he/she achieves gold status be spending over  
-$1000 in a single calendar year
+- The system will automatically email the customer when he/she achieves gold status be spending over 1,000 dollars in a single calendar year
+- The system will store a list of transactions made by each customer
+- The system will automatically apply discount based upon customer status
+- The system will show the manager total amount customer has spent 
 
 ## Non-Functional Requirements
 - The system will run on an Android device
