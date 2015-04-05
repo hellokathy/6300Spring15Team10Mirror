@@ -67,9 +67,6 @@ public class AddTransaction extends Activity {
 
 				if( amount.length() > 0 ) {
 					double amt = Double.parseDouble(amount);
-					amt *= 100;
-					Math.round(amt);
-					amt /= 100;
 
 					// Get dummy card info from service
 					String CCInfo = CreditCardService.getCardInfo();
@@ -204,8 +201,6 @@ public class AddTransaction extends Activity {
 	}
 	
 	public static double round(double value, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
-
 	    BigDecimal bd = new BigDecimal(value);
 	    bd = bd.setScale(places, RoundingMode.HALF_UP);
 	    return bd.doubleValue();
