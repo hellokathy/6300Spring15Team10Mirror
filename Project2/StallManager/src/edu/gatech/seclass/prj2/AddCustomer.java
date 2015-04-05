@@ -53,7 +53,7 @@ public class AddCustomer extends Activity {
 			Toast.makeText(getBaseContext(), "Please enter FULL ZIP!", Toast.LENGTH_LONG).show();
 		}
 		else if( email.equals("") || !email.contains("@") ) {
-			Toast.makeText(getBaseContext(), "Please enter EMAIL!", Toast.LENGTH_LONG).show();
+			Toast.makeText(getBaseContext(), "Please enter Correct EMAIL!", Toast.LENGTH_LONG).show();
 		}
 		else{
 			Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, customerID);

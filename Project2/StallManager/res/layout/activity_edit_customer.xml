@@ -89,17 +89,6 @@
         android:ems="10"
         android:inputType="number" />
 
-
-    <Button
-        android:id="@+id/editCustomerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/emailTextEdit"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="36dp"
-        android:onClick="editCustomerPressed"
-        android:text="Submit" />
-
     <TextView
         android:id="@+id/TextView04"
         android:layout_width="wrap_content"
@@ -118,5 +107,26 @@
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="number" />
+
+    <Button
+        android:id="@+id/ReturnPressedBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editCustomerButton"
+        android:layout_alignBottom="@+id/editCustomerButton"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/editCustomerButton"
+        android:onClick="ReturnPressed"
+        android:text="Return" />
+
+    <Button
+        android:id="@+id/editCustomerButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView04"
+        android:layout_marginTop="38dp"
+        android:layout_toRightOf="@+id/TextView03"
+        android:onClick="editCustomerPressed"
+        android:text="Submit" />
 
 </RelativeLayout>

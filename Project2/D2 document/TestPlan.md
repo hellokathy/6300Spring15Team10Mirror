@@ -48,8 +48,8 @@ Number| Purpose        | Test step 1          | Test step 2 | Test step 3 | Test
 9.    | TestEditCustomer1 | Click "View/Edit/Delete Customer" | Click "Edit"      |      N/A     | N/A | N/A | Notice: please choose a customer | same as expected 
 10.   | TestEditCustomer2 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Edit" | N/A | N/A | Display a new screen that people can edit this customer's information| same as expected 
 11.   | TestEditCustomer3 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Edit" | Edit the information | Click "Submit" | Successfully edited a customer's information in the database| same as expected
-12.   | TestEditCustomer4 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Edit" | Remove the name      | Click "Submit" | Notice: Invalid name!| No notice
-13.   | TestEditCustomer5 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Edit" | Click "Return"       |      N/A       | Return to the "View/Edit/Delete Customer" screen| No "Return" botton
+12.   | TestEditCustomer4 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Edit" | Remove the name      | Click "Submit" | Notice: Invalid name!| Same as expected
+13.   | TestEditCustomer5 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Edit" | Click "Return"       |      N/A       | Return to the "View/Edit/Delete Customer" screen| Same as expected
 14.   | TestDeleteCustomer1 | Click "View/Edit/Delete Customer" | Click "Delete"    |      N/A       |      N/A         | N/A | Notice: please choose a customer| same as expected 
 15.   | TestDeleteCustomer2 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Delete" | Confirm "Delete" | N/A | Delete the customer in the database| same as expected 
 16.   | TestDeleteCustomer3 | Click "View/Edit/Delete Customer" | Choose a customer | Click "Delete" | Confirm "keep"   | N/A | Do not delete anything and return to the "View/Edit/Delete Customer" screen| same as expected 

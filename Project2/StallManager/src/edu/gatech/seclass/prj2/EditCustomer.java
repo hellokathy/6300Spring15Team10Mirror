@@ -22,6 +22,12 @@ public class EditCustomer extends Activity {
 	Context ctx = this;
 	EditText FNAME, LNAME, ZIP, EMAIL, UID = null;
 
+	public void ReturnPressed(View view){		
+		//Switch back to the main view
+		Intent launchactivity= new Intent(EditCustomer.this, SelectcustomerActivity.class);   
+		startActivity(launchactivity);       
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,16 +60,32 @@ public class EditCustomer extends Activity {
 				email = ((EditText)findViewById(R.id.emailTextEdit)).getText().toString();
 				customerID = ((EditText)findViewById(R.id.customerIDEdit)).getText().toString();
 
-				Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, customerID);
-				if( !(c.moveToFirst()) || (customerID.equals(origID)) ) {
-					DB.EditCustomerInfo(DB, firstName, lastName, zip, email, origID, customerID);
-					Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
-					Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
-					startActivity(launchactivity);
+				
+				if( firstName.equals("") || lastName.equals("") ) {
+					Toast.makeText(getBaseContext(), "Please enter FULL NAME!", Toast.LENGTH_LONG).show();
 				}
-				else {
-					Toast.makeText(getBaseContext(), "User ID already exists, please choose another", Toast.LENGTH_LONG).show();
+				else if( zip.equals("") || (zip.length() != 5 && zip.length() != 9 && zip.length() != 10) ) {
+					Toast.makeText(getBaseContext(), "Please enter FULL ZIP!", Toast.LENGTH_LONG).show();
 				}
+				else if( email.equals("") || !email.contains("@") ) {
+					Toast.makeText(getBaseContext(), "Please enter CORRECT EMAIL!", Toast.LENGTH_LONG).show();
+				}
+				else if(customerID.equals("")){
+					Toast.makeText(getBaseContext(), "Please enter CUSTOMER ID!", Toast.LENGTH_LONG).show();
+				}
+				else{
+					Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, customerID);
+					if( !(c.moveToFirst()) || (customerID.equals(origID)) ) {
+						DB.EditCustomerInfo(DB, firstName, lastName, zip, email, origID, customerID);
+						Toast.makeText(getBaseContext(), "Customer updated successfully", Toast.LENGTH_LONG).show();
+						Intent launchactivity = new Intent(ctx, SelectcustomerActivity.class);
+						startActivity(launchactivity);
+					}
+					else {
+						Toast.makeText(getBaseContext(), "User ID already exists, please choose another", Toast.LENGTH_LONG).show();
+					}
+				}
+				return;
 			}
 		});
 	}
