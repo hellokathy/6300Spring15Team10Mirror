@@ -52,6 +52,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 		sqldb = dop.getWritableDatabase();
 		String[] args = {ID};
 		sqldb.delete(CustomerTableInfo.TABLE_NAME, CustomerTableInfo.USER_ID + " LIKE ?", args);
+		sqldb.delete(TransactionTableInfo.TABLE_NAME, TransactionTableInfo.USER_ID + " LIKE ?", args);
 	}
 
 	public void EnterCustomerInfo(DatabaseOperations dop, String fname, String lname, String zip, String email, String acct) {
