@@ -27,11 +27,11 @@ Jacob and Yanglei will perform such activities.
 
 ### 1.4 Bug Tracking
 
-We will try to find as many bugs as possible from our tests and then deal with bugs and enhancement requests as a group, everyone should get involved.Same
+We use manual tests to find bugs and then try to fix the bug until all tests get passed.
 
 ### 1.5 Technology
 
-We will use JUnit to build the tests.
+We will use manual tests on Android vertual device in eclipse to test this system.
 
 ## 2 Test Cases
 
