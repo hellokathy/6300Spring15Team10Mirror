@@ -84,15 +84,6 @@
         android:text="0.00" />
 
     <Button
-        android:id="@+id/addTransactionSubmitButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/discountBalance"
-        android:layout_centerVertical="true"
-        android:onClick="submitNewTransactionPressed"
-        android:text="Submit" />
-
-    <Button
         android:id="@+id/ReturnBtn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -101,5 +92,15 @@
         android:layout_toRightOf="@+id/addTransactionSubmitButton"
         android:onClick="ReturnPressed"
         android:text="Return" />
+
+    <Button
+        android:id="@+id/addTransactionSubmitButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/discountBalance"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="36dp"
+        android:onClick="submitNewTransactionPressed"
+        android:text="Submit" />
 
 </RelativeLayout>
