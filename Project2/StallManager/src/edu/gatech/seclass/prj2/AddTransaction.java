@@ -1,5 +1,7 @@
 package edu.gatech.seclass.prj2;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -77,8 +79,7 @@ public class AddTransaction extends Activity {
 					else {
 						CardInfo = CCInfo.split("#");
 						try {
-							// This is probably the point where we should figure out if the customer making a purchase
-							// is eligible for any discounts
+							// Setup vars
 							DatabaseOperations DB = new DatabaseOperations(ctx);
 							Cursor c = DB.getInfoByKey(DB, CustomerTableInfo.USER_ID, acct);
 							int gdex = c.getColumnIndex(CustomerTableInfo.GOLD_STATUS);
@@ -111,14 +112,24 @@ public class AddTransaction extends Activity {
 								discount = 0;
 							}
 
-							amount = Double.toString(amt);
+							amount = Double.toString(round(amt, 2));
 
 
 							// Process payment
 							boolean paymentSuccess = PaymentService.processPayment(CardInfo[0], CardInfo[1], CardInfo[2], CardInfo[3], CardInfo[4], amt);
-							if(paymentSuccess) {
+							
+							// if not successful try a couple more times
+							if( !paymentSuccess ) {
+								paymentSuccess = PaymentService.processPayment(CardInfo[0], CardInfo[1], CardInfo[2], CardInfo[3], CardInfo[4], amt);
+							}
+							
+							if( !paymentSuccess ) {
+								paymentSuccess = PaymentService.processPayment(CardInfo[0], CardInfo[1], CardInfo[2], CardInfo[3], CardInfo[4], amt);
+							}
+							
+							if( paymentSuccess ) {
 								// Add to DB
-								DB.EnterTransactionInfo(DB, amount, date, acct, goldApplied, discUsed);
+								DB.EnterTransactionInfo(DB, amount, date, acct, goldApplied, round(discUsed, 2));
 								Toast.makeText(ctx, "Payment Successful", Toast.LENGTH_LONG).show();
 
 								total += amt;
@@ -160,7 +171,8 @@ public class AddTransaction extends Activity {
 											mailSent = EmailService.sendEmail(email, "Gold status reached!", "Congratulations! You will" + 
 													"receive a 5% discount on all future purchases.");
 										}
-										else {
+										
+										if( !(mailSent) ) {
 											Toast.makeText(ctx, "Email could not be sent...", Toast.LENGTH_LONG).show();
 										}
 									}
@@ -168,7 +180,7 @@ public class AddTransaction extends Activity {
 									isGoldInt = 1;
 								}
 
-								DB.EditCustomerInfo(DB, acct, total, isGoldInt, discount);
+								DB.EditCustomerInfo(DB, acct, round(total, 2), isGoldInt, round(discount, 2));
 								DB.close();
 
 								Intent launchactivity = new Intent(ctx, MainActivity.class);
@@ -189,5 +201,13 @@ public class AddTransaction extends Activity {
 				}
 			}
 		});
+	}
+	
+	public static double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    BigDecimal bd = new BigDecimal(value);
+	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    return bd.doubleValue();
 	}
 }
