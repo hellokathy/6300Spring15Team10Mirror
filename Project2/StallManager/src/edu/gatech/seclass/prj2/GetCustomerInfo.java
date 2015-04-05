@@ -31,7 +31,7 @@ public class GetCustomerInfo extends Activity {
 	    		DatabaseOperations DB = new DatabaseOperations(ctx);
 	    		Cursor cursor=DB.getCustomerInfo(DB);
 	    		String acct = ((EditText)findViewById(R.id.customerID)).getText().toString();
-	    		cursor.moveToFirst();
+	    	//	cursor.moveToFirst();
 	    		if( cursor.moveToFirst() ) {
 	    			do{
 	    				String customerID=cursor.getString(cursor.getColumnIndex("acctnum"));
@@ -71,22 +71,26 @@ public class GetCustomerInfo extends Activity {
 	    					return;
 	    				}
 	    			}while(cursor.moveToNext());
+	    			
+		    		myTextView=(TextView)findViewById(R.id.cName);
+		    		myTextView.setText("");
+		    		myTextView=(TextView)findViewById(R.id.cZip);
+		    		myTextView.setText("");		
+		    		myTextView=(TextView)findViewById(R.id.cEmail);
+		    		myTextView.setText("");	
+		    		myTextView=(TextView)findViewById(R.id.cGoldStatus);
+		    		myTextView.setText("");	
+		    		myTextView=(TextView)findViewById(R.id.cDiscount);
+		    		myTextView.setText("");
+		    		myTextView=(TextView)findViewById(R.id.cTotalSpent);
+		    		myTextView.setText("");
+		    		DB.close();
+		    		Toast.makeText(getBaseContext(), "Customer NOT found!", Toast.LENGTH_LONG).show();
+		    		return;
 	    		}
-	    		myTextView=(TextView)findViewById(R.id.cName);
-	    		myTextView.setText("");
-	    		myTextView=(TextView)findViewById(R.id.cZip);
-	    		myTextView.setText("");		
-	    		myTextView=(TextView)findViewById(R.id.cEmail);
-	    		myTextView.setText("");	
-	    		myTextView=(TextView)findViewById(R.id.cGoldStatus);
-	    		myTextView.setText("");	
-	    		myTextView=(TextView)findViewById(R.id.cDiscount);
-	    		myTextView.setText("");
-	    		myTextView=(TextView)findViewById(R.id.cTotalSpent);
-	    		myTextView.setText("");
-	    		DB.close();
-	    		Toast.makeText(getBaseContext(), "Customer NOT found!", Toast.LENGTH_LONG).show();
-	    		return;
+	    		else{
+	    			Toast.makeText(getBaseContext(), "Empty database!", Toast.LENGTH_LONG).show();
+	    		}
 	    	}
 	    });
 	}	     
