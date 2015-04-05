@@ -5,16 +5,6 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="16dp"
-        android:text="Name:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/Zip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,47 +34,6 @@
         android:text="Please enter the Customer ID:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
-        android:id="@+id/customerID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/transactionLabel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="number" />
-
-    <Button
-        android:id="@+id/submitGetCustomerInfoButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/customerID"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/Name"
-        android:onClick="submitGetCustomerInfoPressed"
-        android:text="Submit" />
-
-    <Button
-        android:id="@+id/returnGetCustomerInfo"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/submitGetCustomerInfoButton"
-        android:layout_marginBottom="26dp"
-        android:onClick="returnGetCustomerInfo"
-        android:text="Return" />
-
-    <TextView
-        android:id="@+id/cName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Name"
-        android:layout_alignBottom="@+id/Name"
-        android:layout_alignLeft="@+id/submitGetCustomerInfoButton"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <TextView
         android:id="@+id/cZip"
         android:layout_width="wrap_content"
@@ -101,6 +50,116 @@
         android:layout_alignBaseline="@+id/Email"
         android:layout_alignBottom="@+id/Email"
         android:layout_alignLeft="@+id/cZip"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/GoldStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Email"
+        android:layout_below="@+id/cEmail"
+        android:layout_marginTop="16dp"
+        android:text="GoldStatus:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/cGoldStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/GoldStatus"
+        android:layout_alignBottom="@+id/GoldStatus"
+        android:layout_alignLeft="@+id/cEmail"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/cName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Zip"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/GoldStatus"
+        android:layout_below="@+id/cGoldStatus"
+        android:layout_marginTop="14dp"
+        android:text="Discount:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/customerID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transactionLabel"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/TotalSpentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_below="@+id/TextView01"
+        android:layout_marginTop="16dp"
+        android:text="TotalSpent:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/submitGetCustomerInfoButton"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="14dp"
+        android:text="Name:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/returnGetCustomerInfo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:onClick="returnGetCustomerInfo"
+        android:text="Return" />
+
+    <Button
+        android:id="@+id/submitGetCustomerInfoButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/returnGetCustomerInfo"
+        android:layout_below="@+id/customerID"
+        android:onClick="submitGetCustomerInfoPressed"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/cDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TotalSpentBtn"
+        android:layout_alignLeft="@+id/cGoldStatus"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/cTotalSpent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TotalSpentBtn"
+        android:layout_alignBottom="@+id/TotalSpentBtn"
+        android:layout_alignLeft="@+id/cDiscount"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
         
