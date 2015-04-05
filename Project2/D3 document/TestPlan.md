@@ -31,7 +31,7 @@ We will try to find as many bugs as possible from our tests and then deal with b
 
 ### 1.5 Technology
 
-We will use JUnit to build the tests.
+We will use an Android emulator to perform these manual tests.
 
 ## 2 Test Cases
 
